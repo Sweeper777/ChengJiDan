@@ -9,6 +9,12 @@ class SVGView : UIView {
         }
     }
     
+    var colorDict: [Int: UIColor] = [:] {
+        didSet {
+            setNeedsDisplay()
+        }
+    }
+    
     override func draw(_ rect: CGRect) {
         guard let svg = svgStrings else { return }
         
