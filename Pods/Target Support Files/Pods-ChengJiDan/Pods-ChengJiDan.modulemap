@@ -1,0 +1,6 @@
+framework module Pods_ChengJiDan {
+  umbrella header "Pods-ChengJiDan-umbrella.h"
+
+  export *
+  module * { export * }
+}
