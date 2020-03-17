@@ -9,5 +9,36 @@ class SVGView : UIView {
         }
     }
     
+    override func draw(_ rect: CGRect) {
+        guard let svg = svgStrings else { return }
+        
+        if svg.count == 1 {
+            guard let path = UIBezierPath(svgString: svg.first!) else {
+                print("cannot create path")
+                return
+            }
+            let bounds = path.bounds
+            let scaleFactor = min(self.bounds.width / bounds.width, self.bounds.height / bounds.height)
+            let scale = CGAffineTransform(scaleX: scaleFactor, y: scaleFactor)
+            let translate = CGAffineTransform(translationX: -x, y: -y)
+            path.apply(translate)
+            path.apply(scale)
+            path.lineWidth = 1
+            UIColor.label.setStroke()
+            path.stroke()
+            return
+        }
+        
+        for (index, string) in svg.enumerated() {
+            guard let path = UIBezierPath(svgString: string) else {
+                print("cannot create path")
+                continue
+            }
+            
+            path.lineWidth = 1
+            UIColor.label.setStroke()
+            path.stroke()
+        }
+    }
 }
 
