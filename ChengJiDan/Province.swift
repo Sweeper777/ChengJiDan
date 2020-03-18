@@ -20,3 +20,9 @@ struct CityStatusPair {
     let status: TravelStatus
 }
 
+extension CityStatusPair : CustomDebugStringConvertible {
+    var debugDescription: String {
+        "\(city): \(status)"
+    }
+}
+
