@@ -9,3 +9,9 @@ struct Province {
     
 }
 
+extension Province: CustomDebugStringConvertible {
+    var debugDescription: String {
+        "Province: \(name)"
+    }
+}
+
