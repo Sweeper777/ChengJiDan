@@ -31,3 +31,13 @@ struct ChengJiDanMap {
     let entries: [CityStatusPair]
 }
 
+class CityStatusPairObject: Object {
+    @objc dynamic var city = ""
+    @objc dynamic var statusInt = 0
+}
+
+class ChengJiDanMapObject: Object {
+    @objc dynamic var name = ""
+    let entries = List<CityStatusPairObject>()
+    
+}
