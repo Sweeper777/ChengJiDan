@@ -15,3 +15,8 @@ extension Province: CustomDebugStringConvertible {
     }
 }
 
+struct CityStatusPair {
+    let city: String
+    let status: TravelStatus
+}
+
