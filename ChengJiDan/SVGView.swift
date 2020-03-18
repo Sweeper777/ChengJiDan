@@ -32,6 +32,8 @@ class SVGView : UIView {
             path.lineWidth = 1
             UIColor.label.setStroke()
             path.stroke()
+            (colorDict[0] ?? .clear).setFill()
+            path.fill()
             return
         }
         
@@ -44,6 +46,8 @@ class SVGView : UIView {
             path.lineWidth = 1
             UIColor.label.setStroke()
             path.stroke()
+            (colorDict[index] ?? .clear).setFill()
+            path.fill()
         }
     }
 }
