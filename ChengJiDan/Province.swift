@@ -26,3 +26,8 @@ extension CityStatusPair : CustomDebugStringConvertible {
     }
 }
 
+struct ChengJiDanMap {
+    let name: String
+    let entries: [CityStatusPair]
+}
+
