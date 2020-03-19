@@ -6,6 +6,21 @@ struct Province {
     let svgPathIndex: Int
     let cities: [String]
     
+    init?(city: String) {
+        if let p = Province.dictionaryByCityName[city] {
+            self = p
+        } else {
+            return nil
+        }
+    }
+    
+    init?(name: String) {
+        if let p = Province.dictionaryByName[name] {
+            self = p
+        } else {
+            return nil
+        }
+    }
     
     private static let dictionaryByName: [String: Province] = Dictionary(elements: Province.allCases.map { ($0.name, $0) })
     private static let dictionaryByCityName: [String: Province] = Dictionary(elements:
