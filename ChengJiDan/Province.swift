@@ -7,6 +7,12 @@ struct Province {
     let cities: [String]
     
     
+    private static let dictionaryByName: [String: Province] = Dictionary(elements: Province.allCases.map { ($0.name, $0) })
+    private static let dictionaryByCityName: [String: Province] = Dictionary(elements:
+        Province.allCases.flatMap { p in
+            p.cities.map { ($0, p) }
+        }
+    )
 }
 
 extension Province: CustomDebugStringConvertible {
