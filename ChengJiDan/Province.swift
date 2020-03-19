@@ -34,6 +34,17 @@ struct ChengJiDanMap {
 class CityStatusPairObject: Object {
     @objc dynamic var city = ""
     @objc dynamic var statusInt = 0
+    
+    var cityStatusPair: CityStatusPair {
+        CityStatusPair(city: city, status: TravelStatus(rawValue: statusInt) ?? .untrodden)
+    }
+    
+    init(from cityStatusPair: CityStatusPair) {
+        city = cityStatusPair.city
+        statusInt = cityStatusPair.status.rawValue
+    }
+    
+    required init() { }
 }
 
 class ChengJiDanMapObject: Object {
