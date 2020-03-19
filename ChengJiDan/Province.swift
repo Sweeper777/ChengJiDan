@@ -51,4 +51,14 @@ class ChengJiDanMapObject: Object {
     @objc dynamic var name = ""
     let entries = List<CityStatusPairObject>()
     
+    var chengJiDanMap: ChengJiDanMap {
+        ChengJiDanMap(name: name, entries: entries.map { $0.cityStatusPair })
+    }
+    
+    init(from chengJiDanMap: ChengJiDanMap) {
+        name = chengJiDanMap.name
+        entries.append(objectsIn: chengJiDanMap.entries.map(CityStatusPairObject.init))
+    }
+    
+    required init() {}
 }
