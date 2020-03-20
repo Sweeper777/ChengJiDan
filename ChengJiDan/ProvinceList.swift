@@ -74,12 +74,47 @@ extension Province {
         "陇南市",
     ])
     static let guangxi = Province(name: "广西壮族自治区", svgPathIndex: 6, cities: [
+        "南宁市",
+        "柳州市",
+        "桂林市",
+        "梧州市",
+        "北海市",
+        "防城港市",
+        "钦州市",
+        "贵港市",
+        "玉林市",
+        "百色市",
+        "贺州市",
+        "河池市",
+        "来宾市",
+        "崇左市",
     ])
     static let guizhou = Province(name: "贵州省", svgPathIndex: 7, cities: [
+        "贵阳市",
+        "六盘水市",
+        "遵义市",
+        "安顺市",
+        "毕节市",
+        "铜仁市",
     ])
     static let hainan = Province(name: "海南省", svgPathIndex: 8, cities: [
+        "海口市",
+        "三亚市",
+        "三沙市",
+        "儋州市",
     ])
     static let hebei = Province(name: "河北省", svgPathIndex: 9, cities: [
+        "石家庄市",
+        "唐山市",
+        "秦皇岛市",
+        "邯郸市",
+        "邢台市",
+        "保定市",
+        "张家口市",
+        "承德市",
+        "沧州市",
+        "廊坊市",
+        "衡水市",
     ])
     static let henan = Province(name: "河南省", svgPathIndex: 10, cities: [
     ])
