@@ -352,12 +352,41 @@ extension Province {
         "澎湖县",
     ])
     static let xinjiang = Province(name: "新疆维吾尔自治区", svgPathIndex: 30, cities: [
+        "乌鲁木齐市",
+        "克拉玛依市",
+        "吐鲁番市",
+        "哈密市",
     ])
     static let xizang = Province(name: "西藏自治区", svgPathIndex: 31, cities: [
+        "拉萨市",
+        "日喀则市",
+        "昌都市",
+        "林芝市",
+        "山南市",
+        "那曲市",
     ])
     static let yunnan = Province(name: "云南省", svgPathIndex: 32, cities: [
+        "昆明市",
+        "曲靖市",
+        "玉溪市",
+        "保山市",
+        "昭通市",
+        "丽江市",
+        "普洱市",
+        "临沧市",
     ])
     static let zhejiang = Province(name: "浙江省", svgPathIndex: 33, cities: [
+        "杭州市",
+        "宁波市",
+        "温州市",
+        "嘉兴市",
+        "湖州市",
+        "绍兴市",
+        "金华市",
+        "衢州市",
+        "舟山市",
+        "台州市",
+        "丽水市",
     ])
 }
 
