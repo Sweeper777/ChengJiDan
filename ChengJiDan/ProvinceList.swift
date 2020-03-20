@@ -117,15 +117,69 @@ extension Province {
         "衡水市",
     ])
     static let henan = Province(name: "河南省", svgPathIndex: 10, cities: [
+        "郑州市",
+        "开封市",
+        "洛阳市",
+        "平顶山市",
+        "安阳市",
+        "鹤壁市",
+        "新乡市",
+        "焦作市",
+        "濮阳市",
+        "许昌市",
+        "漯河市",
+        "三门峡市",
+        "南阳市",
+        "商丘市",
+        "信阳市",
+        "周口市",
+        "驻马店市",
     ])
     static let hongKong = Province(name: "香港特别行政区", svgPathIndex: 11, cities: [
         "香港特别行政区"
     ])
     static let heilongjiang = Province(name: "黑龙江省", svgPathIndex: 12, cities: [
+        "哈尔滨市",
+        "齐齐哈尔市",
+        "鸡西市",
+        "鹤岗市",
+        "双鸭山市",
+        "大庆市",
+        "伊春市",
+        "佳木斯市",
+        "七台河市",
+        "牡丹江市",
+        "黑河市",
+        "绥化市",
     ])
     static let hunan = Province(name: "湖南省", svgPathIndex: 13, cities: [
+        "长沙市",
+        "株洲市",
+        "湘潭市",
+        "衡阳市",
+        "邵阳市",
+        "岳阳市",
+        "常德市",
+        "张家界市",
+        "益阳市",
+        "郴州市",
+        "永州市",
+        "怀化市",
+        "娄底市",
     ])
     static let hubei = Province(name: "湖北省", svgPathIndex: 14, cities: [
+        "武汉市",
+        "黄石市",
+        "十堰市",
+        "宜昌市",
+        "襄阳市",
+        "鄂州市",
+        "荆门市",
+        "孝感市",
+        "荆州市",
+        "黄冈市",
+        "咸宁市",
+        "随州市",
     ])
     static let jilin = Province(name: "吉林省", svgPathIndex: 15, cities: [
     ])
