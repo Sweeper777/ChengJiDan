@@ -182,12 +182,58 @@ extension Province {
         "随州市",
     ])
     static let jilin = Province(name: "吉林省", svgPathIndex: 15, cities: [
+        "长春市",
+        "吉林市",
+        "四平市",
+        "辽源市",
+        "通化市",
+        "白山市",
+        "松原市",
+        "白城市",
     ])
     static let jiangsu = Province(name: "江苏省", svgPathIndex: 16, cities: [
+        "南京市",
+        "无锡市",
+        "徐州市",
+        "常州市",
+        "苏州市",
+        "南通市",
+        "连云港市",
+        "淮安市",
+        "盐城市",
+        "扬州市",
+        "镇江市",
+        "泰州市",
+        "宿迁市",
     ])
     static let jiangxi = Province(name: "江西省", svgPathIndex: 17, cities: [
+        "南昌市",
+        "景德镇市",
+        "萍乡市",
+        "九江市",
+        "抚州市",
+        "鹰潭市",
+        "赣州市",
+        "吉安市",
+        "宜春市",
+        "新余市",
+        "上饶市",
     ])
     static let liaoning = Province(name: "辽宁省", svgPathIndex: 18, cities: [
+        "沈阳市",
+        "大连市",
+        "鞍山市",
+        "抚顺市",
+        "本溪市",
+        "丹东市",
+        "锦州市",
+        "营口市",
+        "阜新市",
+        "辽阳市",
+        "盘锦市",
+        "铁岭市",
+        "朝阳市",
+        "葫芦岛市",
     ])
     static let macau = Province(name: "澳门特别行政区", svgPathIndex: 19, cities: [
         "澳门特别行政区"
