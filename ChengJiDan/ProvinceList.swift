@@ -273,17 +273,83 @@ extension Province {
         "商洛市",
     ])
     static let sichuan = Province(name: "四川省", svgPathIndex: 24, cities: [
+        "成都市",
+        "自贡市",
+        "攀枝花市",
+        "泸州市",
+        "德阳市",
+        "绵阳市",
+        "广元市",
+        "遂宁市",
+        "内江市",
+        "乐山市",
+        "南充市",
+        "眉山市",
+        "宜宾市",
+        "广安市",
+        "达州市",
+        "雅安市",
+        "巴中市",
+        "资阳市",
     ])
     static let shandong = Province(name: "山东省", svgPathIndex: 25, cities: [
+        "济南市",
+        "青岛市",
+        "淄博市",
+        "枣庄市",
+        "东营市",
+        "烟台市",
+        "潍坊市",
+        "济宁市",
+        "泰安市",
+        "威海市",
+        "日照市",
+        "临沂市",
+        "德州市",
+        "聊城市",
+        "滨州市",
+        "菏泽市",
     ])
     static let shanghai = Province(name: "上海市", svgPathIndex: 26, cities: [
         "上海市"
     ])
     static let shanxi = Province(name: "山西省", svgPathIndex: 27, cities: [
+        "太原市",
+        "大同市",
+        "阳泉市",
+        "长治市",
+        "晋城市",
+        "朔州市",
+        "晋中市",
+        "运城市",
+        "忻州市",
+        "临汾市",
+        "吕梁市",
     ])
     static let tianjin = Province(name: "天津市", svgPathIndex: 28, cities: [
+        "天津市"
     ])
     static let taiwan = Province(name: "台湾省", svgPathIndex: 29, cities: [
+        "台北市",
+        "新北市",
+        "桃园市",
+        "台中市",
+        "台南市",
+        "高雄市",
+        "基隆市",
+        "新竹市",
+        "嘉义市",
+        "新竹县",
+        "苗栗县",
+        "彰化县",
+        "南投县",
+        "云林县",
+        "嘉义县",
+        "屏东县",
+        "宜兰县",
+        "花莲县",
+        "台东县",
+        "澎湖县",
     ])
     static let xinjiang = Province(name: "新疆维吾尔自治区", svgPathIndex: 30, cities: [
     ])
