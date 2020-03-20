@@ -239,12 +239,38 @@ extension Province {
         "澳门特别行政区"
     ])
     static let innerMongolia = Province(name: "内蒙古自治区", svgPathIndex: 20, cities: [
+        "呼和浩特市",
+        "包头市",
+        "乌海市",
+        "赤峰市",
+        "通辽市",
+        "鄂尔多斯市",
+        "呼伦贝尔市",
+        "巴彦淖尔市",
+        "乌兰察布市",
     ])
     static let ningxia = Province(name: "宁夏回族自治区", svgPathIndex: 21, cities: [
+        "银川市",
+        "石嘴山市",
+        "吴忠市",
+        "固原市",
+        "中卫市",
     ])
     static let qinghai = Province(name: "青海省", svgPathIndex: 22, cities: [
+        "西宁市",
+        "海东市",
     ])
     static let shaanxi = Province(name: "陕西省", svgPathIndex: 23, cities: [
+        "西安市",
+        "铜川市",
+        "宝鸡市",
+        "咸阳市",
+        "渭南市",
+        "延安市",
+        "汉中市",
+        "榆林市",
+        "安康市",
+        "商洛市",
     ])
     static let sichuan = Province(name: "四川省", svgPathIndex: 24, cities: [
     ])
