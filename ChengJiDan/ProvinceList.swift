@@ -2,6 +2,22 @@ import Foundation
 
 extension Province {
     static let anhui = Province(name: "安徽省", svgPathIndex: 0, cities: [
+        "安庆市",
+        "蚌埠市",
+        "亳州市",
+        "池州市",
+        "滁州市",
+        "阜阳市",
+        "合肥市",
+        "淮北市",
+        "淮南市",
+        "黄山市",
+        "六安市",
+        "马鞍山市",
+        "宿州市",
+        "铜陵市",
+        "芜湖市",
+        "宣城市",
     ])
     static let beijing = Province(name: "北京市", svgPathIndex: 1, cities: [
         "北京市",
@@ -10,10 +26,52 @@ extension Province {
         "重庆市",
     ])
     static let fujian = Province(name: "福建省", svgPathIndex: 3, cities: [
+        "福州市",
+        "厦门市",
+        "莆田市",
+        "三明市",
+        "泉州市",
+        "漳州市",
+        "南平市",
+        "龙岩市",
+        "宁德市",
     ])
     static let guangdong = Province(name: "广东省", svgPathIndex: 4, cities: [
+        "广州市",
+        "韶关市",
+        "深圳市",
+        "珠海市",
+        "汕头市",
+        "佛山市",
+        "江门市",
+        "湛江市",
+        "茂名市",
+        "肇庆市",
+        "惠州市",
+        "梅州市",
+        "汕尾市",
+        "河源市",
+        "阳江市",
+        "清远市",
+        "东莞市",
+        "中山市",
+        "潮州市",
+        "揭阳市",
+        "云浮市",
     ])
     static let gansu = Province(name: "甘肃省", svgPathIndex: 5, cities: [
+        "兰州市",
+        "嘉峪关市",
+        "金昌市",
+        "白银市",
+        "天水市",
+        "武威市",
+        "张掖市",
+        "平凉市",
+        "酒泉市",
+        "庆阳市",
+        "定西市",
+        "陇南市",
     ])
     static let guangxi = Province(name: "广西壮族自治区", svgPathIndex: 6, cities: [
     ])
