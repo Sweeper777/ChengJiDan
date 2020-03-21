@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,14 @@
 		5A0456A7241CF1210055EB27 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A0456A6241CF1210055EB27 /* Assets.xcassets */; };
 		5A0456AA241CF1210055EB27 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A0456A8241CF1210055EB27 /* LaunchScreen.storyboard */; };
 		5A0456B5241CF1210055EB27 /* ChengJiDanTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0456B4241CF1210055EB27 /* ChengJiDanTests.swift */; };
+		5A0456C3241CF2190055EB27 /* SKUBezierPath+SVG.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A0456C1241CF2190055EB27 /* SKUBezierPath+SVG.m */; };
+		5A0456C5241CFEBD0055EB27 /* map.svg in Resources */ = {isa = PBXBuildFile; fileRef = 5A0456C4241CFEBD0055EB27 /* map.svg */; };
+		5A0456C7241CFF040055EB27 /* SVGView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0456C6241CFF040055EB27 /* SVGView.swift */; };
+		5A0456C9241D074E0055EB27 /* Province.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0456C8241D074E0055EB27 /* Province.swift */; };
+		5A0456CB241D0A960055EB27 /* TravelStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0456CA241D0A960055EB27 /* TravelStatus.swift */; };
+		5A0456CD241D120D0055EB27 /* ProvinceList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0456CC241D120D0055EB27 /* ProvinceList.swift */; };
+		A0E62ABE231B1EEE6E04A48D /* Pods_ChengJiDanTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF005624EB9400C5F702CF96 /* Pods_ChengJiDanTests.framework */; };
+		E8A7BCA40E0B31DB48040986 /* Pods_ChengJiDan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E18FCFFB50D5F648DE25C86 /* Pods_ChengJiDan.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +35,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2E18FCFFB50D5F648DE25C86 /* Pods_ChengJiDan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChengJiDan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		539EB4ABCA838705AEA39C6E /* Pods-ChengJiDanTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChengJiDanTests.release.xcconfig"; path = "Target Support Files/Pods-ChengJiDanTests/Pods-ChengJiDanTests.release.xcconfig"; sourceTree = "<group>"; };
 		5A04569A241CF11E0055EB27 /* ChengJiDan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChengJiDan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A04569D241CF11E0055EB27 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5A04569F241CF11E0055EB27 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -38,6 +48,18 @@
 		5A0456B0241CF1210055EB27 /* ChengJiDanTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChengJiDanTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A0456B4241CF1210055EB27 /* ChengJiDanTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChengJiDanTests.swift; sourceTree = "<group>"; };
 		5A0456B6241CF1210055EB27 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5A0456C0241CF2190055EB27 /* SKUBezierPath+SVG.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SKUBezierPath+SVG.h"; sourceTree = "<group>"; };
+		5A0456C1241CF2190055EB27 /* SKUBezierPath+SVG.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SKUBezierPath+SVG.m"; sourceTree = "<group>"; };
+		5A0456C2241CF2190055EB27 /* ChengJiDan-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ChengJiDan-Bridging-Header.h"; sourceTree = "<group>"; };
+		5A0456C4241CFEBD0055EB27 /* map.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = map.svg; sourceTree = "<group>"; };
+		5A0456C6241CFF040055EB27 /* SVGView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SVGView.swift; sourceTree = "<group>"; };
+		5A0456C8241D074E0055EB27 /* Province.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Province.swift; sourceTree = "<group>"; };
+		5A0456CA241D0A960055EB27 /* TravelStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelStatus.swift; sourceTree = "<group>"; };
+		5A0456CC241D120D0055EB27 /* ProvinceList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProvinceList.swift; sourceTree = "<group>"; };
+		CF34EFBE4FD5C6F567B0E8F9 /* Pods-ChengJiDan.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChengJiDan.debug.xcconfig"; path = "Target Support Files/Pods-ChengJiDan/Pods-ChengJiDan.debug.xcconfig"; sourceTree = "<group>"; };
+		DA58222A8C517369AADDA01F /* Pods-ChengJiDan.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChengJiDan.release.xcconfig"; path = "Target Support Files/Pods-ChengJiDan/Pods-ChengJiDan.release.xcconfig"; sourceTree = "<group>"; };
+		E2E9D6AAEC8C37C0F85733B2 /* Pods-ChengJiDanTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChengJiDanTests.debug.xcconfig"; path = "Target Support Files/Pods-ChengJiDanTests/Pods-ChengJiDanTests.debug.xcconfig"; sourceTree = "<group>"; };
+		FF005624EB9400C5F702CF96 /* Pods_ChengJiDanTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChengJiDanTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E8A7BCA40E0B31DB48040986 /* Pods_ChengJiDan.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,18 +75,32 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0E62ABE231B1EEE6E04A48D /* Pods_ChengJiDanTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4EDD9D2C58878A2DEA66B487 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CF34EFBE4FD5C6F567B0E8F9 /* Pods-ChengJiDan.debug.xcconfig */,
+				DA58222A8C517369AADDA01F /* Pods-ChengJiDan.release.xcconfig */,
+				E2E9D6AAEC8C37C0F85733B2 /* Pods-ChengJiDanTests.debug.xcconfig */,
+				539EB4ABCA838705AEA39C6E /* Pods-ChengJiDanTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		5A045691241CF11E0055EB27 = {
 			isa = PBXGroup;
 			children = (
 				5A04569C241CF11E0055EB27 /* ChengJiDan */,
 				5A0456B3241CF1210055EB27 /* ChengJiDanTests */,
 				5A04569B241CF11E0055EB27 /* Products */,
+				4EDD9D2C58878A2DEA66B487 /* Pods */,
+				E899A27729F4E7BF3283F9DF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -82,10 +119,18 @@
 				5A04569D241CF11E0055EB27 /* AppDelegate.swift */,
 				5A04569F241CF11E0055EB27 /* SceneDelegate.swift */,
 				5A0456A1241CF11E0055EB27 /* ViewController.swift */,
+				5A0456C6241CFF040055EB27 /* SVGView.swift */,
+				5A0456C8241D074E0055EB27 /* Province.swift */,
+				5A0456CC241D120D0055EB27 /* ProvinceList.swift */,
+				5A0456CA241D0A960055EB27 /* TravelStatus.swift */,
 				5A0456A3241CF11E0055EB27 /* Main.storyboard */,
 				5A0456A6241CF1210055EB27 /* Assets.xcassets */,
 				5A0456A8241CF1210055EB27 /* LaunchScreen.storyboard */,
 				5A0456AB241CF1210055EB27 /* Info.plist */,
+				5A0456C2241CF2190055EB27 /* ChengJiDan-Bridging-Header.h */,
+				5A0456C0241CF2190055EB27 /* SKUBezierPath+SVG.h */,
+				5A0456C1241CF2190055EB27 /* SKUBezierPath+SVG.m */,
+				5A0456C4241CFEBD0055EB27 /* map.svg */,
 			);
 			path = ChengJiDan;
 			sourceTree = "<group>";
@@ -99,6 +144,15 @@
 			path = ChengJiDanTests;
 			sourceTree = "<group>";
 		};
+		E899A27729F4E7BF3283F9DF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2E18FCFFB50D5F648DE25C86 /* Pods_ChengJiDan.framework */,
+				FF005624EB9400C5F702CF96 /* Pods_ChengJiDanTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -106,9 +160,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5A0456B9241CF1210055EB27 /* Build configuration list for PBXNativeTarget "ChengJiDan" */;
 			buildPhases = (
+				E592890FDBDDF473C22CDD43 /* [CP] Check Pods Manifest.lock */,
 				5A045696241CF11E0055EB27 /* Sources */,
 				5A045697241CF11E0055EB27 /* Frameworks */,
 				5A045698241CF11E0055EB27 /* Resources */,
+				499D33CB024488FA9AAB17A3 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -123,6 +179,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5A0456BC241CF1210055EB27 /* Build configuration list for PBXNativeTarget "ChengJiDanTests" */;
 			buildPhases = (
+				D404B89762B62A38591A5831 /* [CP] Check Pods Manifest.lock */,
 				5A0456AC241CF1210055EB27 /* Sources */,
 				5A0456AD241CF1210055EB27 /* Frameworks */,
 				5A0456AE241CF1210055EB27 /* Resources */,
@@ -149,6 +206,7 @@
 				TargetAttributes = {
 					5A045699241CF11E0055EB27 = {
 						CreatedOnToolsVersion = 11.0;
+						LastSwiftMigration = 1100;
 					};
 					5A0456AF241CF1210055EB27 = {
 						CreatedOnToolsVersion = 11.0;
@@ -183,6 +241,7 @@
 				5A0456AA241CF1210055EB27 /* LaunchScreen.storyboard in Resources */,
 				5A0456A7241CF1210055EB27 /* Assets.xcassets in Resources */,
 				5A0456A5241CF11E0055EB27 /* Main.storyboard in Resources */,
+				5A0456C5241CFEBD0055EB27 /* map.svg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -195,14 +254,83 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		499D33CB024488FA9AAB17A3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ChengJiDan/Pods-ChengJiDan-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ChengJiDan/Pods-ChengJiDan-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ChengJiDan/Pods-ChengJiDan-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D404B89762B62A38591A5831 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ChengJiDanTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E592890FDBDDF473C22CDD43 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ChengJiDan-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		5A045696241CF11E0055EB27 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				5A0456A2241CF11E0055EB27 /* ViewController.swift in Sources */,
+				5A0456C7241CFF040055EB27 /* SVGView.swift in Sources */,
 				5A04569E241CF11E0055EB27 /* AppDelegate.swift in Sources */,
+				5A0456C9241D074E0055EB27 /* Province.swift in Sources */,
+				5A0456CB241D0A960055EB27 /* TravelStatus.swift in Sources */,
+				5A0456C3241CF2190055EB27 /* SKUBezierPath+SVG.m in Sources */,
 				5A0456A0241CF11E0055EB27 /* SceneDelegate.swift in Sources */,
+				5A0456CD241D120D0055EB27 /* ProvinceList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -360,8 +488,10 @@
 		};
 		5A0456BA241CF1210055EB27 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CF34EFBE4FD5C6F567B0E8F9 /* Pods-ChengJiDan.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = E9MW74DJ4Y;
 				INFOPLIST_FILE = ChengJiDan/Info.plist;
@@ -371,6 +501,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = sweeper777.github.io.ChengJiDan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ChengJiDan/ChengJiDan-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -378,8 +510,10 @@
 		};
 		5A0456BB241CF1210055EB27 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DA58222A8C517369AADDA01F /* Pods-ChengJiDan.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = E9MW74DJ4Y;
 				INFOPLIST_FILE = ChengJiDan/Info.plist;
@@ -389,6 +523,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = sweeper777.github.io.ChengJiDan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ChengJiDan/ChengJiDan-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -396,6 +531,7 @@
 		};
 		5A0456BD241CF1210055EB27 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E2E9D6AAEC8C37C0F85733B2 /* Pods-ChengJiDanTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -418,6 +554,7 @@
 		};
 		5A0456BE241CF1210055EB27 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 539EB4ABCA838705AEA39C6E /* Pods-ChengJiDanTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
