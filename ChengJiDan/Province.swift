@@ -36,6 +36,12 @@ struct Province {
     )
 }
 
+extension Province : Hashable {
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(name)
+    }
+}
+
 extension Province: CustomDebugStringConvertible {
     var debugDescription: String {
         "Province: \(name)"
