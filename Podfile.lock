@@ -4,12 +4,14 @@ PODS:
   - Realm/Headers (4.3.2)
   - RealmSwift (4.3.2):
     - Realm (= 4.3.2)
+  - SCLAlertView (0.8.1)
   - SwiftyUtils (5.0.0)
   - SwiftyXMLParser (5.1.0)
 
 DEPENDENCIES:
   - Realm
   - RealmSwift
+  - SCLAlertView (from `https://github.com/vikmeup/SCLAlertView-Swift.git`)
   - SwiftyUtils
   - SwiftyXMLParser (from `https://github.com/yahoojapan/SwiftyXMLParser.git`)
 
@@ -20,10 +22,15 @@ SPEC REPOS:
     - SwiftyUtils
 
 EXTERNAL SOURCES:
+  SCLAlertView:
+    :git: https://github.com/vikmeup/SCLAlertView-Swift.git
   SwiftyXMLParser:
     :git: https://github.com/yahoojapan/SwiftyXMLParser.git
 
 CHECKOUT OPTIONS:
+  SCLAlertView:
+    :commit: d98c3e647ad77ed537d021e7d6ad07bb71f83186
+    :git: https://github.com/vikmeup/SCLAlertView-Swift.git
   SwiftyXMLParser:
     :commit: bc85162ecee60d6eb94b778648bc4c51e1c4d34f
     :git: https://github.com/yahoojapan/SwiftyXMLParser.git
@@ -31,9 +38,10 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   Realm: 5e92902e2875dff4bb0fd02f67bb737c3d5db2bc
   RealmSwift: 9a360fc7bae04fc2e308a34fbd899d5faa2d6b22
+  SCLAlertView: 776813fb1f62248965f37cb7edf4088ee6394460
   SwiftyUtils: 0536386622b456460c329f44e38759f16864fe24
   SwiftyXMLParser: 8271497e0a37b5c04b0b167c77b4896e36175a21
 
-PODFILE CHECKSUM: ef700025fe0a19a707522c5568afc85c930cc7a9
+PODFILE CHECKSUM: 8a2777ea234130661972d0d11592f2cfb4afefc4
 
 COCOAPODS: 1.7.5

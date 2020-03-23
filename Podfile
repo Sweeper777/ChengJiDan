@@ -10,6 +10,7 @@ target 'ChengJiDan' do
   pod 'SwiftyUtils'
   pod 'Realm'
   pod 'RealmSwift'
+  pod 'SCLAlertView', :git => 'https://github.com/vikmeup/SCLAlertView-Swift.git'
 
   target 'ChengJiDanTests' do
     inherit! :search_paths
