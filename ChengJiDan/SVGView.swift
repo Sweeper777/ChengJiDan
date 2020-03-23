@@ -37,6 +37,13 @@ class SVGView : UIView {
             return
         }
         
+        let allPaths = svg.compactMap(UIBezierPath.init)
+        let allPathsUnion = allPaths.reduce(into: UIBezierPath()) { (union, path) in
+            union.append(path)
+        }
+        let bounds = allPathsUnion.bounds
+        let scaleFactor = min(self.bounds.width / bounds.width, self.bounds.height / bounds.height)
+        let scale = CGAffineTransform(scaleX: scaleFactor, y: scaleFactor)
         for (index, string) in svg.enumerated() {
             guard let path = UIBezierPath(svgString: string) else {
                 print("cannot create path")
