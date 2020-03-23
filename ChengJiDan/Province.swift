@@ -6,6 +6,12 @@ struct Province {
     let svgPathIndex: Int
     let cities: [String]
     
+    init(name: String, svgPathIndex: Int, cities: [String]) {
+        self.name = name
+        self.svgPathIndex = svgPathIndex
+        self.cities = cities
+    }
+    
     init?(city: String) {
         if let p = Province.dictionaryByCityName[city] {
             self = p
