@@ -49,8 +49,9 @@ class SVGView : UIView {
                 print("cannot create path")
                 continue
             }
-            
-            path.lineWidth = 1
+            path.apply(scale)
+            path.lineJoinStyle = .round
+            path.lineWidth = 0.5
             UIColor.label.setStroke()
             path.stroke()
             (colorDict[index] ?? .clear).setFill()
