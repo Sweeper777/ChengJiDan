@@ -62,6 +62,18 @@ extension CityStatusPair : CustomDebugStringConvertible {
 struct ChengJiDanMap {
     let name: String
     let entries: [CityStatusPair]
+    
+    var objectRef: ChengJiDanMapObject?
+    
+    init(name: String, entries: [CityStatusPair]) {
+        self.name = name
+        self.entries = entries
+    }
+    
+    init(objectRef: ChengJiDanMapObject) {
+        self.init(name: objectRef.name, entries: objectRef.entries.map { $0.cityStatusPair })
+        self.objectRef = objectRef
+    }
 }
 
 class CityStatusPairObject: Object {
