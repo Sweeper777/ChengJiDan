@@ -97,7 +97,7 @@ class ChengJiDanMapObject: Object {
     let entries = List<CityStatusPairObject>()
     
     var chengJiDanMap: ChengJiDanMap {
-        ChengJiDanMap(name: name, entries: entries.map { $0.cityStatusPair })
+        ChengJiDanMap(objectRef: self)
     }
     
     init(from chengJiDanMap: ChengJiDanMap) {
