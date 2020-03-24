@@ -9,4 +9,14 @@ class DataManager {
         Array(chengJiDanMaps).map { $0.chengJiDanMap }
     }
     
+    private init() {
+        do {
+            realm = try Realm()
+            chengJiDanMaps = realm.objects(ChengJiDanMapObject.self)
+        } catch let error {
+            print(error)
+            fatalError()
+        }
+    }
+    
 }
