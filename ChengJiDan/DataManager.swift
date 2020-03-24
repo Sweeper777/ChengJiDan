@@ -19,4 +19,11 @@ class DataManager {
         }
     }
     
+    private static var _shared: DataManager?
+    
+    static var shared: DataManager {
+        _shared = _shared ?? DataManager()
+        return _shared!
+    }
+    
 }
