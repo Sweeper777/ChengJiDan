@@ -40,4 +40,18 @@ class DataManager {
             .map { $0.chengJiDanMap }
     }
     
+    func updateChengJiDan(oldChengJiDan: ChengJiDanMap, newChengJiDan: ChengJiDanMap) throws {
+        try realm.write {
+            deleteChengJiDanImpl(oldChengJiDan)
+            addChengJiDanImpl(newChengJiDan)
+        }
+    }
+    
+    private func addChengJiDanImpl(_ chengJiDan: ChengJiDanMap) {
+        realm.add(ChengJiDanMapObject(from: chengJiDan))
+    }
+    
+    private func deleteChengJiDanImpl(_ chengJiDan: ChengJiDanMap) {
+        chengJiDan.objectRef.map { realm.delete($0) }
+    }
 }
