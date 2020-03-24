@@ -26,4 +26,13 @@ class DataManager {
         return _shared!
     }
     
+    func addChengJiDan(withName name: String) throws -> ChengJiDanMap {
+        let chengJiDan = ChengJiDanMapObject()
+        chengJiDan.name = name
+        try realm.write {
+            realm.add(chengJiDan)
+        }
+        return chengJiDan.chengJiDanMap
+    }
+    
 }
