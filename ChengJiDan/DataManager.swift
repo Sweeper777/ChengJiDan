@@ -35,4 +35,9 @@ class DataManager {
         return chengJiDan.chengJiDanMap
     }
     
+    func queryChengJiDan(_ format: String, args: Any...) -> [ChengJiDanMap] {
+        return chengJiDanMaps.filter(NSPredicate(format: format, argumentArray: args))
+            .map { $0.chengJiDanMap }
+    }
+    
 }
