@@ -1,18 +1,13 @@
-//
-//  ViewController.swift
-//  ChengJiDan
-//
-//  Created by Mulang Su on 14/03/2020.
-//  Copyright © 2020 Mulang Su. All rights reserved.
-//
-
 import UIKit
+import SCLAlertView
 
-class ViewController: UIViewController {
+class ChengJiDanListViewController: UITableViewController {
 
+    var chengJiDans: [ChengJiDanMap]!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        chengJiDans = DataManager.shared.allChengJiDan
     }
 
 
