@@ -37,5 +37,21 @@ class ChengJiDanListViewController: UITableViewController {
         alert.showEdit("新城跡单", subTitle: nil, closeButtonTitle: "取消")
     }
     
+    func addChengJiDan(name: String) {
+        if name.trimmed() == "" {
+            SCLAlertView().showError("错误", subTitle: "名字不能为空！", closeButtonTitle: "确定")
+        } else if DataManager.shared.queryChengJiDan("name == %@", args: name).count > 0 {
+            SCLAlertView().showError("错误", subTitle: "该名字已被使用！", closeButtonTitle: "确定")
+        } else {
+            do {
+                let newChengJiDan = try DataManager.shared.addChengJiDan(withName: name)
+                self.chengJiDans.append(newChengJiDan)
+                self.tableView.insertRows(at: [IndexPath(row: self.chengJiDans.count - 1, section: 0)], with: .automatic)
+            } catch let error {
+                SCLAlertView().showError("错误", subTitle: error.localizedDescription, closeButtonTitle: "确定")
+            }
+        }
+    }
+    
 }
 
