@@ -24,6 +24,11 @@ class ChengJiDanListViewController: UITableViewController {
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "showChengJiDan", sender: chengJiDans[indexPath.row])
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
     @IBAction func addChengJiDanTapped() {
         let chengJiDansWithDefaultNames = DataManager.shared.queryChengJiDan("name BEGINSWITH %@", args: "城跡单")
         let nextNumber = (chengJiDansWithDefaultNames.compactMap { Int($0.name.dropFirst(3)) }.max() ?? 0) + 1
@@ -53,5 +58,10 @@ class ChengJiDanListViewController: UITableViewController {
         }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let vc = segue.destination as? ChengJiDanMapViewController, let map = sender as? ChengJiDanMap {
+            vc.chengJiDan = map
+        }
+    }
 }
 
