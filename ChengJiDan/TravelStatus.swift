@@ -1,6 +1,6 @@
 import Foundation
 
-enum TravelStatus: Int, CustomDebugStringConvertible {
+enum TravelStatus: Int, CustomDebugStringConvertible, CustomStringConvertible {
     case untrodden
     case passedThrough
     case landed
@@ -22,6 +22,23 @@ enum TravelStatus: Int, CustomDebugStringConvertible {
             return "spentTheNight"
         case .lived:
             return "lived"
+        }
+    }
+    
+    var description: String {
+        switch self {
+        case .untrodden:
+            return "未经"
+        case .passedThrough:
+            return "驶过"
+        case .landed:
+            return "转乘"
+        case .visited:
+            return "访问"
+        case .spentTheNight:
+            return "小住"
+        case .lived:
+            return "居住"
         }
     }
 }
