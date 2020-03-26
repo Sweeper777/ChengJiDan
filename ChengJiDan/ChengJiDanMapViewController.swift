@@ -7,6 +7,14 @@ class ChengJiDanMapViewController : UIViewController {
     @IBOutlet var svgView: SVGView!
     
     override func viewDidLoad() {
+        
+        let xmlString = try! String(contentsOfFile: Bundle.main.path(forResource: "map", ofType: "svg")!)
+        let xml = try! XML.parse(xmlString)
+        svgView.svgStrings = Array(xml["svg", "g" ,"path"])
+            .map { $0.attributes["d"]! }
+        svgView.colorDict = Dictionary(elements:
+            chengJiDan.totalForEachProvince.map { ($0.key.svgPathIndex, $0.value) }
+        )
     }
     
 }
