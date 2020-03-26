@@ -29,6 +29,16 @@ class ChengJiDanMapViewController : UIViewController {
         )
     }
     
+    @IBAction func editTapped() {
+        performSegue(withIdentifier: "editChengJiDan", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let vc = (segue.destination as? UINavigationController)?.topViewController as? ChengJiDanEditorViewController {
+            vc.cityStatusPairs = chengJiDan.entries
+            vc.delegate = self
+        }
+    }
 }
 
 extension ChengJiDanMap {
