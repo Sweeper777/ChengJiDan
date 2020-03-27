@@ -32,3 +32,6 @@ class ChengJiDanEditorViewController : UITableViewController {
     }
 }
 
+protocol ChengJiDanEditorViewControllerDelegate: class {
+    func didFinishEditing(editingResult: [CityStatusPair])
+}

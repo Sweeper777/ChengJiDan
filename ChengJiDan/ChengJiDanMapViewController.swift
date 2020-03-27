@@ -49,3 +49,9 @@ extension ChengJiDanMap {
         return totals.mapValues { UIColor(named: TravelStatus(rawValue: $0)!.debugDescription) } as! [Province: UIColor]
     }
 }
+
+extension ChengJiDanMapViewController : ChengJiDanEditorViewControllerDelegate {
+    func didFinishEditing(editingResult: [CityStatusPair]) {
+        
+    }
+}
