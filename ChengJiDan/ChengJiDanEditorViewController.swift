@@ -47,6 +47,14 @@ class ChengJiDanEditorViewController : UITableViewController {
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
+    @IBAction func doneTapped() {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        delegate?.didFinishEditing(editingResult: cityStatusPairDict.map { CityStatusPair(city: $0.key, status: $0.value) })
+    }
 }
 
 protocol ChengJiDanEditorViewControllerDelegate: class {
