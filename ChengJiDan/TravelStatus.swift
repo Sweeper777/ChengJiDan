@@ -1,6 +1,6 @@
 import Foundation
 
-enum TravelStatus: Int, CustomDebugStringConvertible, CustomStringConvertible {
+enum TravelStatus: Int, CustomDebugStringConvertible, CustomStringConvertible, CaseIterable {
     case untrodden
     case passedThrough
     case landed
