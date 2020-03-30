@@ -1,4 +1,5 @@
 import UIKit
+import SCLAlertView
 
 class ChengJiDanEditorViewController : UITableViewController {
     weak var delegate: ChengJiDanEditorViewControllerDelegate?
@@ -30,6 +31,22 @@ class ChengJiDanEditorViewController : UITableViewController {
         cell.detailTextLabel?.text = status.description
         return cell
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let provinceName = dataSource[indexPath.section].name
+        let cityName = dataSource[indexPath.section].cities[indexPath.row]
+        let alert = SCLAlertView()
+        TravelStatus.allCases.forEach { (status) in
+            alert.addButton(status.description, backgroundColor: UIColor(named: status.debugDescription)) {
+                [weak self] in
+                self?.cityStatusPairDict[cityName] = status
+                tableView.reloadRows(at: [indexPath], with: .automatic)
+            }
+        }
+        alert.showEdit(cityName, subTitle: provinceName, closeButtonTitle: "取消")
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
 }
 
 protocol ChengJiDanEditorViewControllerDelegate: class {
