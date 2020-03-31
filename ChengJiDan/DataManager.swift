@@ -4,6 +4,7 @@ import RealmSwift
 class DataManager {
     private let chengJiDanMaps: Results<ChengJiDanMapObject>
     private let realm: Realm!
+    weak var delegate: DataManagerDelegate?
     
     var allChengJiDan: [ChengJiDanMap] {
         Array(chengJiDanMaps).map { $0.chengJiDanMap }
@@ -54,4 +55,14 @@ class DataManager {
     private func deleteChengJiDanImpl(_ chengJiDan: ChengJiDanMap) {
         chengJiDan.objectRef.map { realm.delete($0) }
     }
+}
+
+protocol DataManagerDelegate : class {
+    func dataDidUpdate(kind: DataUpdateKind)
+}
+
+enum DataUpdateKind {
+    case added(ChengJiDanMap)
+    case removed(ChengJiDanMap)
+    case updated(old: ChengJiDanMap, new: ChengJiDanMap)
 }
