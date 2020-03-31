@@ -1,5 +1,6 @@
 import UIKit
 import SwiftyXMLParser
+import SCLAlertView
 
 class ChengJiDanMapViewController : UIViewController {
     var chengJiDan: ChengJiDanMap!
@@ -39,6 +40,16 @@ extension ChengJiDanMap {
 
 extension ChengJiDanMapViewController : ChengJiDanEditorViewControllerDelegate {
     func didFinishEditing(editingResult: [CityStatusPair]) {
-        
+        do {
+            let newChengJiDan = ChengJiDanMap(name: chengJiDan.name, entries: editingResult)
+            try DataManager.shared.updateChengJiDan(oldChengJiDan: chengJiDan, newChengJiDan: newChengJiDan)
+            chengJiDan = newChengJiDan
+            svgView.colorDict = Dictionary(elements:
+                chengJiDan.totalForEachProvince.map { ($0.key.svgPathIndex, $0.value) }
+            )
+        } catch let error {
+            let alert = SCLAlertView()
+            alert.showError("错误", subTitle: error.localizedDescription, closeButtonTitle: "确定")
+        }
     }
 }
