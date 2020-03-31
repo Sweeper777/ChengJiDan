@@ -122,7 +122,7 @@
                                             <rect key="frame" x="260" y="12" width="44" height="20.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -135,12 +135,16 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="编辑成绩单" id="SoA-ho-hhQ">
-                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="w0H-K3-ZFX"/>
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="w0H-K3-ZFX">
+                            <connections>
+                                <action selector="doneTapped" destination="j1W-AG-AwW" id="sqW-Zh-FK3"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yMb-O1-zTn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2951" y="94"/>
+            <point key="canvasLocation" x="2957" y="93"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="TbI-kY-MEP">
