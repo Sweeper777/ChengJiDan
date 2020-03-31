@@ -33,6 +33,7 @@ class DataManager {
         try realm.write {
             realm.add(chengJiDan)
         }
+        delegate?.dataDidUpdate(kind: .added(chengJiDan.chengJiDanMap))
         return chengJiDan.chengJiDanMap
     }
     
@@ -46,6 +47,7 @@ class DataManager {
             deleteChengJiDanImpl(oldChengJiDan)
             addChengJiDanImpl(newChengJiDan)
         }
+        delegate?.dataDidUpdate(kind: .updated(old: oldChengJiDan, new: newChengJiDan))
     }
     
     private func addChengJiDanImpl(_ chengJiDan: ChengJiDanMap) {
