@@ -8,6 +8,7 @@ class ChengJiDanListViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         chengJiDans = DataManager.shared.allChengJiDan
+        DataManager.shared.delegate = self
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -49,9 +50,7 @@ class ChengJiDanListViewController: UITableViewController {
             SCLAlertView().showError("错误", subTitle: "该名字已被使用！", closeButtonTitle: "确定")
         } else {
             do {
-                let newChengJiDan = try DataManager.shared.addChengJiDan(withName: name)
-                self.chengJiDans.append(newChengJiDan)
-                self.tableView.insertRows(at: [IndexPath(row: self.chengJiDans.count - 1, section: 0)], with: .automatic)
+                try DataManager.shared.addChengJiDan(withName: name)
             } catch let error {
                 SCLAlertView().showError("错误", subTitle: error.localizedDescription, closeButtonTitle: "确定")
             }
@@ -65,3 +64,21 @@ class ChengJiDanListViewController: UITableViewController {
     }
 }
 
+extension ChengJiDanListViewController : DataManagerDelegate {
+    func dataDidUpdate(kind: DataUpdateKind) {
+        switch kind {
+        case .added(let newChengJiDan):
+            self.chengJiDans.append(newChengJiDan)
+            self.tableView.insertRows(at: [IndexPath(row: self.chengJiDans.count - 1, section: 0)], with: .automatic)
+        case .removed(_):
+            break
+        case .updated(let old, let new):
+            if let index = chengJiDans.firstIndex(where: { $0.name == old.name }) {
+                chengJiDans[index] = new
+                tableView.reloadRows(at: [IndexPath(row: index, section: 0)], with: .automatic)
+            } else {
+                tableView.reloadData()
+            }
+        }
+    }
+}
