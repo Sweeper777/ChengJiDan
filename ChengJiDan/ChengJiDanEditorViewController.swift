@@ -37,7 +37,7 @@ class ChengJiDanEditorViewController : UITableViewController {
         let cityName = dataSource[indexPath.section].cities[indexPath.row]
         let alert = SCLAlertView()
         TravelStatus.allCases.forEach { (status) in
-            alert.addButton(status.description, backgroundColor: UIColor(named: status.debugDescription)) {
+            alert.addButton(status.description, backgroundColor: UIColor(named: status.debugDescription) ?? .systemGray) {
                 [weak self] in
                 self?.cityStatusPairDict[cityName] = status
                 tableView.reloadRows(at: [indexPath], with: .automatic)
