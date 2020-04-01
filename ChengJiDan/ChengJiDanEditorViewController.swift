@@ -29,6 +29,7 @@ class ChengJiDanEditorViewController : UITableViewController {
         cell.textLabel?.text = dataSource[indexPath.section].cities[indexPath.row]
         let status = cityStatusPairDict[dataSource[indexPath.section].cities[indexPath.row]] ?? .untrodden
         cell.detailTextLabel?.text = status.description
+        cell.backgroundColor = UIColor(named: status.debugDescription) ?? .systemGray
         return cell
     }
     
