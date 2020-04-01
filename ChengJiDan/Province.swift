@@ -62,12 +62,14 @@ extension CityStatusPair : CustomDebugStringConvertible {
 struct ChengJiDanMap {
     let name: String
     let entries: [CityStatusPair]
+    let entryDict: [String: TravelStatus]
     
     var objectRef: ChengJiDanMapObject?
     
     init(name: String, entries: [CityStatusPair]) {
         self.name = name
         self.entries = entries
+        self.entryDict = Dictionary(elements: entries.map { ($0.city, $0.status) })
     }
     
     init(objectRef: ChengJiDanMapObject) {

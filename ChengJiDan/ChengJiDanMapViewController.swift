@@ -1,6 +1,7 @@
 import UIKit
 import SwiftyXMLParser
 import SCLAlertView
+import DynamicColor
 
 class ChengJiDanMapViewController : UIViewController {
     var chengJiDan: ChengJiDanMap!
@@ -13,7 +14,7 @@ class ChengJiDanMapViewController : UIViewController {
         svgView.svgStrings = Array(xml["svg", "g" ,"path"])
             .map { $0.attributes["d"]! }
         svgView.colorDict = Dictionary(elements:
-            chengJiDan.totalForEachProvince.map { ($0.key.svgPathIndex, $0.value) }
+            chengJiDan.colorForEachProvince.map { ($0.key.svgPathIndex, $0.value) }
         )
     }
     
@@ -30,11 +31,18 @@ class ChengJiDanMapViewController : UIViewController {
 }
 
 extension ChengJiDanMap {
-    var totalForEachProvince: [Province: UIColor] {
-        let groups = Dictionary(grouping: entries, by: { Province(city: $0.city) })
-        var totals = groups.mapValues { $0.map { $0.status.rawValue }.max() ?? 0 }
-        totals[nil] = nil
-        return totals.mapValues { UIColor(named: TravelStatus(rawValue: $0)!.debugDescription) } as! [Province: UIColor]
+    var colorForEachProvince: [Province: UIColor] {
+        Dictionary(elements: Province.allCases.map { ($0, color(forProvince: $0)) })
+    }
+    
+    private func color(forProvince province: Province) -> UIColor {
+        let statuses = province.cities.map { entryDict[$0] ?? .untrodden }
+        let maxStatus = TravelStatus(rawValue: statuses.map { $0.rawValue }.max() ?? 0) ?? .untrodden
+        let baseColor = UIColor(named: maxStatus.debugDescription) ?? .clear
+        let totalNumber = province.cities.count
+        let visitedCount = statuses.filter { $0.rawValue > 0 }.count
+        let percentage = visitedCount.f / totalNumber.f
+        return baseColor.withAlphaComponent(percentage)
     }
 }
 
@@ -45,7 +53,7 @@ extension ChengJiDanMapViewController : ChengJiDanEditorViewControllerDelegate {
             try DataManager.shared.updateChengJiDan(oldChengJiDan: chengJiDan, newChengJiDan: newChengJiDan)
             chengJiDan = newChengJiDan
             svgView.colorDict = Dictionary(elements:
-                chengJiDan.totalForEachProvince.map { ($0.key.svgPathIndex, $0.value) }
+                chengJiDan.colorForEachProvince.map { ($0.key.svgPathIndex, $0.value) }
             )
         } catch let error {
             let alert = SCLAlertView()
