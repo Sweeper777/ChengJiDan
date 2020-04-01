@@ -49,8 +49,8 @@ extension ChengJiDanMap {
 extension ChengJiDanMapViewController : ChengJiDanEditorViewControllerDelegate {
     func didFinishEditing(editingResult: [CityStatusPair]) {
         do {
-            let newChengJiDan = ChengJiDanMap(name: chengJiDan.name, entries: editingResult)
-            try DataManager.shared.updateChengJiDan(oldChengJiDan: chengJiDan, newChengJiDan: newChengJiDan)
+            var newChengJiDan = ChengJiDanMap(name: chengJiDan.name, entries: editingResult)
+            try DataManager.shared.updateChengJiDan(oldChengJiDan: chengJiDan, newChengJiDan: &newChengJiDan)
             chengJiDan = newChengJiDan
             svgView.colorDict = Dictionary(elements:
                 chengJiDan.colorForEachProvince.map { ($0.key.svgPathIndex, $0.value) }

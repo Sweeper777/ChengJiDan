@@ -13,7 +13,7 @@ class DataManager {
     private init() {
         do {
             realm = try Realm()
-            chengJiDanMaps = realm.objects(ChengJiDanMapObject.self)
+            chengJiDanMaps = realm.objects(ChengJiDanMapObject.self).sorted(byKeyPath: "name")
         } catch let error {
             print(error)
             fatalError()
@@ -27,14 +27,13 @@ class DataManager {
         return _shared!
     }
     
-    func addChengJiDan(withName name: String) throws -> ChengJiDanMap {
+    func addChengJiDan(withName name: String) throws {
         let chengJiDan = ChengJiDanMapObject()
         chengJiDan.name = name
         try realm.write {
             realm.add(chengJiDan)
         }
         delegate?.dataDidUpdate(kind: .added(chengJiDan.chengJiDanMap))
-        return chengJiDan.chengJiDanMap
     }
     
     func queryChengJiDan(_ format: String, args: Any...) -> [ChengJiDanMap] {
@@ -42,16 +41,18 @@ class DataManager {
             .map { $0.chengJiDanMap }
     }
     
-    func updateChengJiDan(oldChengJiDan: ChengJiDanMap, newChengJiDan: ChengJiDanMap) throws {
+    func updateChengJiDan(oldChengJiDan: ChengJiDanMap, newChengJiDan: inout ChengJiDanMap) throws {
         try realm.write {
             deleteChengJiDanImpl(oldChengJiDan)
-            addChengJiDanImpl(newChengJiDan)
+            addChengJiDanImpl(&newChengJiDan)
         }
         delegate?.dataDidUpdate(kind: .updated(old: oldChengJiDan, new: newChengJiDan))
     }
     
-    private func addChengJiDanImpl(_ chengJiDan: ChengJiDanMap) {
-        realm.add(ChengJiDanMapObject(from: chengJiDan))
+    private func addChengJiDanImpl(_ chengJiDan: inout ChengJiDanMap) {
+        let object = ChengJiDanMapObject(from: chengJiDan)
+        realm.add(object)
+        chengJiDan.objectRef = object
     }
     
     private func deleteChengJiDanImpl(_ chengJiDan: ChengJiDanMap) {
