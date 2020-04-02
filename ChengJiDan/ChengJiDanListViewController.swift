@@ -9,6 +9,7 @@ class ChengJiDanListViewController: UITableViewController {
         super.viewDidLoad()
         chengJiDans = DataManager.shared.allChengJiDan
         DataManager.shared.delegate = self
+        navigationItem.rightBarButtonItems?.append(editButtonItem)
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
