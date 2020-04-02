@@ -1,5 +1,6 @@
 import UIKit
 import SCLAlertView
+import ZYPinYinSearch
 
 class ChengJiDanEditorViewController : UITableViewController {
     weak var delegate: ChengJiDanEditorViewControllerDelegate?
@@ -7,9 +8,26 @@ class ChengJiDanEditorViewController : UITableViewController {
     var cityStatusPairDict: [String: TravelStatus]!
     var dataSource: [Province]!
     
+    let searchController = UISearchController(searchResultsController: nil)
+    var filteredCities: [String] = []
+    
+    var isSearchBarEmpty: Bool {
+      return searchController.searchBar.text?.isEmpty ?? true
+    }
+    
+    var isFiltering: Bool {
+        return searchController.isActive && !isSearchBarEmpty
+    }
+    
     override func viewDidLoad() {
         cityStatusPairDict = Dictionary(elements: cityStatusPairs!.map { ($0.city, $0.status) })
         dataSource = Province.allCases
+        
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "搜索..."
+        navigationItem.searchController = searchController
+        definesPresentationContext = true
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
