@@ -12,6 +12,7 @@ target 'ChengJiDan' do
   pod 'RealmSwift'
   pod 'SCLAlertView', :git => 'https://github.com/vikmeup/SCLAlertView-Swift.git'
   pod 'DynamicColor'
+  pod 'ZYPinYinSearch'
 
   target 'ChengJiDanTests' do
     inherit! :search_paths
