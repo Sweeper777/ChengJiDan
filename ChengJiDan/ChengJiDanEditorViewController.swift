@@ -79,3 +79,21 @@ class ChengJiDanEditorViewController : UITableViewController {
 protocol ChengJiDanEditorViewControllerDelegate: class {
     func didFinishEditing(editingResult: [CityStatusPair])
 }
+
+extension ChengJiDanEditorViewController : UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        let searchBar = searchController.searchBar
+        filterContentForSearchText(searchBar.text!)
+    }
+    
+    func filterContentForSearchText(_ searchText: String) {
+        let allCities = dataSource!.flatMap { $0.cities }
+        
+        ZYPinYinSearch.search(byPropertyName: "", withOriginalArray: allCities as [NSString], searchText: searchText, success: { (result) in
+            self.filteredCities = ((result as? [NSString]) as [String]?) ?? []
+            self.tableView.reloadData()
+        }) { (errorMessage) in
+            print(errorMessage ?? "")
+        }
+    }
+}
