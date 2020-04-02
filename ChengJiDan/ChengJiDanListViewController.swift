@@ -38,6 +38,17 @@ class ChengJiDanListViewController: UITableViewController {
         .delete
     }
     
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        let chengJiDan = chengJiDans[indexPath.row]
+        do {
+            try DataManager.shared.deleteChengJiDan(chengJiDan)
+            chengJiDans.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+        } catch let error {
+            SCLAlertView().showError("错误", subTitle: error.localizedDescription, closeButtonTitle: "确定")
+        }
+    }
+    
     @IBAction func addChengJiDanTapped() {
         let chengJiDansWithDefaultNames = DataManager.shared.queryChengJiDan("name BEGINSWITH %@", args: "城跡单")
         let nextNumber = (chengJiDansWithDefaultNames.compactMap { Int($0.name.dropFirst(3)) }.max() ?? 0) + 1
