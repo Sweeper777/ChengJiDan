@@ -31,29 +31,55 @@ class ChengJiDanEditorViewController : UITableViewController {
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        dataSource.count
+        if isFiltering {
+            return 1
+        } else {
+            return dataSource.count
+        }
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        dataSource[section].cities.count
+        if isFiltering {
+            return filteredCities.count
+        } else {
+            return dataSource[section].cities.count
+        }
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        dataSource[section].name
+        if isFiltering {
+            return nil
+        } else {
+            return dataSource[section].name
+        }
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell")!
-        cell.textLabel?.text = dataSource[indexPath.section].cities[indexPath.row]
-        let status = cityStatusPairDict[dataSource[indexPath.section].cities[indexPath.row]] ?? .untrodden
+        let status: TravelStatus
+        if isFiltering {
+            cell.textLabel?.text = filteredCities[indexPath.row]
+            status = cityStatusPairDict[filteredCities[indexPath.row]] ?? .untrodden
+        } else {
+            cell.textLabel?.text = dataSource[indexPath.section].cities[indexPath.row]
+            status = cityStatusPairDict[dataSource[indexPath.section].cities[indexPath.row]] ?? .untrodden
+        }
         cell.detailTextLabel?.text = status.description
         cell.backgroundColor = UIColor(named: status.debugDescription) ?? .systemGray
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let provinceName = dataSource[indexPath.section].name
-        let cityName = dataSource[indexPath.section].cities[indexPath.row]
+        view.endEditing(true)
+        let provinceName: String
+        let cityName: String
+        if isFiltering {
+            provinceName = Province(city: filteredCities[indexPath.row])!.name
+            cityName = filteredCities[indexPath.row]
+        } else {
+            provinceName = dataSource[indexPath.section].name
+            cityName = dataSource[indexPath.section].cities[indexPath.row]
+        }
         let alert = SCLAlertView()
         TravelStatus.allCases.forEach { (status) in
             alert.addButton(status.description, backgroundColor: UIColor(named: status.debugDescription) ?? .systemGray) {
