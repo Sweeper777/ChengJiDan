@@ -76,6 +76,10 @@ struct ChengJiDanMap {
         self.init(name: objectRef.name, entries: objectRef.entries.map { $0.cityStatusPair })
         self.objectRef = objectRef
     }
+    
+    var totalScore: Int {
+        entries.map { $0.status.rawValue }.reduce(0, +)
+    }
 }
 
 class CityStatusPairObject: Object {
