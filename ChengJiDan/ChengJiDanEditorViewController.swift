@@ -1,6 +1,5 @@
 import UIKit
 import SCLAlertView
-import ZYPinYinSearch
 
 class ChengJiDanEditorViewController : UITableViewController {
     weak var delegate: ChengJiDanEditorViewControllerDelegate?
@@ -115,11 +114,5 @@ extension ChengJiDanEditorViewController : UISearchResultsUpdating {
     func filterContentForSearchText(_ searchText: String) {
         let allCities = dataSource!.flatMap { $0.cities }
         
-        ZYPinYinSearch.search(byPropertyName: "", withOriginalArray: allCities as [NSString], searchText: searchText, success: { (result) in
-            self.filteredCities = ((result as? [NSString]) as [String]?) ?? []
-            self.tableView.reloadData()
-        }) { (errorMessage) in
-            print(errorMessage ?? "")
-        }
     }
 }
