@@ -1,6 +1,0 @@
-framework module ZYPinYinSearch {
-  umbrella header "ZYPinYinSearch-umbrella.h"
-
-  export *
-  module * { export * }
-}

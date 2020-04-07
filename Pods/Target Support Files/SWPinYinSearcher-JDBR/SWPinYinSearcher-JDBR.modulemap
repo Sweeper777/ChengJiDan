@@ -1,0 +1,6 @@
+framework module SWPinYinSearcher_JDBR {
+  umbrella header "SWPinYinSearcher-JDBR-umbrella.h"
+
+  export *
+  module * { export * }
+}

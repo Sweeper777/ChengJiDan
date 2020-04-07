@@ -8,7 +8,7 @@ PODS:
   - SCLAlertView (0.8.1)
   - SwiftyUtils (5.0.0)
   - SwiftyXMLParser (5.1.0)
-  - ZYPinYinSearch (2.0.1)
+  - SWPinYinSearcher-JDBR (0.0.3)
 
 DEPENDENCIES:
   - DynamicColor
@@ -17,7 +17,7 @@ DEPENDENCIES:
   - SCLAlertView (from `https://github.com/vikmeup/SCLAlertView-Swift.git`)
   - SwiftyUtils
   - SwiftyXMLParser (from `https://github.com/yahoojapan/SwiftyXMLParser.git`)
-  - ZYPinYinSearch
+  - SWPinYinSearcher-JDBR
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -25,7 +25,7 @@ SPEC REPOS:
     - Realm
     - RealmSwift
     - SwiftyUtils
-    - ZYPinYinSearch
+    - SWPinYinSearcher-JDBR
 
 EXTERNAL SOURCES:
   SCLAlertView:
@@ -48,8 +48,8 @@ SPEC CHECKSUMS:
   SCLAlertView: 776813fb1f62248965f37cb7edf4088ee6394460
   SwiftyUtils: 0536386622b456460c329f44e38759f16864fe24
   SwiftyXMLParser: 8271497e0a37b5c04b0b167c77b4896e36175a21
-  ZYPinYinSearch: a32d2661ce14d16843ef1d684a9dd7a8d55a4a47
+  SWPinYinSearcher-JDBR: 19978c80333fc375d6899929cc5ab0d829b35e43
 
-PODFILE CHECKSUM: a694cfe4dd1a298bfd5926495c1f067efb1d317b
+PODFILE CHECKSUM: b710db4c74bce2aac2b2e9f64ef0502484a8e4c9
 
 COCOAPODS: 1.7.5
