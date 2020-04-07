@@ -23,6 +23,7 @@
 		5A061E7D24265EBD00CC3308 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A061E7C24265EBD00CC3308 /* DataManager.swift */; };
 		5A061E7F2426689C00CC3308 /* ChengJiDanMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A061E7E2426689C00CC3308 /* ChengJiDanMapViewController.swift */; };
 		5A12B12B2427B6B000124870 /* ChengJiDanEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A12B12A2427B6B000124870 /* ChengJiDanEditorViewController.swift */; };
+		5A26BFC5243C73930092D680 /* hanzi2pinyin_v2.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5A26BFC4243C73930092D680 /* hanzi2pinyin_v2.txt */; };
 		A0E62ABE231B1EEE6E04A48D /* Pods_ChengJiDanTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF005624EB9400C5F702CF96 /* Pods_ChengJiDanTests.framework */; };
 		E8A7BCA40E0B31DB48040986 /* Pods_ChengJiDan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E18FCFFB50D5F648DE25C86 /* Pods_ChengJiDan.framework */; };
 /* End PBXBuildFile section */
@@ -62,6 +63,7 @@
 		5A061E7C24265EBD00CC3308 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		5A061E7E2426689C00CC3308 /* ChengJiDanMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChengJiDanMapViewController.swift; sourceTree = "<group>"; };
 		5A12B12A2427B6B000124870 /* ChengJiDanEditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChengJiDanEditorViewController.swift; sourceTree = "<group>"; };
+		5A26BFC4243C73930092D680 /* hanzi2pinyin_v2.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = hanzi2pinyin_v2.txt; path = "Pods/SWPinYinSearcher-JDBR/SWPinYinSearcher/hanzi2pinyin_v2.txt"; sourceTree = SOURCE_ROOT; };
 		CF34EFBE4FD5C6F567B0E8F9 /* Pods-ChengJiDan.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChengJiDan.debug.xcconfig"; path = "Target Support Files/Pods-ChengJiDan/Pods-ChengJiDan.debug.xcconfig"; sourceTree = "<group>"; };
 		DA58222A8C517369AADDA01F /* Pods-ChengJiDan.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChengJiDan.release.xcconfig"; path = "Target Support Files/Pods-ChengJiDan/Pods-ChengJiDan.release.xcconfig"; sourceTree = "<group>"; };
 		E2E9D6AAEC8C37C0F85733B2 /* Pods-ChengJiDanTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChengJiDanTests.debug.xcconfig"; path = "Target Support Files/Pods-ChengJiDanTests/Pods-ChengJiDanTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 		5A04569C241CF11E0055EB27 /* ChengJiDan */ = {
 			isa = PBXGroup;
 			children = (
+				5A26BFC4243C73930092D680 /* hanzi2pinyin_v2.txt */,
 				5A04569D241CF11E0055EB27 /* AppDelegate.swift */,
 				5A04569F241CF11E0055EB27 /* SceneDelegate.swift */,
 				5A0456A1241CF11E0055EB27 /* ChengJiDanListViewController.swift */,
@@ -248,6 +251,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A0456AA241CF1210055EB27 /* LaunchScreen.storyboard in Resources */,
+				5A26BFC5243C73930092D680 /* hanzi2pinyin_v2.txt in Resources */,
 				5A0456A7241CF1210055EB27 /* Assets.xcassets in Resources */,
 				5A0456A5241CF11E0055EB27 /* Main.storyboard in Resources */,
 				5A0456C5241CFEBD0055EB27 /* map.svg in Resources */,
