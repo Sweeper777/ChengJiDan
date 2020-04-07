@@ -3,7 +3,6 @@
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -47,7 +46,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <segue destination="xYK-lY-EDQ" kind="show" identifier="showChengJiDan" id="7UW-Vr-uCq"/>
+                        <segue destination="cas-vn-INv" kind="show" identifier="showChengJiDan" id="5h9-ja-B19"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NiE-uq-1Ic" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -55,45 +54,75 @@
             <point key="canvasLocation" x="556" y="95"/>
         </scene>
         <!--Cheng Ji Dan Map View Controller-->
-        <scene sceneID="phz-Nf-CXR">
+        <scene sceneID="caW-dH-Taa">
             <objects>
-                <viewController id="xYK-lY-EDQ" customClass="ChengJiDanMapViewController" customModule="ChengJiDan" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="wWB-rD-phh">
+                <tableViewController id="cas-vn-INv" customClass="ChengJiDanMapViewController" customModule="ChengJiDan" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Nvg-14-RU6">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iWZ-z2-147" customClass="SVGView" customModule="ChengJiDan" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="124" width="320" height="320"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="iWZ-z2-147" secondAttribute="height" multiplier="1:1" id="Nhm-Uu-4UR"/>
-                                </constraints>
-                            </view>
-                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstItem="iWZ-z2-147" firstAttribute="centerX" secondItem="wWB-rD-phh" secondAttribute="centerX" id="8ik-gU-bUJ"/>
-                            <constraint firstItem="iWZ-z2-147" firstAttribute="centerY" secondItem="wWB-rD-phh" secondAttribute="centerY" id="ada-lK-RHO"/>
-                            <constraint firstItem="iWZ-z2-147" firstAttribute="leading" secondItem="WMS-5F-kAL" secondAttribute="leading" id="k5b-Gn-zIm"/>
-                            <constraint firstItem="iWZ-z2-147" firstAttribute="trailing" secondItem="WMS-5F-kAL" secondAttribute="trailing" id="kZ1-9Z-rRM"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="WMS-5F-kAL"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="FMb-i4-IfS">
-                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="GvN-3O-zAa">
+                        <sections>
+                            <tableViewSection id="P2p-kZ-7Ot">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="mA2-Oh-zjN">
+                                        <rect key="frame" x="0.0" y="28" width="320" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mA2-Oh-zjN" id="aUJ-RR-dj4">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="9YK-pN-c34">
+                                        <rect key="frame" x="0.0" y="71.5" width="320" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9YK-pN-c34" id="eR2-1p-iGl">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EiC-Ah-hQC" customClass="SVGView" customModule="ChengJiDan" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="EiC-Ah-hQC" firstAttribute="leading" secondItem="eR2-1p-iGl" secondAttribute="leading" id="Beq-oy-Cvw"/>
+                                                <constraint firstItem="EiC-Ah-hQC" firstAttribute="top" secondItem="eR2-1p-iGl" secondAttribute="top" id="Fum-bk-6cA"/>
+                                                <constraint firstAttribute="bottom" secondItem="EiC-Ah-hQC" secondAttribute="bottom" id="THD-vT-tLC"/>
+                                                <constraint firstAttribute="trailing" secondItem="EiC-Ah-hQC" secondAttribute="trailing" id="tkw-1w-2MB"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="ULU-cg-2C5">
+                                        <rect key="frame" x="0.0" y="115" width="320" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ULU-cg-2C5" id="rJD-1y-Yh6">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="cas-vn-INv" id="I0J-LN-d50"/>
+                            <outlet property="delegate" destination="cas-vn-INv" id="FVV-NI-2Ju"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="hdq-Tb-hgh">
+                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="ZDa-yS-yOV">
                             <connections>
-                                <action selector="editTapped" destination="xYK-lY-EDQ" id="c0k-g3-jvk"/>
+                                <action selector="editTapped" destination="cas-vn-INv" id="Utq-as-anR"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="svgView" destination="iWZ-z2-147" id="gxa-x5-Eve"/>
-                        <segue destination="Mgd-UA-usN" kind="presentation" identifier="editChengJiDan" modalPresentationStyle="formSheet" id="PnM-dm-WR7"/>
+                        <outlet property="svgView" destination="EiC-Ah-hQC" id="9XW-93-1v5"/>
+                        <segue destination="Mgd-UA-usN" kind="presentation" identifier="editChengJiDan" modalPresentationStyle="formSheet" id="vZh-ag-I4e"/>
                     </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="da4-e3-MMg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7DG-Fu-5Qx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1310.625" y="92.957746478873247"/>
+            <point key="canvasLocation" x="1297.5" y="92.957746478873247"/>
         </scene>
         <!--编辑成绩单-->
         <scene sceneID="Uhn-X9-8yx">
