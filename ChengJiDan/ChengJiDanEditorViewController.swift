@@ -1,5 +1,6 @@
 import UIKit
 import SCLAlertView
+import SWPinYinSearcher_JDBR
 
 class ChengJiDanEditorViewController : UITableViewController {
     weak var delegate: ChengJiDanEditorViewControllerDelegate?
@@ -113,6 +114,7 @@ extension ChengJiDanEditorViewController : UISearchResultsUpdating {
     
     func filterContentForSearchText(_ searchText: String) {
         let allCities = dataSource!.flatMap { $0.cities }
-        
+        filteredCities = (allCities as NSArray).searchPinYin(withKeyPath: nil, search: searchText.lowercased(), searchOption: [.hanZi, .jianPin, .quanPin]) as! [String]
+        tableView.reloadData()
     }
 }
