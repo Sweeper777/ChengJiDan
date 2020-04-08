@@ -128,12 +128,41 @@ Cg
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="ULU-cg-2C5">
-                                        <rect key="frame" x="0.0" y="149.5" width="320" height="43.5"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="BIo-i6-pAn" rowHeight="54" style="IBUITableViewCellStyleDefault" id="ULU-cg-2C5">
+                                        <rect key="frame" x="0.0" y="149.5" width="320" height="54"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ULU-cg-2C5" id="rJD-1y-Yh6">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="54"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="BIo-i6-pAn">
+                                                    <rect key="frame" x="16" y="0.0" width="288" height="54"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <attributedString key="attributedText">
+                                                        <fragment content="驶过">
+                                                            <attributes>
+                                                                <font key="NSFont" size="17" name=".HiraginoSansGBInterface-W3"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" paragraphSpacing="5" tighteningFactorForTruncation="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                        <fragment>
+                                                            <string key="content">：
+</string>
+                                                            <attributes>
+                                                                <font key="NSFont" size="17" name=".HiraKakuInterface-W3"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" paragraphSpacing="5" tighteningFactorForTruncation="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                        <fragment content="沈阳市">
+                                                            <attributes>
+                                                                <font key="NSFont" size="13" name=".HiraKakuInterface-W3"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" paragraphSpacing="5" tighteningFactorForTruncation="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
@@ -152,6 +181,7 @@ Cg
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="passedThroughLabel" destination="BIo-i6-pAn" id="Sg5-0q-V1G"/>
                         <outlet property="scoreLabel" destination="1sz-LH-eri" id="5co-sg-t37"/>
                         <outlet property="svgView" destination="EiC-Ah-hQC" id="9XW-93-1v5"/>
                         <segue destination="Mgd-UA-usN" kind="presentation" identifier="editChengJiDan" modalPresentationStyle="formSheet" id="vZh-ag-I4e"/>
