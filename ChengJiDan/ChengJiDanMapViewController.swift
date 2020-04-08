@@ -3,7 +3,7 @@ import SwiftyXMLParser
 import SCLAlertView
 import DynamicColor
 
-class ChengJiDanMapViewController : UIViewController {
+class ChengJiDanMapViewController : UITableViewController {
     var chengJiDan: ChengJiDanMap!
     
     @IBOutlet var svgView: SVGView!
@@ -16,6 +16,9 @@ class ChengJiDanMapViewController : UIViewController {
         svgView.colorDict = Dictionary(elements:
             chengJiDan.colorForEachProvince.map { ($0.key.svgPathIndex, $0.value) }
         )
+        updateView()
+        tableView.separatorColor = .clear
+        tableView.allowsSelection = false
     }
     
     @IBAction func editTapped() {
