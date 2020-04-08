@@ -38,6 +38,13 @@ class ChengJiDanMapViewController : UITableViewController {
         }
     }
     
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        coordinator.animate(alongsideTransition: { _ in
+            self.svgView.setNeedsDisplay()
+        }) { _ in
+            self.tableView.reloadData()
+        }
+    }
     
     func updateView() {
         svgView.colorDict = Dictionary(elements:
