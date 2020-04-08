@@ -28,6 +28,15 @@ class ChengJiDanMapViewController : UIViewController {
             vc.delegate = self
         }
     }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.row == 1 {
+            return tableView.width / svgView.whRatio
+        } else {
+            return UITableView.automaticDimension
+        }
+    }
+    
 }
 
 extension ChengJiDanMap {
