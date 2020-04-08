@@ -13,9 +13,6 @@ class ChengJiDanMapViewController : UITableViewController {
         let xml = try! XML.parse(xmlString)
         svgView.svgStrings = Array(xml["svg", "g" ,"path"])
             .map { $0.attributes["d"]! }
-        svgView.colorDict = Dictionary(elements:
-            chengJiDan.colorForEachProvince.map { ($0.key.svgPathIndex, $0.value) }
-        )
         updateView()
         tableView.separatorColor = .clear
         tableView.allowsSelection = false
@@ -38,6 +35,13 @@ class ChengJiDanMapViewController : UITableViewController {
         } else {
             return UITableView.automaticDimension
         }
+    }
+    
+    
+    func updateView() {
+        svgView.colorDict = Dictionary(elements:
+            chengJiDan.colorForEachProvince.map { ($0.key.svgPathIndex, $0.value) }
+        )
     }
     
 }
@@ -64,9 +68,7 @@ extension ChengJiDanMapViewController : ChengJiDanEditorViewControllerDelegate {
             var newChengJiDan = ChengJiDanMap(name: chengJiDan.name, entries: editingResult)
             try DataManager.shared.updateChengJiDan(oldChengJiDan: chengJiDan, newChengJiDan: &newChengJiDan)
             chengJiDan = newChengJiDan
-            svgView.colorDict = Dictionary(elements:
-                chengJiDan.colorForEachProvince.map { ($0.key.svgPathIndex, $0.value) }
-            )
+            updateView()
         } catch let error {
             let alert = SCLAlertView()
             alert.showError("错误", subTitle: error.localizedDescription, closeButtonTitle: "确定")
