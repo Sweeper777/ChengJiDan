@@ -15,6 +15,8 @@ class SVGView : UIView {
         }
     }
     
+    private(set) var whRatio: CGFloat = 1
+    
     override func draw(_ rect: CGRect) {
         guard let svg = svgStrings else { return }
         
@@ -42,6 +44,7 @@ class SVGView : UIView {
             union.append(path)
         }
         let bounds = allPathsUnion.bounds
+        whRatio = bounds.width / bounds.height
         let scaleFactor = min(self.bounds.width / bounds.width, self.bounds.height / bounds.height)
         let scale = CGAffineTransform(scaleX: scaleFactor, y: scaleFactor)
         for (index, string) in svg.enumerated() {
