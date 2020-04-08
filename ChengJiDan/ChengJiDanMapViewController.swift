@@ -7,6 +7,7 @@ class ChengJiDanMapViewController : UITableViewController {
     var chengJiDan: ChengJiDanMap!
     
     @IBOutlet var svgView: SVGView!
+    @IBOutlet var scoreLabel: UILabel!
     
     override func viewDidLoad() {
         let xmlString = try! String(contentsOfFile: Bundle.main.path(forResource: "map", ofType: "svg")!)
@@ -42,8 +43,18 @@ class ChengJiDanMapViewController : UITableViewController {
         svgView.colorDict = Dictionary(elements:
             chengJiDan.colorForEachProvince.map { ($0.key.svgPathIndex, $0.value) }
         )
+        updateScoreLabel()
     }
     
+    func updateScoreLabel() {
+        let scoreText = NSMutableAttributedString(string: "城跡：\n", attributes: [.font: UIFont.systemFont(ofSize: 30)])
+        scoreText.append(NSAttributedString(string: "\(chengJiDan.totalScore)", attributes: [.font: UIFont.systemFont(ofSize: 50)]))
+        scoreText.append(NSAttributedString(string: "分", attributes: [.font: UIFont.systemFont(ofSize: 30), .baselineOffset: 7]))
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.alignment = .center
+        scoreText.addAttributes([.paragraphStyle: paragraphStyle], range: NSRange(location: 0, length: scoreText.length))
+        scoreLabel.attributedText = scoreText
+    }
 }
 
 extension ChengJiDanMap {
