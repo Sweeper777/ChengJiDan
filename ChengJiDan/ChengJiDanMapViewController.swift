@@ -8,6 +8,11 @@ class ChengJiDanMapViewController : UITableViewController {
     
     @IBOutlet var svgView: SVGView!
     @IBOutlet var scoreLabel: UILabel!
+    @IBOutlet var passedThroughLabel: UILabel!
+    @IBOutlet var landedLabel: UILabel!
+    @IBOutlet var visitedLabel: UILabel!
+    @IBOutlet var spentTheNightLabel: UILabel!
+    @IBOutlet var livedLabel: UILabel!
     
     override func viewDidLoad() {
         let xmlString = try! String(contentsOfFile: Bundle.main.path(forResource: "map", ofType: "svg")!)
