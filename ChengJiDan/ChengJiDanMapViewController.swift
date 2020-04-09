@@ -56,6 +56,7 @@ class ChengJiDanMapViewController : UITableViewController {
             chengJiDan.colorForEachProvince.map { ($0.key.svgPathIndex, $0.value) }
         )
         updateScoreLabel()
+        updateCityListLabels()
     }
     
     func updateScoreLabel() {
@@ -66,6 +67,34 @@ class ChengJiDanMapViewController : UITableViewController {
         paragraphStyle.alignment = .center
         scoreText.addAttributes([.paragraphStyle: paragraphStyle], range: NSRange(location: 0, length: scoreText.length))
         scoreLabel.attributedText = scoreText
+    }
+    
+    func updateCityListLabels() {
+        let statusLabelDict = [
+            TravelStatus.passedThrough: passedThroughLabel!,
+            .landed: landedLabel!,
+            .visited: visitedLabel!,
+            .spentTheNight: spentTheNightLabel!,
+            .lived: livedLabel!
+        ]
+        
+        func updateCityListLabel(status: TravelStatus) {
+            guard let label = statusLabelDict[status] else { return }
+            let text = NSMutableAttributedString(string: "\(status.description)：\n", attributes: [.font: UIFont.systemFont(ofSize: 18)])
+            let cityList = chengJiDan.entries.filter { $0.status == status }.map { $0.city }
+            let cityListText = cityList.isEmpty ? "无" : cityList.joined(separator: "、")
+            text.append(NSAttributedString(string: cityListText, attributes: [.font: UIFont.systemFont(ofSize: 13), .foregroundColor: UIColor.systemGray]))
+            let paragraphStyle = NSMutableParagraphStyle()
+            paragraphStyle.paragraphSpacing = 5
+            text.addAttributes([.paragraphStyle: paragraphStyle], range: NSRange(location: 0, length: text.length))
+            label.attributedText = text
+        }
+        
+        updateCityListLabel(status: .passedThrough)
+        updateCityListLabel(status: .landed)
+        updateCityListLabel(status: .visited)
+        updateCityListLabel(status: .spentTheNight)
+        updateCityListLabel(status: .lived)
     }
 }
 
