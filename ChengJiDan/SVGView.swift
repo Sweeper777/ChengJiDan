@@ -18,6 +18,10 @@ class SVGView : UIView {
     private(set) var whRatio: CGFloat = 1
     
     override func draw(_ rect: CGRect) {
+        draw(inBounds: self.bounds)
+    }
+    
+    func draw(inBounds rect: CGRect) {
         guard let svg = svgStrings else { return }
         
         if svg.count == 1 {
@@ -26,7 +30,7 @@ class SVGView : UIView {
                 return
             }
             let bounds = path.bounds
-            let scaleFactor = min(self.bounds.width / bounds.width, self.bounds.height / bounds.height)
+            let scaleFactor = min(rect.width / bounds.width, rect.height / bounds.height)
             let scale = CGAffineTransform(scaleX: scaleFactor, y: scaleFactor)
             let translate = CGAffineTransform(translationX: -x, y: -y)
             path.apply(translate)
@@ -45,7 +49,7 @@ class SVGView : UIView {
         }
         let bounds = allPathsUnion.bounds
         whRatio = bounds.width / bounds.height
-        let scaleFactor = min(self.bounds.width / bounds.width, self.bounds.height / bounds.height)
+        let scaleFactor = min(rect.width / bounds.width, rect.height / bounds.height)
         let scale = CGAffineTransform(scaleX: scaleFactor, y: scaleFactor)
         for (index, string) in svg.enumerated() {
             guard let path = UIBezierPath(svgString: string) else {
