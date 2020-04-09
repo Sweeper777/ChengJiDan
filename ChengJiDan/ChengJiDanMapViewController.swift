@@ -97,6 +97,14 @@ class ChengJiDanMapViewController : UITableViewController {
         updateCityListLabel(status: .spentTheNight)
         updateCityListLabel(status: .lived)
     }
+    
+    func exportChengJiDanAsImage(size: CGSize) -> UIImage? {
+        UIGraphicsBeginImageContext(size)
+        svgView.draw(inBounds: CGRect(origin: .zero, size: size))
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return image
+    }
 }
 
 extension ChengJiDanMap {
