@@ -22,6 +22,7 @@ class ChengJiDanMapViewController : UITableViewController {
         updateView()
         tableView.separatorColor = .clear
         tableView.allowsSelection = false
+        title = chengJiDan.name
     }
     
     @IBAction func editTapped() {
