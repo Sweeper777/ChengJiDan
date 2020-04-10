@@ -155,7 +155,7 @@ Cg
                                                         </fragment>
                                                         <fragment content="沈阳市">
                                                             <attributes>
-                                                                <font key="NSFont" size="13" name=".HiraKakuInterface-W3"/>
+                                                                <font key="NSFont" usesAppearanceFont="YES"/>
                                                                 <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" paragraphSpacing="5" tighteningFactorForTruncation="0.0"/>
                                                             </attributes>
                                                         </fragment>
@@ -192,7 +192,7 @@ Cg
                                                         </fragment>
                                                         <fragment content="沈阳市">
                                                             <attributes>
-                                                                <font key="NSFont" size="13" name=".HiraKakuInterface-W3"/>
+                                                                <font key="NSFont" usesAppearanceFont="YES"/>
                                                                 <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" paragraphSpacing="5" tighteningFactorForTruncation="0.0"/>
                                                             </attributes>
                                                         </fragment>
@@ -229,7 +229,7 @@ Cg
                                                         </fragment>
                                                         <fragment content="沈阳市">
                                                             <attributes>
-                                                                <font key="NSFont" size="13" name=".HiraKakuInterface-W3"/>
+                                                                <font key="NSFont" usesAppearanceFont="YES"/>
                                                                 <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" paragraphSpacing="5" tighteningFactorForTruncation="0.0"/>
                                                             </attributes>
                                                         </fragment>
@@ -266,7 +266,7 @@ Cg
                                                         </fragment>
                                                         <fragment content="沈阳市">
                                                             <attributes>
-                                                                <font key="NSFont" size="13" name=".HiraKakuInterface-W3"/>
+                                                                <font key="NSFont" usesAppearanceFont="YES"/>
                                                                 <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" paragraphSpacing="5" tighteningFactorForTruncation="0.0"/>
                                                             </attributes>
                                                         </fragment>
@@ -303,7 +303,7 @@ Cg
                                                         </fragment>
                                                         <fragment content="沈阳市">
                                                             <attributes>
-                                                                <font key="NSFont" size="13" name=".HiraKakuInterface-W3"/>
+                                                                <font key="NSFont" usesAppearanceFont="YES"/>
                                                                 <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" paragraphSpacing="5" tighteningFactorForTruncation="0.0"/>
                                                             </attributes>
                                                         </fragment>
@@ -322,11 +322,19 @@ Cg
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="hdq-Tb-hgh">
-                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="ZDa-yS-yOV">
-                            <connections>
-                                <action selector="editTapped" destination="cas-vn-INv" id="Utq-as-anR"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="edit" id="ZDa-yS-yOV">
+                                <connections>
+                                    <action selector="editTapped" destination="cas-vn-INv" id="Utq-as-anR"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem systemItem="action" id="vgY-Lj-Xa2"/>
+                            <barButtonItem title="Item" image="plus.magnifyingglass" catalog="system" id="ho7-ZF-pMh">
+                                <connections>
+                                    <action selector="zoomTapped" destination="cas-vn-INv" id="DKZ-oD-ExV"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="landedLabel" destination="Blx-d8-riO" id="xzi-MM-7sL"/>
@@ -429,4 +437,7 @@ Cg
             <point key="canvasLocation" x="-458" y="95"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="plus.magnifyingglass" catalog="system" width="64" height="60"/>
+    </resources>
 </document>
