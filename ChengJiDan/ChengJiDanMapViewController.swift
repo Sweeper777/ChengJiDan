@@ -2,6 +2,7 @@ import UIKit
 import SwiftyXMLParser
 import SCLAlertView
 import DynamicColor
+import FSImageViewer
 
 class ChengJiDanMapViewController : UITableViewController {
     var chengJiDan: ChengJiDanMap!
@@ -96,6 +97,13 @@ class ChengJiDanMapViewController : UITableViewController {
         updateCityListLabel(status: .visited)
         updateCityListLabel(status: .spentTheNight)
         updateCityListLabel(status: .lived)
+    }
+    
+    @IBAction func zoomTapped() {
+        guard let image = exportChengJiDanAsImage(size: CGSize(width: 1000, height: 1000)) else { return }
+        let fsImage = FSBasicImage(image: image)
+        let imageSource = FSBasicImageSource(images: [fsImage])
+        self.navigationController?.pushViewController(FSImageViewerViewController(imageSource: imageSource), animated: true)
     }
     
     func exportChengJiDanAsImage(size: CGSize) -> UIImage? {
