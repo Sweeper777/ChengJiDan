@@ -18,7 +18,7 @@ class SVGView : UIView {
     private(set) var whRatio: CGFloat = 1
     
     override func draw(_ rect: CGRect) {
-        draw(inBounds: self.bounds, lineWidth: 0.5)
+        draw(inBounds: self.bounds, lineWidth: min(self.width, self.height) / 640)
     }
     
     func draw(inBounds rect: CGRect, lineWidth: CGFloat) {
