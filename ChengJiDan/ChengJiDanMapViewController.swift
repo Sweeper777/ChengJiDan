@@ -57,18 +57,18 @@ class ChengJiDanMapViewController : UITableViewController {
         svgView.colorDict = Dictionary(elements:
             chengJiDan.colorForEachProvince.map { ($0.key.svgPathIndex, $0.value) }
         )
-        updateScoreLabel()
+        scoreLabel.attributedText = generateScoreText(fontSize: 30)
         updateCityListLabels()
     }
     
-    func updateScoreLabel() {
-        let scoreText = NSMutableAttributedString(string: "城跡：\n", attributes: [.font: UIFont.systemFont(ofSize: 30)])
-        scoreText.append(NSAttributedString(string: "\(chengJiDan.totalScore)", attributes: [.font: UIFont.systemFont(ofSize: 50)]))
-        scoreText.append(NSAttributedString(string: "分", attributes: [.font: UIFont.systemFont(ofSize: 30), .baselineOffset: 7]))
+    func generateScoreText(fontSize: CGFloat) -> NSAttributedString {
+        let scoreText = NSMutableAttributedString(string: "城跡：\n", attributes: [.font: UIFont.systemFont(ofSize: fontSize)])
+        scoreText.append(NSAttributedString(string: "\(chengJiDan.totalScore)", attributes: [.font: UIFont.systemFont(ofSize: fontSize * 5 / 3)]))
+        scoreText.append(NSAttributedString(string: "分", attributes: [.font: UIFont.systemFont(ofSize: fontSize), .baselineOffset: fontSize / 4]))
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.alignment = .center
         scoreText.addAttributes([.paragraphStyle: paragraphStyle], range: NSRange(location: 0, length: scoreText.length))
-        scoreLabel.attributedText = scoreText
+        return scoreText
     }
     
     func updateCityListLabels() {
@@ -100,15 +100,30 @@ class ChengJiDanMapViewController : UITableViewController {
     }
     
     @IBAction func zoomTapped() {
-        guard let image = exportChengJiDanAsImage(size: CGSize(width: 1000, height: 1000)) else { return }
+        guard let image = exportChengJiDanAsImage() else { return }
         let fsImage = FSBasicImage(image: image)
         let imageSource = FSBasicImageSource(images: [fsImage])
         self.navigationController?.pushViewController(FSImageViewerViewController(imageSource: imageSource), animated: true)
     }
     
-    func exportChengJiDanAsImage(size: CGSize) -> UIImage? {
+    func exportChengJiDanAsImage() -> UIImage? {
+        let size = CGSize(width: 1000, height: 1000)
         UIGraphicsBeginImageContext(size)
-        svgView.draw(inBounds: CGRect(origin: .zero, size: size))
+        svgView.draw(inBounds: CGRect(origin: .zero, size: size), lineWidth: 2.5)
+        
+        let scoreText = generateScoreText(fontSize: 50)
+        let boundingRect = scoreText.boundingRect(with: size, options: [.usesDeviceMetrics, .usesLineFragmentOrigin], context: nil)
+        let padding = 30.f
+        let x = padding * 3
+        let y = size.height - boundingRect.height - padding * 3
+        let drawingRect = boundingRect.with(origin: CGPoint(x: x, y: y))
+        scoreText.draw(with: drawingRect, options: [.usesDeviceMetrics, .usesLineFragmentOrigin], context: nil)
+        
+        let path = UIBezierPath(roundedRect: drawingRect.insetBy(dx: -padding, dy: -padding), cornerRadius: 20)
+        path.lineWidth = 5
+        UIColor.black.setStroke()
+        path.stroke()
+        
         let image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         return image
