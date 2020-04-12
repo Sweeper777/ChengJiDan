@@ -151,6 +151,11 @@ class ChengJiDanMapViewController : UITableViewController {
         let keyText = generateKeyText(fontSize: 45)
         keyText.draw(with: keyTextRect, options: [.usesDeviceMetrics, .usesLineFragmentOrigin], context: nil)
         
+        let keyTextBoundingRect = keyText.boundingRect(with: keyTextRect.size, options: [.usesDeviceMetrics, .usesLineFragmentOrigin], context: nil)
+            .with(origin: keyTextRect.origin)
+        let keyBorderPath = UIBezierPath(roundedRect: keyTextBoundingRect.insetBy(dx: -padding, dy: -padding), cornerRadius: 20)
+        keyBorderPath.lineWidth = 5
+        keyBorderPath.stroke()
         
         let image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
