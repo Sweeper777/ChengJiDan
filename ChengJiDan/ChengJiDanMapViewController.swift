@@ -97,7 +97,7 @@ class ChengJiDanMapViewController : UITableViewController {
         
         func updateCityListLabel(status: TravelStatus) {
             guard let label = statusLabelDict[status] else { return }
-            let text = NSMutableAttributedString(string: "\(status.description)：\n", attributes: [.font: UIFont.systemFont(ofSize: 18)])
+            let text = NSMutableAttributedString(string: "\(status.description)（\(status.rawValue)分）：\n", attributes: [.font: UIFont.systemFont(ofSize: 18)])
             let cityList = chengJiDan.entries.filter { $0.status == status }.map { $0.city }
             let cityListText = cityList.isEmpty ? "无" : cityList.joined(separator: "、")
             text.append(NSAttributedString(string: cityListText, attributes: [.font: UIFont.systemFont(ofSize: 13), .foregroundColor: UIColor.systemGray]))
