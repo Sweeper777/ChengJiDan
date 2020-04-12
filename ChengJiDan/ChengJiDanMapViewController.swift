@@ -109,20 +109,22 @@ class ChengJiDanMapViewController : UITableViewController {
     func exportChengJiDanAsImage() -> UIImage? {
         let size = CGSize(width: 1000, height: 1000)
         UIGraphicsBeginImageContext(size)
-        svgView.draw(inBounds: CGRect(origin: .zero, size: size), lineWidth: 2.5)
+        svgView.draw(inBounds: CGRect(origin: .zero, size: size), lineWidth: 2.5, borderColor: .black)
         
         let scoreText = generateScoreText(fontSize: 50)
-        let boundingRect = scoreText.boundingRect(with: size, options: [.usesDeviceMetrics, .usesLineFragmentOrigin], context: nil)
+        let scoreTextBoundingRect = scoreText.boundingRect(with: size, options: [.usesDeviceMetrics, .usesLineFragmentOrigin], context: nil)
         let padding = 30.f
-        let x = padding * 3
-        let y = size.height - boundingRect.height - padding * 3
-        let drawingRect = boundingRect.with(origin: CGPoint(x: x, y: y))
+        let scoreTextX = padding * 3
+        let scoreTextY = size.height - scoreTextBoundingRect.height - padding * 3
+        let drawingRect = scoreTextBoundingRect.with(origin: CGPoint(x: scoreTextX, y: scoreTextY))
         scoreText.draw(with: drawingRect, options: [.usesDeviceMetrics, .usesLineFragmentOrigin], context: nil)
         
-        let path = UIBezierPath(roundedRect: drawingRect.insetBy(dx: -padding, dy: -padding), cornerRadius: 20)
-        path.lineWidth = 5
+        let borderRect = drawingRect.insetBy(dx: -padding, dy: -padding)
+        let scoreTextBorderPath = UIBezierPath(roundedRect: borderRect, cornerRadius: 20)
+        scoreTextBorderPath.lineWidth = 5
         UIColor.black.setStroke()
-        path.stroke()
+        scoreTextBorderPath.stroke()
+        
         
         let image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
