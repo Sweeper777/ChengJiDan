@@ -18,10 +18,10 @@ class SVGView : UIView {
     private(set) var whRatio: CGFloat = 1
     
     override func draw(_ rect: CGRect) {
-        draw(inBounds: self.bounds, lineWidth: min(self.width, self.height) / 640)
+        draw(inBounds: self.bounds, lineWidth: min(self.width, self.height) / 640, borderColor: .label)
     }
     
-    func draw(inBounds rect: CGRect, lineWidth: CGFloat) {
+    func draw(inBounds rect: CGRect, lineWidth: CGFloat, borderColor: UIColor) {
         guard let svg = svgStrings else { return }
         
         if svg.count == 1 {
@@ -36,7 +36,7 @@ class SVGView : UIView {
             path.apply(translate)
             path.apply(scale)
             path.lineWidth = lineWidth
-            UIColor.label.setStroke()
+            borderColor.setStroke()
             path.stroke()
             (colorDict[0] ?? .clear).setFill()
             path.fill()
@@ -59,7 +59,7 @@ class SVGView : UIView {
             path.apply(scale)
             path.lineJoinStyle = .round
             path.lineWidth = lineWidth
-            UIColor.label.setStroke()
+            borderColor.setStroke()
             path.stroke()
             (colorDict[index] ?? .clear).setFill()
             path.fill()
