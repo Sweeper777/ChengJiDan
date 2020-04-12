@@ -71,6 +71,21 @@ class ChengJiDanMapViewController : UITableViewController {
         return scoreText
     }
     
+    func generateKeyText(fontSize: CGFloat) -> NSAttributedString {
+        let keyText = NSMutableAttributedString()
+        let keyTextFont = UIFont.systemFont(ofSize: fontSize)
+        for status in TravelStatus.allCases where status != .untrodden {
+            keyText.append(NSAttributedString(string: "█ ", attributes: [
+                .font: keyTextFont,
+                .foregroundColor: UIColor(named: status.debugDescription)!
+            ]))
+            keyText.append(NSAttributedString(string: status.description + "　", attributes: [
+                .font: keyTextFont
+            ]))
+        }
+        return keyText
+    }
+    
     func updateCityListLabels() {
         let statusLabelDict = [
             TravelStatus.passedThrough: passedThroughLabel!,
