@@ -140,6 +140,17 @@ class ChengJiDanMapViewController : UITableViewController {
         UIColor.black.setStroke()
         scoreTextBorderPath.stroke()
         
+        let keyRectX = borderRect.maxX
+        let keyRectY = size.width / svgView.whRatio
+        let keyBorderRect = CGRect(origin: .zero, size: size)
+            .divided(atDistance: keyRectX, from: .minXEdge).remainder
+            .divided(atDistance: keyRectY, from: .minYEdge).remainder
+            .insetBy(dx: padding, dy: padding)
+        
+        let keyTextRect = keyBorderRect.insetBy(dx: padding, dy: padding)
+        let keyText = generateKeyText(fontSize: 45)
+        keyText.draw(with: keyTextRect, options: [.usesDeviceMetrics, .usesLineFragmentOrigin], context: nil)
+        
         
         let image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
