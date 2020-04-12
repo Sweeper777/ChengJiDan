@@ -82,7 +82,7 @@ class ChengJiDanEditorViewController : UITableViewController {
         }
         let alert = SCLAlertView()
         TravelStatus.allCases.forEach { (status) in
-            alert.addButton(status.description, backgroundColor: UIColor(named: status.debugDescription) ?? .systemGray) {
+            alert.addButton("\(status.description) （\(status.rawValue)分）", backgroundColor: UIColor(named: status.debugDescription) ?? .systemGray) {
                 [weak self] in
                 self?.cityStatusPairDict[cityName] = status
                 tableView.reloadRows(at: [indexPath], with: .automatic)
