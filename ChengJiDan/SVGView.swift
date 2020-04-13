@@ -15,7 +15,12 @@ class SVGView : UIView {
         }
     }
     
-    private(set) var whRatio: CGFloat = 1
+    private(set) var svgPaths: [UIBezierPath] = []
+    private(set) var svgPathBounds: CGRect = .zero
+    
+    var whRatio: CGFloat {
+        svgPathBounds.width / svgPathBounds.height
+    }
     
     override func draw(_ rect: CGRect) {
         draw(inBounds: self.bounds, lineWidth: min(self.width, self.height) / 640, borderColor: .label)
