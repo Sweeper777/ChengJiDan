@@ -5,6 +5,21 @@ class SVGView : UIView {
     
     var svgStrings: [String]? {
         didSet {
+            guard let svg = svgStrings else { return }
+            if svg.count == 1 {
+                guard let path = UIBezierPath(svgString: svg.first!) else {
+                    print("cannot create path")
+                    return
+                }
+                svgPaths = [path]
+            } else {
+                let allPaths = svg.compactMap(UIBezierPath.init)
+                let allPathsUnion = allPaths.reduce(into: UIBezierPath()) { (union, path) in
+                    union.append(path)
+                }
+                svgPathBounds = allPathsUnion.bounds
+                svgPaths = allPaths
+            }
             setNeedsDisplay()
         }
     }
@@ -27,13 +42,10 @@ class SVGView : UIView {
     }
     
     func draw(inBounds rect: CGRect, lineWidth: CGFloat, borderColor: UIColor) {
-        guard let svg = svgStrings else { return }
         
-        if svg.count == 1 {
-            guard let path = UIBezierPath(svgString: svg.first!) else {
-                print("cannot create path")
-                return
-            }
+        
+        if svgPaths.count == 1 {
+            let path = UIBezierPath(cgPath: svgPaths.first!.cgPath)
             let bounds = path.bounds
             let scaleFactor = min(rect.width / bounds.width, rect.height / bounds.height)
             let scale = CGAffineTransform(scaleX: scaleFactor, y: scaleFactor)
@@ -48,19 +60,11 @@ class SVGView : UIView {
             return
         }
         
-        let allPaths = svg.compactMap(UIBezierPath.init)
-        let allPathsUnion = allPaths.reduce(into: UIBezierPath()) { (union, path) in
-            union.append(path)
-        }
-        let bounds = allPathsUnion.bounds
-        whRatio = bounds.width / bounds.height
-        let scaleFactor = min(rect.width / bounds.width, rect.height / bounds.height)
+        
+        let scaleFactor = min(rect.width / svgPathBounds.width, rect.height / svgPathBounds.height)
         let scale = CGAffineTransform(scaleX: scaleFactor, y: scaleFactor)
-        for (index, string) in svg.enumerated() {
-            guard let path = UIBezierPath(svgString: string) else {
-                print("cannot create path")
-                continue
-            }
+        for (index, p) in svgPaths.enumerated() {
+            let path = UIBezierPath(cgPath: p.cgPath)
             path.apply(scale)
             path.lineJoinStyle = .round
             path.lineWidth = lineWidth
