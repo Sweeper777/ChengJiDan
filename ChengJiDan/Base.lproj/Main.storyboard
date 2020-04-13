@@ -328,8 +328,7 @@ Cg
                                     <action selector="editTapped" destination="cas-vn-INv" id="Utq-as-anR"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem systemItem="action" id="vgY-Lj-Xa2"/>
-                            <barButtonItem title="Item" image="plus.magnifyingglass" catalog="system" id="ho7-ZF-pMh">
+                            <barButtonItem title="Item" image="photo" catalog="system" id="ho7-ZF-pMh">
                                 <connections>
                                     <action selector="zoomTapped" destination="cas-vn-INv" id="DKZ-oD-ExV"/>
                                 </connections>
@@ -383,7 +382,7 @@ Cg
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
-                                <color key="backgroundColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" systemColor="systemGrayColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -438,6 +437,6 @@ Cg
         </scene>
     </scenes>
     <resources>
-        <image name="plus.magnifyingglass" catalog="system" width="64" height="60"/>
+        <image name="photo" catalog="system" width="64" height="48"/>
     </resources>
 </document>
