@@ -25,6 +25,12 @@ class ChengJiDanMapViewController : UITableViewController {
         tableView.separatorColor = .clear
         tableView.allowsSelection = false
         title = chengJiDan.name
+        let keyText = generateKeyText(fontSize: 13)
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.lineSpacing = 5
+        paragraphStyle.alignment = .center
+        keyText.addAttributes([.paragraphStyle: paragraphStyle], range: NSRange(location: 0, length: keyText.length))
+        keyLabel.attributedText = keyText
     }
     
     @IBAction func editTapped() {
@@ -72,7 +78,7 @@ class ChengJiDanMapViewController : UITableViewController {
         return scoreText
     }
     
-    func generateKeyText(fontSize: CGFloat) -> NSAttributedString {
+    func generateKeyText(fontSize: CGFloat) -> NSMutableAttributedString {
         let keyText = NSMutableAttributedString()
         let keyTextFont = UIFont.systemFont(ofSize: fontSize)
         for status in TravelStatus.allCases where status != .untrodden {
