@@ -14,6 +14,7 @@ class ChengJiDanMapViewController : UITableViewController {
     @IBOutlet var visitedLabel: UILabel!
     @IBOutlet var spentTheNightLabel: UILabel!
     @IBOutlet var livedLabel: UILabel!
+    @IBOutlet var keyLabel: UILabel!
     
     override func viewDidLoad() {
         let xmlString = try! String(contentsOfFile: Bundle.main.path(forResource: "map", ofType: "svg")!)
