@@ -147,22 +147,16 @@ class ChengJiDanMapViewController : UITableViewController {
         UIColor.black.setStroke()
         scoreTextBorderPath.stroke()
         
-        let keyRectX = borderRect.maxX
-        let keyRectY = size.width / svgView.whRatio
-        let keyBorderRect = CGRect(origin: .zero, size: size)
-            .divided(atDistance: keyRectX, from: .minXEdge).remainder
-            .divided(atDistance: keyRectY, from: .minYEdge).remainder
-            .insetBy(dx: padding, dy: padding)
-        
-        let keyTextRect = keyBorderRect.insetBy(dx: padding, dy: padding)
-        let keyText = generateKeyText(fontSize: 45)
-        keyText.draw(with: keyTextRect, options: [.usesDeviceMetrics, .usesLineFragmentOrigin], context: nil)
-        
-        let keyTextBoundingRect = keyText.boundingRect(with: keyTextRect.size, options: [.usesDeviceMetrics, .usesLineFragmentOrigin], context: nil)
-            .with(origin: keyTextRect.origin)
+        let keyTextBoundingRect = CGRect(x: 439.3878255208333,
+                                            y: 795.5247017952324,
+                                            width: 500.6121744791667,
+                                            height: 95.46875)
         let keyBorderPath = UIBezierPath(roundedRect: keyTextBoundingRect.insetBy(dx: -padding, dy: -padding), cornerRadius: 20)
         keyBorderPath.lineWidth = 5
         keyBorderPath.stroke()
+        
+        let keyText = generateKeyText(fontSize: 40)
+        keyText.draw(with: keyTextBoundingRect, options: [.usesDeviceMetrics, .usesLineFragmentOrigin], context: nil)
         
         let image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
