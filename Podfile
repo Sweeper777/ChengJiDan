@@ -11,7 +11,6 @@ target 'ChengJiDan' do
   pod 'Realm'
   pod 'RealmSwift'
   pod 'SCLAlertView', :git => 'https://github.com/vikmeup/SCLAlertView-Swift.git'
-  pod 'DynamicColor'
   pod 'SWPinYinSearcher-JDBR'
   pod 'FSImageViewer'
 
