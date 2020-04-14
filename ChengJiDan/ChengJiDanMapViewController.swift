@@ -1,7 +1,6 @@
 import UIKit
 import SwiftyXMLParser
 import SCLAlertView
-import DynamicColor
 import FSImageViewer
 
 class ChengJiDanMapViewController : UITableViewController {
@@ -139,13 +138,17 @@ class ChengJiDanMapViewController : UITableViewController {
         let scoreTextX = padding * 3
         let scoreTextY = size.height - scoreTextBoundingRect.height - padding * 3
         let drawingRect = scoreTextBoundingRect.with(origin: CGPoint(x: scoreTextX, y: scoreTextY))
-        scoreText.draw(with: drawingRect, options: [.usesDeviceMetrics, .usesLineFragmentOrigin], context: nil)
         
         let borderRect = drawingRect.insetBy(dx: -padding, dy: -padding)
         let scoreTextBorderPath = UIBezierPath(roundedRect: borderRect, cornerRadius: 20)
-        scoreTextBorderPath.lineWidth = 5
-        UIColor.black.setStroke()
-        scoreTextBorderPath.stroke()
+
+        let scoreTextBackgroundLayer = CAShapeLayer()
+        scoreTextBackgroundLayer.path = scoreTextBorderPath.cgPath
+        scoreTextBackgroundLayer.fillColor = UIColor.white.cgColor
+        scoreTextBackgroundLayer.shadowRadius = 7
+        scoreTextBackgroundLayer.shadowOpacity = 1
+        scoreTextBackgroundLayer.render(in: UIGraphicsGetCurrentContext()!)
+        scoreText.draw(with: drawingRect, options: [.usesDeviceMetrics, .usesLineFragmentOrigin], context: nil)
         
         let keyTextBoundingRect = CGRect(x: 439.3878255208333,
                                             y: 795.5247017952324,
