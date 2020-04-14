@@ -121,7 +121,7 @@ class ChengJiDanMapViewController : UITableViewController {
         updateCityListLabel(status: .lived)
     }
     
-    @IBAction func zoomTapped() {
+    @IBAction func exportTapped() {
         guard let image = exportChengJiDanAsImage() else { return }
         let fsImage = FSBasicImage(image: image)
         let imageSource = FSBasicImageSource(images: [fsImage])
