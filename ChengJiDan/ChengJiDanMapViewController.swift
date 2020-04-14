@@ -155,8 +155,13 @@ class ChengJiDanMapViewController : UITableViewController {
                                             width: 500.6121744791667,
                                             height: 95.46875)
         let keyBorderPath = UIBezierPath(roundedRect: keyTextBoundingRect.insetBy(dx: -padding, dy: -padding), cornerRadius: 20)
-        keyBorderPath.lineWidth = 5
-        keyBorderPath.stroke()
+        
+        let keyTextBackgroundLayer = CAShapeLayer()
+        keyTextBackgroundLayer.path = keyBorderPath.cgPath
+        keyTextBackgroundLayer.fillColor = UIColor.white.cgColor
+        keyTextBackgroundLayer.shadowRadius = 7
+        keyTextBackgroundLayer.shadowOpacity = 1
+        keyTextBackgroundLayer.render(in: UIGraphicsGetCurrentContext()!)
         
         let keyText = generateKeyText(fontSize: 40)
         keyText.draw(with: keyTextBoundingRect, options: [.usesDeviceMetrics, .usesLineFragmentOrigin], context: nil)
