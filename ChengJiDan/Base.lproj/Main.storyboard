@@ -3,6 +3,7 @@
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -39,7 +40,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="我的城跡单" id="j7S-mN-ynf">
-                        <barButtonItem key="leftBarButtonItem" title="?" style="done" id="o9b-gt-jP6"/>
+                        <barButtonItem key="leftBarButtonItem" title="?" style="done" id="o9b-gt-jP6">
+                            <connections>
+                                <action selector="helpTapped" destination="GhD-02-AJP" id="0cm-bL-A6w"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="dZy-Uu-d7v">
                             <connections>
                                 <action selector="addChengJiDanTapped" destination="GhD-02-AJP" id="NNa-Sg-eSQ"/>
@@ -48,11 +53,61 @@
                     </navigationItem>
                     <connections>
                         <segue destination="cas-vn-INv" kind="show" identifier="showChengJiDan" id="5h9-ja-B19"/>
+                        <segue destination="GNM-Ur-PeN" kind="presentation" identifier="showHelp" modalPresentationStyle="formSheet" id="ckv-61-0uc"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NiE-uq-1Ic" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="556" y="95"/>
+        </scene>
+        <!--帮助-->
+        <scene sceneID="hAS-CZ-zQN">
+            <objects>
+                <viewController id="Rfo-UT-tjy" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eJe-ut-XGb">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0mG-nK-XRo">
+                                <rect key="frame" x="16" y="56" width="288" height="472"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <attributedString key="attributedText"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="KDw-NH-ugc" firstAttribute="trailing" secondItem="0mG-nK-XRo" secondAttribute="trailing" constant="16" id="MNA-pa-czv"/>
+                            <constraint firstItem="0mG-nK-XRo" firstAttribute="top" secondItem="KDw-NH-ugc" secondAttribute="top" id="MXs-Nv-Xys"/>
+                            <constraint firstItem="0mG-nK-XRo" firstAttribute="leading" secondItem="KDw-NH-ugc" secondAttribute="leading" constant="16" id="ceN-UM-1Zx"/>
+                            <constraint firstItem="KDw-NH-ugc" firstAttribute="bottom" secondItem="0mG-nK-XRo" secondAttribute="bottom" constant="20" id="lGq-H7-7jy"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="KDw-NH-ugc"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="帮助" id="ToR-I5-SIV">
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="yGA-ko-jTf"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ba3-qm-7eL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1297.5" y="841.90140845070425"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="tRa-c1-gD7">
+            <objects>
+                <navigationController id="GNM-Ur-PeN" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="JUm-Lq-d4S"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="r3F-hC-uKf">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Rfo-UT-tjy" kind="relationship" relationship="rootViewController" id="VnZ-j5-JZP"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0Tx-nG-4Bj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="555" y="842"/>
         </scene>
         <!--Cheng Ji Dan Map View Controller-->
         <scene sceneID="caW-dH-Taa">
