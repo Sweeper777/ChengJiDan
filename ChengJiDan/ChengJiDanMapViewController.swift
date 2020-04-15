@@ -133,6 +133,8 @@ class ChengJiDanMapViewController : UITableViewController {
     func exportChengJiDanAsImage() -> UIImage? {
         let size = CGSize(width: 1000, height: 1000)
         UIGraphicsBeginImageContext(size)
+        UIColor.white.setFill()
+        UIRectFill(CGRect(origin: .zero, size: size))
         svgView.draw(inBounds: CGRect(origin: .zero, size: size), lineWidth: 2.5, borderColor: .black)
         
         let scoreText = generateScoreText(fontSize: 50)
