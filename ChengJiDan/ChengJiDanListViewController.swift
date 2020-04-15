@@ -63,6 +63,10 @@ class ChengJiDanListViewController: UITableViewController {
         alert.showEdit("新城跡单", subTitle: nil, closeButtonTitle: "取消")
     }
     
+    @IBAction func helpTapped() {
+        performSegue(withIdentifier: "showHelp", sender: nil)
+    }
+    
     func addChengJiDan(name: String) {
         if name.trimmed() == "" {
             SCLAlertView().showError("错误", subTitle: "名字不能为空！", closeButtonTitle: "确定")
