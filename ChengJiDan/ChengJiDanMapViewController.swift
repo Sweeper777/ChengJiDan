@@ -124,7 +124,10 @@ class ChengJiDanMapViewController : UITableViewController {
         guard let image = exportChengJiDanAsImage() else { return }
         let fsImage = FSBasicImage(image: image)
         let imageSource = FSBasicImageSource(images: [fsImage])
-        self.navigationController?.pushViewController(FSImageViewerViewController(imageSource: imageSource), animated: true)
+        let vc = FSImageViewerViewController(imageSource: imageSource)
+        vc.backgroundColorVisible = .systemBackground
+        vc.backgroundColorHidden = .systemBackground
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     func exportChengJiDanAsImage() -> UIImage? {
