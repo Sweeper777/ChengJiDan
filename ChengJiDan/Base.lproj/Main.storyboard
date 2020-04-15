@@ -63,7 +63,7 @@
         <!--帮助-->
         <scene sceneID="hAS-CZ-zQN">
             <objects>
-                <viewController id="Rfo-UT-tjy" sceneMemberID="viewController">
+                <viewController id="Rfo-UT-tjy" customClass="HelpViewController" customModule="ChengJiDan" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eJe-ut-XGb">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -85,7 +85,11 @@
                         <viewLayoutGuide key="safeArea" id="KDw-NH-ugc"/>
                     </view>
                     <navigationItem key="navigationItem" title="帮助" id="ToR-I5-SIV">
-                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="yGA-ko-jTf"/>
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="yGA-ko-jTf">
+                            <connections>
+                                <action selector="doneTapped" destination="Rfo-UT-tjy" id="x0X-JF-8cf"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ba3-qm-7eL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

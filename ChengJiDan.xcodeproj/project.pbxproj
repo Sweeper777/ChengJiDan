@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A011C76244711BE001FAC3E /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A011C75244711BE001FAC3E /* HelpViewController.swift */; };
 		5A04569E241CF11E0055EB27 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A04569D241CF11E0055EB27 /* AppDelegate.swift */; };
 		5A0456A0241CF11E0055EB27 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A04569F241CF11E0055EB27 /* SceneDelegate.swift */; };
 		5A0456A2241CF11E0055EB27 /* ChengJiDanListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0456A1241CF11E0055EB27 /* ChengJiDanListViewController.swift */; };
@@ -41,6 +42,7 @@
 /* Begin PBXFileReference section */
 		2E18FCFFB50D5F648DE25C86 /* Pods_ChengJiDan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChengJiDan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		539EB4ABCA838705AEA39C6E /* Pods-ChengJiDanTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChengJiDanTests.release.xcconfig"; path = "Target Support Files/Pods-ChengJiDanTests/Pods-ChengJiDanTests.release.xcconfig"; sourceTree = "<group>"; };
+		5A011C75244711BE001FAC3E /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
 		5A04569A241CF11E0055EB27 /* ChengJiDan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChengJiDan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A04569D241CF11E0055EB27 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5A04569F241CF11E0055EB27 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 				5A0456A1241CF11E0055EB27 /* ChengJiDanListViewController.swift */,
 				5A061E7E2426689C00CC3308 /* ChengJiDanMapViewController.swift */,
 				5A12B12A2427B6B000124870 /* ChengJiDanEditorViewController.swift */,
+				5A011C75244711BE001FAC3E /* HelpViewController.swift */,
 				5A0456C6241CFF040055EB27 /* SVGView.swift */,
 				5A0456C8241D074E0055EB27 /* Province.swift */,
 				5A0456CC241D120D0055EB27 /* ProvinceList.swift */,
@@ -343,6 +346,7 @@
 				5A061E7F2426689C00CC3308 /* ChengJiDanMapViewController.swift in Sources */,
 				5A0456CB241D0A960055EB27 /* TravelStatus.swift in Sources */,
 				5A0456C3241CF2190055EB27 /* SKUBezierPath+SVG.m in Sources */,
+				5A011C76244711BE001FAC3E /* HelpViewController.swift in Sources */,
 				5A0456A0241CF11E0055EB27 /* SceneDelegate.swift in Sources */,
 				5A061E7D24265EBD00CC3308 /* DataManager.swift in Sources */,
 				5A0456CD241D120D0055EB27 /* ProvinceList.swift in Sources */,
