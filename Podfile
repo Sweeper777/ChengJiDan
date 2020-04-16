@@ -13,6 +13,7 @@ target 'ChengJiDan' do
   pod 'SCLAlertView', :git => 'https://github.com/vikmeup/SCLAlertView-Swift.git'
   pod 'SWPinYinSearcher-JDBR'
   pod 'FSImageViewer'
+  pod 'DCTextEngine'
 
   target 'ChengJiDanTests' do
     inherit! :search_paths

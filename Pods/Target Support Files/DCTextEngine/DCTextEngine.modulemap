@@ -1,0 +1,6 @@
+framework module DCTextEngine {
+  umbrella header "DCTextEngine-umbrella.h"
+
+  export *
+  module * { export * }
+}

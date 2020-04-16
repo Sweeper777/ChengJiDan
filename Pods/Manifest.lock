@@ -20,6 +20,7 @@ PODS:
   - AFNetworking/UIKit (2.7.0):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
+  - DCTextEngine (0.1.0)
   - EGOCache (2.2.0)
   - FSImageViewer (3.4):
     - AFNetworking (~> 2.5)
@@ -37,6 +38,7 @@ PODS:
   - UAProgressView (0.1.4)
 
 DEPENDENCIES:
+  - DCTextEngine
   - FSImageViewer
   - Realm
   - RealmSwift
@@ -48,6 +50,7 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - AFNetworking
+    - DCTextEngine
     - EGOCache
     - FSImageViewer
     - Realm
@@ -72,6 +75,7 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   AFNetworking: 8dd5f9b9691e09186393069a12cc3b5ed7c8b511
+  DCTextEngine: 44a8084ef5227753660db343acdb8a3225e29d75
   EGOCache: 191fd213da6804d487b49b1a91772ba904f3e324
   FSImageViewer: 0dea92069cce74a800b75cb8777c923f2be59124
   Realm: 5e92902e2875dff4bb0fd02f67bb737c3d5db2bc
@@ -82,6 +86,6 @@ SPEC CHECKSUMS:
   SWPinYinSearcher-JDBR: 19978c80333fc375d6899929cc5ab0d829b35e43
   UAProgressView: 6796f5aa05037fb2940521636163b9db40a6c534
 
-PODFILE CHECKSUM: 8ebfc376a7a9b78bbc57fdc2fea3e45abfa979c9
+PODFILE CHECKSUM: 64b12fc733b721dee335ecb5ab8880625c040c50
 
 COCOAPODS: 1.7.5

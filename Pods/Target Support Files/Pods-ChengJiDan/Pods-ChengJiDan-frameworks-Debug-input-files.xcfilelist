@@ -1,5 +1,6 @@
 ${PODS_ROOT}/Target Support Files/Pods-ChengJiDan/Pods-ChengJiDan-frameworks.sh
 ${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework
+${BUILT_PRODUCTS_DIR}/DCTextEngine/DCTextEngine.framework
 ${BUILT_PRODUCTS_DIR}/EGOCache/EGOCache.framework
 ${BUILT_PRODUCTS_DIR}/FSImageViewer/FSImageViewer.framework
 ${BUILT_PRODUCTS_DIR}/Realm/Realm.framework
