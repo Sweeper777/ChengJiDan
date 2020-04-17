@@ -44,7 +44,7 @@
 		2E18FCFFB50D5F648DE25C86 /* Pods_ChengJiDan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChengJiDan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		539EB4ABCA838705AEA39C6E /* Pods-ChengJiDanTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChengJiDanTests.release.xcconfig"; path = "Target Support Files/Pods-ChengJiDanTests/Pods-ChengJiDanTests.release.xcconfig"; sourceTree = "<group>"; };
 		5A011C75244711BE001FAC3E /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
-		5A04569A241CF11E0055EB27 /* ChengJiDan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChengJiDan.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A04569A241CF11E0055EB27 /* 城跡单.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "城跡单.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A04569D241CF11E0055EB27 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5A04569F241CF11E0055EB27 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		5A0456A1241CF11E0055EB27 /* ChengJiDanListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChengJiDanListViewController.swift; sourceTree = "<group>"; };
@@ -119,7 +119,7 @@
 		5A04569B241CF11E0055EB27 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				5A04569A241CF11E0055EB27 /* ChengJiDan.app */,
+				5A04569A241CF11E0055EB27 /* 城跡单.app */,
 				5A0456B0241CF1210055EB27 /* ChengJiDanTests.xctest */,
 			);
 			name = Products;
@@ -190,7 +190,7 @@
 			);
 			name = ChengJiDan;
 			productName = ChengJiDan;
-			productReference = 5A04569A241CF11E0055EB27 /* ChengJiDan.app */;
+			productReference = 5A04569A241CF11E0055EB27 /* 城跡单.app */;
 			productType = "com.apple.product-type.application";
 		};
 		5A0456AF241CF1210055EB27 /* ChengJiDanTests */ = {
@@ -525,7 +525,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = sweeper777.github.io.ChengJiDan;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "城跡单";
 				SWIFT_OBJC_BRIDGING_HEADER = "ChengJiDan/ChengJiDan-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -547,7 +547,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = sweeper777.github.io.ChengJiDan;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "城跡单";
 				SWIFT_OBJC_BRIDGING_HEADER = "ChengJiDan/ChengJiDan-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
