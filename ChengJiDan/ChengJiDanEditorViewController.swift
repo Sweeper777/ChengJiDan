@@ -70,7 +70,7 @@ class ChengJiDanEditorViewController : UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        view.endEditing(true)
+        searchController.searchBar.resignFirstResponder()
         let provinceName: String
         let cityName: String
         if isFiltering {
