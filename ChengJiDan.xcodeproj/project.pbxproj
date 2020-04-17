@@ -11,9 +11,7 @@
 		5A04569E241CF11E0055EB27 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A04569D241CF11E0055EB27 /* AppDelegate.swift */; };
 		5A0456A0241CF11E0055EB27 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A04569F241CF11E0055EB27 /* SceneDelegate.swift */; };
 		5A0456A2241CF11E0055EB27 /* ChengJiDanListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0456A1241CF11E0055EB27 /* ChengJiDanListViewController.swift */; };
-		5A0456A5241CF11E0055EB27 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A0456A3241CF11E0055EB27 /* Main.storyboard */; };
 		5A0456A7241CF1210055EB27 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A0456A6241CF1210055EB27 /* Assets.xcassets */; };
-		5A0456AA241CF1210055EB27 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A0456A8241CF1210055EB27 /* LaunchScreen.storyboard */; };
 		5A0456B5241CF1210055EB27 /* ChengJiDanTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0456B4241CF1210055EB27 /* ChengJiDanTests.swift */; };
 		5A0456C3241CF2190055EB27 /* SKUBezierPath+SVG.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A0456C1241CF2190055EB27 /* SKUBezierPath+SVG.m */; };
 		5A0456C5241CFEBD0055EB27 /* map.svg in Resources */ = {isa = PBXBuildFile; fileRef = 5A0456C4241CFEBD0055EB27 /* map.svg */; };
@@ -23,6 +21,9 @@
 		5A0456CD241D120D0055EB27 /* ProvinceList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0456CC241D120D0055EB27 /* ProvinceList.swift */; };
 		5A061E7D24265EBD00CC3308 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A061E7C24265EBD00CC3308 /* DataManager.swift */; };
 		5A061E7F2426689C00CC3308 /* ChengJiDanMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A061E7E2426689C00CC3308 /* ChengJiDanMapViewController.swift */; };
+		5A0A045C244850CA009E426A /* help.md in Resources */ = {isa = PBXBuildFile; fileRef = 5A0A045B244850CA009E426A /* help.md */; };
+		5A0A91242448918900D4303E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A0A91202448918900D4303E /* LaunchScreen.storyboard */; };
+		5A0A91252448918900D4303E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A0A91222448918900D4303E /* Main.storyboard */; };
 		5A12B12B2427B6B000124870 /* ChengJiDanEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A12B12A2427B6B000124870 /* ChengJiDanEditorViewController.swift */; };
 		5A26BFC5243C73930092D680 /* hanzi2pinyin_v2.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5A26BFC4243C73930092D680 /* hanzi2pinyin_v2.txt */; };
 		A0E62ABE231B1EEE6E04A48D /* Pods_ChengJiDanTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF005624EB9400C5F702CF96 /* Pods_ChengJiDanTests.framework */; };
@@ -47,9 +48,7 @@
 		5A04569D241CF11E0055EB27 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5A04569F241CF11E0055EB27 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		5A0456A1241CF11E0055EB27 /* ChengJiDanListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChengJiDanListViewController.swift; sourceTree = "<group>"; };
-		5A0456A4241CF11E0055EB27 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5A0456A6241CF1210055EB27 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		5A0456A9241CF1210055EB27 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5A0456AB241CF1210055EB27 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5A0456B0241CF1210055EB27 /* ChengJiDanTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChengJiDanTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A0456B4241CF1210055EB27 /* ChengJiDanTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChengJiDanTests.swift; sourceTree = "<group>"; };
@@ -64,6 +63,9 @@
 		5A0456CC241D120D0055EB27 /* ProvinceList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProvinceList.swift; sourceTree = "<group>"; };
 		5A061E7C24265EBD00CC3308 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		5A061E7E2426689C00CC3308 /* ChengJiDanMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChengJiDanMapViewController.swift; sourceTree = "<group>"; };
+		5A0A045B244850CA009E426A /* help.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = help.md; sourceTree = "<group>"; };
+		5A0A91212448918900D4303E /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.storyboard"; sourceTree = "<group>"; };
+		5A0A91232448918900D4303E /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = "zh-Hans"; path = "zh-Hans.lproj/Main.storyboard"; sourceTree = "<group>"; };
 		5A12B12A2427B6B000124870 /* ChengJiDanEditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChengJiDanEditorViewController.swift; sourceTree = "<group>"; };
 		5A26BFC4243C73930092D680 /* hanzi2pinyin_v2.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = hanzi2pinyin_v2.txt; path = "Pods/SWPinYinSearcher-JDBR/SWPinYinSearcher/hanzi2pinyin_v2.txt"; sourceTree = SOURCE_ROOT; };
 		CF34EFBE4FD5C6F567B0E8F9 /* Pods-ChengJiDan.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChengJiDan.debug.xcconfig"; path = "Target Support Files/Pods-ChengJiDan/Pods-ChengJiDan.debug.xcconfig"; sourceTree = "<group>"; };
@@ -138,14 +140,15 @@
 				5A0456CC241D120D0055EB27 /* ProvinceList.swift */,
 				5A0456CA241D0A960055EB27 /* TravelStatus.swift */,
 				5A061E7C24265EBD00CC3308 /* DataManager.swift */,
-				5A0456A3241CF11E0055EB27 /* Main.storyboard */,
+				5A0A91202448918900D4303E /* LaunchScreen.storyboard */,
+				5A0A91222448918900D4303E /* Main.storyboard */,
 				5A0456A6241CF1210055EB27 /* Assets.xcassets */,
-				5A0456A8241CF1210055EB27 /* LaunchScreen.storyboard */,
 				5A0456AB241CF1210055EB27 /* Info.plist */,
 				5A0456C2241CF2190055EB27 /* ChengJiDan-Bridging-Header.h */,
 				5A0456C0241CF2190055EB27 /* SKUBezierPath+SVG.h */,
 				5A0456C1241CF2190055EB27 /* SKUBezierPath+SVG.m */,
 				5A0456C4241CFEBD0055EB27 /* map.svg */,
+				5A0A045B244850CA009E426A /* help.md */,
 			);
 			path = ChengJiDan;
 			sourceTree = "<group>";
@@ -231,11 +234,10 @@
 			};
 			buildConfigurationList = 5A045695241CF11E0055EB27 /* Build configuration list for PBXProject "ChengJiDan" */;
 			compatibilityVersion = "Xcode 9.3";
-			developmentRegion = en;
+			developmentRegion = "zh-Hans";
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				en,
-				Base,
+				"zh-Hans",
 			);
 			mainGroup = 5A045691241CF11E0055EB27;
 			productRefGroup = 5A04569B241CF11E0055EB27 /* Products */;
@@ -253,10 +255,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5A0456AA241CF1210055EB27 /* LaunchScreen.storyboard in Resources */,
 				5A26BFC5243C73930092D680 /* hanzi2pinyin_v2.txt in Resources */,
 				5A0456A7241CF1210055EB27 /* Assets.xcassets in Resources */,
-				5A0456A5241CF11E0055EB27 /* Main.storyboard in Resources */,
+				5A0A045C244850CA009E426A /* help.md in Resources */,
+				5A0A91252448918900D4303E /* Main.storyboard in Resources */,
+				5A0A91242448918900D4303E /* LaunchScreen.storyboard in Resources */,
 				5A0456C5241CFEBD0055EB27 /* map.svg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -373,20 +376,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		5A0456A3241CF11E0055EB27 /* Main.storyboard */ = {
+		5A0A91202448918900D4303E /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				5A0456A4241CF11E0055EB27 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		5A0456A8241CF1210055EB27 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5A0456A9241CF1210055EB27 /* Base */,
+				5A0A91212448918900D4303E /* zh-Hans */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		5A0A91222448918900D4303E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5A0A91232448918900D4303E /* zh-Hans */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -396,6 +399,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -456,6 +460,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
