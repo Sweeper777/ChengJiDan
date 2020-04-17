@@ -19,7 +19,8 @@ class HelpViewController: UIViewController {
         guard let markdownString = try? String(contentsOfFile: Bundle.main.path(forResource: "help", ofType: "md")!) else {
             return
         }
-        let attributedString = engine.parse(markdownString)
+        let attributedString = NSMutableAttributedString(attributedString: engine.parse(markdownString))
+        attributedString.addAttributes([.foregroundColor: UIColor.label], range: NSRange(location: 0, length: attributedString.length))
         helpTextView.attributedText = attributedString
     }
     
