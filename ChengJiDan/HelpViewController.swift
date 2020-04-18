@@ -6,16 +6,26 @@ class HelpViewController: UIViewController {
     
     override func viewDidLoad() {
         let engine = DCTextEngine.withMarkdown()!
-        engine.addPattern("<picture>") { _,_ in
+        
+        let pictureOptions = { () -> DCTextOptions in
             let options = DCTextOptions()
-            options.attachment = NSTextAttachment(image: UIImage(systemName: "photo")!)
+            let attachment = NSTextAttachment()
+            attachment.image = UIImage(systemName: "photo")!.withTintColor(self.helpTextView.tintColor)
+            options.attachment = attachment
             return options
-        }
-        engine.addPattern("<share>") { _,_ in
+        }()
+        
+        let shareOptions = { () -> DCTextOptions in
             let options = DCTextOptions()
-            options.attachment = NSTextAttachment(image: UIImage(systemName: "square.and.arrow.up")!)
+            let attachment = NSTextAttachment()
+            attachment.image = UIImage(systemName: "square.and.arrow.up")!.withTintColor(self.helpTextView.tintColor)
+            options.attachment = attachment
             return options
-        }
+        }()
+        
+        
+        engine.addPattern("<picture>", options: pictureOptions)
+        engine.addPattern("<share>", options: shareOptions)
         guard let markdownString = try? String(contentsOfFile: Bundle.main.path(forResource: "help", ofType: "md")!) else {
             return
         }
