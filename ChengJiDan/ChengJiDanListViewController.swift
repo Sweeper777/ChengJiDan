@@ -94,15 +94,11 @@ extension ChengJiDanListViewController : DataManagerDelegate {
         case .added(let newChengJiDan):
             self.chengJiDans.append(newChengJiDan)
             self.tableView.insertRows(at: [IndexPath(row: self.chengJiDans.count - 1, section: 0)], with: .automatic)
-        case .removed(_):
+        case .removed:
             break
-        case .updated(let old, let new):
-            if let index = chengJiDans.firstIndex(where: { $0.name == old.name }) {
-                chengJiDans[index] = new
-                tableView.reloadRows(at: [IndexPath(row: index, section: 0)], with: .automatic)
-            } else {
-                tableView.reloadData()
-            }
+        case .updated:
+            chengJiDans = DataManager.shared.allChengJiDan
+            tableView.reloadData()
         }
     }
 }

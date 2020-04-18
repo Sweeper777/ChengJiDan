@@ -43,8 +43,10 @@ class DataManager {
     
     func updateChengJiDan(oldChengJiDan: ChengJiDanMap, newChengJiDan: inout ChengJiDanMap) throws {
         try realm.write {
-            deleteChengJiDanImpl(oldChengJiDan)
-            addChengJiDanImpl(&newChengJiDan)
+            oldChengJiDan.objectRef?.name = newChengJiDan.name
+            oldChengJiDan.objectRef?.entries.forEach(realm.delete)
+            newChengJiDan.entries.map(CityStatusPairObject.init).forEach { oldChengJiDan.objectRef?.entries.append($0) }
+            newChengJiDan.objectRef = oldChengJiDan.objectRef
         }
         delegate?.dataDidUpdate(kind: .updated(old: oldChengJiDan, new: newChengJiDan))
     }
