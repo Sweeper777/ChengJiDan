@@ -23,9 +23,15 @@ class HelpViewController: UIViewController {
             return options
         }()
         
+        let versionOptions = { () -> DCTextOptions in
+            let options = DCTextOptions()
+            options.replaceText = Bundle.main.appVersion
+            return options
+        }()
         
         engine.addPattern("<picture>", options: pictureOptions)
         engine.addPattern("<share>", options: shareOptions)
+        engine.addPattern("<version>", options: versionOptions)
         guard let markdownString = try? String(contentsOfFile: Bundle.main.path(forResource: "help", ofType: "md")!) else {
             return
         }
