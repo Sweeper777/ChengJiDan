@@ -186,9 +186,10 @@ extension ChengJiDanMap {
         let statuses = province.cities.map { entryDict[$0] ?? .untrodden }
         let maxStatus = TravelStatus(rawValue: statuses.map { $0.rawValue }.max() ?? 0) ?? .untrodden
         let baseColor = UIColor(named: maxStatus.debugDescription) ?? .clear
-        let totalNumber = province.cities.count
         let visitedCount = statuses.filter { $0.rawValue > 0 }.count
-        let percentage = visitedCount.f / totalNumber.f
+        let totalNumber = province.cities.count
+//        let percentage = visitedCount.f / totalNumber.f
+        let percentage = min(1, visitedCount.f / min(totalNumber.f, 5))
         return baseColor.withAlphaComponent(percentage)
     }
 }
