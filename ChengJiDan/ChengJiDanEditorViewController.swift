@@ -100,12 +100,12 @@ class ChengJiDanEditorViewController : UITableViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        delegate?.didFinishEditing(editingResult: cityStatusPairDict.map { CityStatusPair(city: $0.key, status: $0.value) })
+        delegate?.didFinishEditing(editingResult: cityStatusPairDict.map { CityStatusPair(city: $0.key, status: $0.value) }, newName: newName)
     }
 }
 
 protocol ChengJiDanEditorViewControllerDelegate: class {
-    func didFinishEditing(editingResult: [CityStatusPair])
+    func didFinishEditing(editingResult: [CityStatusPair], newName: String?)
 }
 
 extension ChengJiDanEditorViewController : UISearchResultsUpdating {

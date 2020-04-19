@@ -64,6 +64,7 @@ class ChengJiDanMapViewController : UITableViewController {
             chengJiDan.colorForEachProvince.map { ($0.key.svgPathIndex, $0.value) }
         )
         scoreLabel.attributedText = generateScoreText(fontSize: 30)
+        title = chengJiDan.name
         updateCityListLabels()
     }
     
@@ -195,9 +196,9 @@ extension ChengJiDanMap {
 }
 
 extension ChengJiDanMapViewController : ChengJiDanEditorViewControllerDelegate {
-    func didFinishEditing(editingResult: [CityStatusPair]) {
+    func didFinishEditing(editingResult: [CityStatusPair], newName: String?) {
         do {
-            var newChengJiDan = ChengJiDanMap(name: chengJiDan.name, entries: editingResult)
+            var newChengJiDan = ChengJiDanMap(name: newName ?? chengJiDan.name, entries: editingResult)
             try DataManager.shared.updateChengJiDan(oldChengJiDan: chengJiDan, newChengJiDan: &newChengJiDan)
             chengJiDan = newChengJiDan
             updateView()
