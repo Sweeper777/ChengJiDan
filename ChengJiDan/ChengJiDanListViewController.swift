@@ -70,11 +70,11 @@ class ChengJiDanListViewController: UITableViewController {
     func addChengJiDan(name: String) {
         if name.trimmed() == "" {
             SCLAlertView().showError("错误", subTitle: "名字不能为空！", closeButtonTitle: "确定")
-        } else if DataManager.shared.queryChengJiDan("name == %@", args: name).count > 0 {
+        } else if DataManager.shared.queryChengJiDan("name == %@", args: name.trimmed()).count > 0 {
             SCLAlertView().showError("错误", subTitle: "该名字已被使用！", closeButtonTitle: "确定")
         } else {
             do {
-                try DataManager.shared.addChengJiDan(withName: name)
+                try DataManager.shared.addChengJiDan(withName: name.trimmed())
             } catch let error {
                 SCLAlertView().showError("错误", subTitle: error.localizedDescription, closeButtonTitle: "确定")
             }
