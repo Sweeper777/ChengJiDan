@@ -38,7 +38,7 @@ class ChengJiDanMapViewController : UITableViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let vc = (segue.destination as? UINavigationController)?.topViewController as? ChengJiDanEditorViewController {
-            vc.cityStatusPairs = chengJiDan.entries
+            vc.chengJiDan = chengJiDan
             vc.delegate = self
         }
     }

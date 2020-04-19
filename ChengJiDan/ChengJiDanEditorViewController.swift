@@ -4,6 +4,7 @@ import SWPinYinSearcher_JDBR
 
 class ChengJiDanEditorViewController : UITableViewController {
     weak var delegate: ChengJiDanEditorViewControllerDelegate?
+    var chengJiDan: ChengJiDanMap!
     var cityStatusPairs: [CityStatusPair]!
     var cityStatusPairDict: [String: TravelStatus]!
     var dataSource: [Province]!
@@ -20,6 +21,7 @@ class ChengJiDanEditorViewController : UITableViewController {
     }
     
     override func viewDidLoad() {
+        cityStatusPairs = chengJiDan.entries
         cityStatusPairDict = Dictionary(elements: cityStatusPairs!.map { ($0.city, $0.status) })
         dataSource = Province.allCases
         
