@@ -10,7 +10,7 @@
         <!--我的城跡单-->
         <scene sceneID="qMZ-Gc-rBO">
             <objects>
-                <tableViewController id="GhD-02-AJP" customClass="ChengJiDanListViewController" customModule="ChengJiDan" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="GhD-02-AJP" customClass="ChengJiDanListViewController" customModule="城跡单" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="tsr-io-23G">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -63,7 +63,7 @@
         <!--帮助-->
         <scene sceneID="hAS-CZ-zQN">
             <objects>
-                <viewController id="Rfo-UT-tjy" customClass="HelpViewController" customModule="ChengJiDan" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Rfo-UT-tjy" customClass="HelpViewController" customModule="城跡单" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eJe-ut-XGb">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -130,7 +130,7 @@ Cg
         <!--Cheng Ji Dan Map View Controller-->
         <scene sceneID="caW-dH-Taa">
             <objects>
-                <tableViewController id="cas-vn-INv" customClass="ChengJiDanMapViewController" customModule="ChengJiDan" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="cas-vn-INv" customClass="ChengJiDanMapViewController" customModule="城跡单" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Nvg-14-RU6">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -189,7 +189,7 @@ Cg
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EiC-Ah-hQC" customClass="SVGView" customModule="ChengJiDan" customModuleProvider="target">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EiC-Ah-hQC" customClass="SVGView" customModule="城跡单" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 </view>
@@ -445,7 +445,7 @@ Cg
         <!--编辑成绩单-->
         <scene sceneID="Uhn-X9-8yx">
             <objects>
-                <tableViewController id="j1W-AG-AwW" customClass="ChengJiDanEditorViewController" customModule="ChengJiDan" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="j1W-AG-AwW" customClass="ChengJiDanEditorViewController" customModule="城跡单" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Jhh-1M-3F3">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -474,7 +474,7 @@ Cg
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
-                                <color key="backgroundColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" systemColor="systemGrayColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -483,6 +483,11 @@ Cg
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="编辑成绩单" id="SoA-ho-hhQ">
+                        <barButtonItem key="leftBarButtonItem" title="重命名..." id="5hH-yN-u2L">
+                            <connections>
+                                <action selector="renameTapped" destination="j1W-AG-AwW" id="tQZ-Kr-g5U"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="w0H-K3-ZFX">
                             <connections>
                                 <action selector="doneTapped" destination="j1W-AG-AwW" id="sqW-Zh-FK3"/>
