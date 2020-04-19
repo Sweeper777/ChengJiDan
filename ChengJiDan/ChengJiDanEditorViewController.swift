@@ -9,6 +9,8 @@ class ChengJiDanEditorViewController : UITableViewController {
     var cityStatusPairDict: [String: TravelStatus]!
     var dataSource: [Province]!
     
+    var newName: String?
+    
     let searchController = UISearchController(searchResultsController: nil)
     var filteredCities: [String] = []
     
@@ -96,6 +98,17 @@ class ChengJiDanEditorViewController : UITableViewController {
     
     @IBAction func doneTapped() {
         dismiss(animated: true, completion: nil)
+    }
+    
+    
+    func renameChengJiDan(name: String) {
+        if name.trimmed() == "" {
+            SCLAlertView().showError("错误", subTitle: "名字不能为空！", closeButtonTitle: "确定")
+        } else if DataManager.shared.queryChengJiDan("name == %@", args: name.trimmed()).count > 0 {
+            SCLAlertView().showError("错误", subTitle: "该名字已被使用！", closeButtonTitle: "确定")
+        } else {
+            newName = name.trimmed()
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
