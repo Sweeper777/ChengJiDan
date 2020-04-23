@@ -100,6 +100,15 @@ class ChengJiDanEditorViewController : UITableViewController {
         dismiss(animated: true, completion: nil)
     }
     
+    @IBAction func renameTapped() {
+        let alert = SCLAlertView()
+        let textField = alert.addTextField("输入新名字")
+        textField.text = "\(chengJiDan.name)"
+        alert.addButton("确定") {
+            self.renameChengJiDan(name: textField.text ?? "")
+        }
+        alert.showEdit("重命名：", subTitle: nil, closeButtonTitle: "取消")
+    }
     
     func renameChengJiDan(name: String) {
         if name.trimmed() == "" {
