@@ -94,14 +94,22 @@ class ChengJiDanEditorViewController : UITableViewController {
         TravelStatus.allCases.forEach { (status) in
             alert.addButton("\(status.description) （\(status.rawValue)分）", backgroundColor: UIColor(named: status.debugDescription) ?? .systemGray) {
                 [weak self] in
-                self?.cityStatusPairDict[cityName] = status
+                guard let `self` = self else { return }
+                self.cityStatusPairDict[cityName] = status
                 tableView.reloadRows(at: [indexPath], with: .automatic)
+                self.tryShowAd(withProbability: 3)
             }
         }
         alert.showEdit(cityName, subTitle: provinceName, closeButtonTitle: "取消")
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
+    func tryShowAd(withProbability probability: Int) {
+        if self.adsLeft > 0 && self.ad.isReady && Int.random(in: 0..<100) < probability {
+            self.ad.present(fromRootViewController: self)
+            self.adsLeft -= 1
+        }
+    }
     @IBAction func doneTapped() {
         dismiss(animated: true, completion: nil)
     }
