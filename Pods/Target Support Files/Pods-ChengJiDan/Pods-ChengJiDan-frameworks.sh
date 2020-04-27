@@ -165,6 +165,8 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/DCTextEngine/DCTextEngine.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/EGOCache/EGOCache.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/FSImageViewer/FSImageViewer.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Realm/Realm.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SCLAlertView/SCLAlertView.framework"
@@ -172,12 +174,15 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/SwiftyUtils/SwiftyUtils.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SwiftyXMLParser/SwiftyXMLParser.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/UAProgressView/UAProgressView.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/DCTextEngine/DCTextEngine.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/EGOCache/EGOCache.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/FSImageViewer/FSImageViewer.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Realm/Realm.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SCLAlertView/SCLAlertView.framework"
@@ -185,6 +190,7 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/SwiftyUtils/SwiftyUtils.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SwiftyXMLParser/SwiftyXMLParser.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/UAProgressView/UAProgressView.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework"
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then
   wait

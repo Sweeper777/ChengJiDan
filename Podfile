@@ -14,6 +14,8 @@ target 'ChengJiDan' do
   pod 'SWPinYinSearcher-JDBR'
   pod 'FSImageViewer'
   pod 'DCTextEngine'
+  pod 'Firebase/AdMob'
+  pod 'Firebase/Core'
 
   target 'ChengJiDanTests' do
     inherit! :search_paths
