@@ -1,6 +1,7 @@
 import UIKit
 import SCLAlertView
 import SWPinYinSearcher_JDBR
+import GoogleMobileAds
 
 class ChengJiDanEditorViewController : UITableViewController {
     weak var delegate: ChengJiDanEditorViewControllerDelegate?
@@ -10,6 +11,9 @@ class ChengJiDanEditorViewController : UITableViewController {
     var dataSource: [Province]!
     
     var newName: String?
+    
+    var ad: GADInterstitial!
+    var adsLeft = 4
     
     let searchController = UISearchController(searchResultsController: nil)
     var filteredCities: [String] = []
@@ -32,6 +36,8 @@ class ChengJiDanEditorViewController : UITableViewController {
         searchController.searchBar.placeholder = "搜索..."
         navigationItem.searchController = searchController
         definesPresentationContext = true
+        
+        ad = createAd()
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
