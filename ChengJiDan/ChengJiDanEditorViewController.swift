@@ -124,6 +124,14 @@ class ChengJiDanEditorViewController : UITableViewController {
         super.viewWillAppear(animated)
         delegate?.didFinishEditing(editingResult: cityStatusPairDict.map { CityStatusPair(city: $0.key, status: $0.value) }, newName: newName)
     }
+    
+    func createAd() -> GADInterstitial {
+        let interstitial = GADInterstitial(adUnitID: adUnitIdInterstitial)
+        interstitial.delegate = self
+        let request = GADRequest()
+        interstitial.load(request)
+        return interstitial
+    }
 }
 
 protocol ChengJiDanEditorViewControllerDelegate: class {
