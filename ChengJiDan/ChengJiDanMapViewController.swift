@@ -126,7 +126,18 @@ class ChengJiDanMapViewController : UITableViewController {
     }
     
     @IBAction func exportTapped() {
-        guard let image = exportChengJiDanAsImage() else { return }
+        let image: UIImage
+        if imageCache != nil && !shouldGenerateNewImage {
+            image = imageCache!
+            print("used cache!")
+        } else {
+            guard let generatedImage = exportChengJiDanAsImage() else { return }
+            image = generatedImage
+            imageCache = generatedImage
+            shouldGenerateNewImage = false
+            
+            print("generated new image!")
+        }
         let fsImage = FSBasicImage(image: image)
         let imageSource = FSBasicImageSource(images: [fsImage])
         let vc = FSImageViewerViewController(imageSource: imageSource)
