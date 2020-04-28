@@ -33,9 +33,10 @@ class ChengJiDanEditorViewController : UITableViewController {
         
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
-        searchController.searchBar.placeholder = "搜索..."
+        searchController.searchBar.placeholder = "搜索 (支持拼音)..."
         navigationItem.searchController = searchController
         definesPresentationContext = true
+        navigationItem.hidesSearchBarWhenScrolling = false
         
         ad = createAd()
     }
