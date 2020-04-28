@@ -1,8 +1,10 @@
 import UIKit
 import DCTextEngine
+import GoogleMobileAds
 
 class HelpViewController: UIViewController {
     @IBOutlet var helpTextView: UITextView!
+    @IBOutlet var ad: GADBannerView!
     
     override func viewDidLoad() {
         let engine = DCTextEngine.withMarkdown()!
@@ -38,6 +40,11 @@ class HelpViewController: UIViewController {
         let attributedString = NSMutableAttributedString(attributedString: engine.parse(markdownString))
         attributedString.addAttributes([.foregroundColor: UIColor.label], range: NSRange(location: 0, length: attributedString.length))
         helpTextView.attributedText = attributedString
+        
+        ad.adUnitID = adUnitIdBanner
+        ad.rootViewController = self
+        ad.load(GADRequest())
+        ad.delegate = self
     }
     
     @IBAction func doneTapped() {
