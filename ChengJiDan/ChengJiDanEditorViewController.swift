@@ -173,3 +173,13 @@ extension ChengJiDanEditorViewController : UISearchResultsUpdating {
         tableView.reloadData()
     }
 }
+
+extension ChengJiDanEditorViewController : GADInterstitialDelegate {
+    func interstitialDidDismissScreen(_ ad: GADInterstitial) {
+        self.ad = createAd()
+    }
+    
+    func interstitial(_ ad: GADInterstitial, didFailToReceiveAdWithError error: GADRequestError) {
+        print(error)
+    }
+}
