@@ -69,7 +69,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0mG-nK-XRo">
-                                <rect key="frame" x="16" y="56" width="288" height="472"/>
+                                <rect key="frame" x="16" y="56" width="288" height="422"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <attributedString key="attributedText">
                                     <fragment>
@@ -85,13 +85,23 @@ Cg
                                 </attributedString>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cMo-7n-fhS" customClass="GADBannerView">
+                                <rect key="frame" x="0.0" y="498" width="320" height="50"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="4LQ-pA-Oos"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="KDw-NH-ugc" firstAttribute="trailing" secondItem="0mG-nK-XRo" secondAttribute="trailing" constant="16" id="MNA-pa-czv"/>
                             <constraint firstItem="0mG-nK-XRo" firstAttribute="top" secondItem="KDw-NH-ugc" secondAttribute="top" id="MXs-Nv-Xys"/>
+                            <constraint firstItem="cMo-7n-fhS" firstAttribute="leading" secondItem="KDw-NH-ugc" secondAttribute="leading" id="Miq-z7-oHU"/>
                             <constraint firstItem="0mG-nK-XRo" firstAttribute="leading" secondItem="KDw-NH-ugc" secondAttribute="leading" constant="16" id="ceN-UM-1Zx"/>
-                            <constraint firstItem="KDw-NH-ugc" firstAttribute="bottom" secondItem="0mG-nK-XRo" secondAttribute="bottom" constant="20" id="lGq-H7-7jy"/>
+                            <constraint firstItem="KDw-NH-ugc" firstAttribute="bottom" secondItem="0mG-nK-XRo" secondAttribute="bottom" constant="70" id="lGq-H7-7jy"/>
+                            <constraint firstItem="cMo-7n-fhS" firstAttribute="trailing" secondItem="KDw-NH-ugc" secondAttribute="trailing" id="s0K-fW-SPZ"/>
+                            <constraint firstItem="cMo-7n-fhS" firstAttribute="bottom" secondItem="KDw-NH-ugc" secondAttribute="bottom" id="tTZ-lM-82Y"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="KDw-NH-ugc"/>
                     </view>
@@ -103,6 +113,7 @@ Cg
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="ad" destination="cMo-7n-fhS" id="TlK-MT-mHq"/>
                         <outlet property="helpTextView" destination="0mG-nK-XRo" id="pnq-a6-Twt"/>
                     </connections>
                 </viewController>
