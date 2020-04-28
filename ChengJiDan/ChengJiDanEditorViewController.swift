@@ -110,6 +110,15 @@ class ChengJiDanEditorViewController : UITableViewController {
             self.adsLeft -= 1
         }
     }
+    
+    override func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        tryShowAd(withProbability: 2)
+    }
+    
+    override func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        tryShowAd(withProbability: 2)
+    }
+    
     @IBAction func doneTapped() {
         dismiss(animated: true, completion: nil)
     }
