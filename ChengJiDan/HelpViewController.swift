@@ -51,3 +51,9 @@ class HelpViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
 }
+
+extension HelpViewController : GADBannerViewDelegate {
+    func adView(_ bannerView: GADBannerView, didFailToReceiveAdWithError error: GADRequestError) {
+        print(error)
+    }
+}
