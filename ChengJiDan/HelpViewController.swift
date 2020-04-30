@@ -34,6 +34,14 @@ class HelpViewController: UIViewController {
         engine.addPattern("<picture>", options: pictureOptions)
         engine.addPattern("<share>", options: shareOptions)
         engine.addPattern("<version>", options: versionOptions)
+        
+        engine.addPattern("<title> [^\n]+") { (regex, text) -> DCTextOptions? in
+            let options = DCTextOptions()
+            options.font = UIFont.preferredFont(forTextStyle: .largeTitle)
+            options.replaceText = String(text?.dropFirst(8) ?? "")
+            return options
+        }
+        
         guard let markdownString = try? String(contentsOfFile: Bundle.main.path(forResource: "help", ofType: "md")!) else {
             return
         }
