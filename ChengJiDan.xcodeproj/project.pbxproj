@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		5A011C76244711BE001FAC3E /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A011C75244711BE001FAC3E /* HelpViewController.swift */; };
+		5A02FF9D24542200001D06ED /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5A02FF9C245421FF001D06ED /* GoogleService-Info.plist */; };
+		5A02FF9F245423EA001D06ED /* SecretStuff.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A02FF9E245423EA001D06ED /* SecretStuff.swift */; };
 		5A04569E241CF11E0055EB27 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A04569D241CF11E0055EB27 /* AppDelegate.swift */; };
 		5A0456A0241CF11E0055EB27 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A04569F241CF11E0055EB27 /* SceneDelegate.swift */; };
 		5A0456A2241CF11E0055EB27 /* ChengJiDanListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0456A1241CF11E0055EB27 /* ChengJiDanListViewController.swift */; };
@@ -44,6 +46,8 @@
 		2E18FCFFB50D5F648DE25C86 /* Pods_ChengJiDan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChengJiDan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		539EB4ABCA838705AEA39C6E /* Pods-ChengJiDanTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChengJiDanTests.release.xcconfig"; path = "Target Support Files/Pods-ChengJiDanTests/Pods-ChengJiDanTests.release.xcconfig"; sourceTree = "<group>"; };
 		5A011C75244711BE001FAC3E /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
+		5A02FF9C245421FF001D06ED /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		5A02FF9E245423EA001D06ED /* SecretStuff.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecretStuff.swift; sourceTree = "<group>"; };
 		5A04569A241CF11E0055EB27 /* 城跡单.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "城跡单.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A04569D241CF11E0055EB27 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5A04569F241CF11E0055EB27 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -128,6 +132,7 @@
 		5A04569C241CF11E0055EB27 /* ChengJiDan */ = {
 			isa = PBXGroup;
 			children = (
+				5A02FF9C245421FF001D06ED /* GoogleService-Info.plist */,
 				5A26BFC4243C73930092D680 /* hanzi2pinyin_v2.txt */,
 				5A04569D241CF11E0055EB27 /* AppDelegate.swift */,
 				5A04569F241CF11E0055EB27 /* SceneDelegate.swift */,
@@ -140,6 +145,7 @@
 				5A0456CC241D120D0055EB27 /* ProvinceList.swift */,
 				5A0456CA241D0A960055EB27 /* TravelStatus.swift */,
 				5A061E7C24265EBD00CC3308 /* DataManager.swift */,
+				5A02FF9E245423EA001D06ED /* SecretStuff.swift */,
 				5A0A91202448918900D4303E /* LaunchScreen.storyboard */,
 				5A0A91222448918900D4303E /* Main.storyboard */,
 				5A0456A6241CF1210055EB27 /* Assets.xcassets */,
@@ -261,6 +267,7 @@
 				5A0A91252448918900D4303E /* Main.storyboard in Resources */,
 				5A0A91242448918900D4303E /* LaunchScreen.storyboard in Resources */,
 				5A0456C5241CFEBD0055EB27 /* map.svg in Resources */,
+				5A02FF9D24542200001D06ED /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,6 +349,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A02FF9F245423EA001D06ED /* SecretStuff.swift in Sources */,
 				5A0456A2241CF11E0055EB27 /* ChengJiDanListViewController.swift in Sources */,
 				5A0456C7241CFF040055EB27 /* SVGView.swift in Sources */,
 				5A04569E241CF11E0055EB27 /* AppDelegate.swift in Sources */,
