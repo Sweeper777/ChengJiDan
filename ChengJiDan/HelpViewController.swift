@@ -5,6 +5,7 @@ import GoogleMobileAds
 class HelpViewController: UIViewController {
     @IBOutlet var helpTextView: UITextView!
     @IBOutlet var ad: GADBannerView!
+    @IBOutlet var bottomConstraint: NSLayoutConstraint!
     
     override func viewDidLoad() {
         let engine = DCTextEngine.withMarkdown()!
@@ -63,5 +64,6 @@ class HelpViewController: UIViewController {
 extension HelpViewController : GADBannerViewDelegate {
     func adView(_ bannerView: GADBannerView, didFailToReceiveAdWithError error: GADRequestError) {
         print(error)
+        bottomConstraint.constant = 8
     }
 }
