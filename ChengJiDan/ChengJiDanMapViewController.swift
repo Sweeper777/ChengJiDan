@@ -73,7 +73,7 @@ class ChengJiDanMapViewController : UITableViewController {
     }
     
     func generateScoreText(fontSize: CGFloat) -> NSAttributedString {
-        let scoreText = NSMutableAttributedString(string: "城跡：\n", attributes: [.font: UIFont.systemFont(ofSize: fontSize)])
+        let scoreText = NSMutableAttributedString(string: "城迹：\n", attributes: [.font: UIFont.systemFont(ofSize: fontSize)])
         scoreText.append(NSAttributedString(string: "\(chengJiDan.totalScore)", attributes: [.font: UIFont.systemFont(ofSize: fontSize * 5 / 3)]))
         scoreText.append(NSAttributedString(string: "分", attributes: [.font: UIFont.systemFont(ofSize: fontSize), .baselineOffset: fontSize / 4]))
         let paragraphStyle = NSMutableParagraphStyle()
