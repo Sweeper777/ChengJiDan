@@ -48,7 +48,7 @@
 		5A011C75244711BE001FAC3E /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
 		5A02FF9C245421FF001D06ED /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5A02FF9E245423EA001D06ED /* SecretStuff.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecretStuff.swift; sourceTree = "<group>"; };
-		5A04569A241CF11E0055EB27 /* 城跡单.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "城跡单.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A04569A241CF11E0055EB27 /* 城迹单.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "城迹单.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A04569D241CF11E0055EB27 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5A04569F241CF11E0055EB27 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		5A0456A1241CF11E0055EB27 /* ChengJiDanListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChengJiDanListViewController.swift; sourceTree = "<group>"; };
@@ -123,7 +123,7 @@
 		5A04569B241CF11E0055EB27 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				5A04569A241CF11E0055EB27 /* 城跡单.app */,
+				5A04569A241CF11E0055EB27 /* 城迹单.app */,
 				5A0456B0241CF1210055EB27 /* ChengJiDanTests.xctest */,
 			);
 			name = Products;
@@ -196,7 +196,7 @@
 			);
 			name = ChengJiDan;
 			productName = ChengJiDan;
-			productReference = 5A04569A241CF11E0055EB27 /* 城跡单.app */;
+			productReference = 5A04569A241CF11E0055EB27 /* 城迹单.app */;
 			productType = "com.apple.product-type.application";
 		};
 		5A0456AF241CF1210055EB27 /* ChengJiDanTests */ = {
@@ -526,16 +526,16 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = E9MW74DJ4Y;
 				INFOPLIST_FILE = ChengJiDan/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.2;
+				MARKETING_VERSION = 0.3;
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.sweeper777.ChengJiDan;
-				PRODUCT_NAME = "城跡单";
+				PRODUCT_NAME = "城迹单";
 				SWIFT_OBJC_BRIDGING_HEADER = "ChengJiDan/ChengJiDan-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -550,16 +550,16 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = E9MW74DJ4Y;
 				INFOPLIST_FILE = ChengJiDan/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.2;
+				MARKETING_VERSION = 0.3;
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.sweeper777.ChengJiDan;
-				PRODUCT_NAME = "城跡单";
+				PRODUCT_NAME = "城迹单";
 				SWIFT_OBJC_BRIDGING_HEADER = "ChengJiDan/ChengJiDan-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
