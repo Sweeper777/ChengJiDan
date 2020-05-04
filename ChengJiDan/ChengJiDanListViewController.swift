@@ -1,5 +1,6 @@
 import UIKit
 import SCLAlertView
+import EmptyDataSet_Swift
 
 class ChengJiDanListViewController: UITableViewController {
 
@@ -10,6 +11,15 @@ class ChengJiDanListViewController: UITableViewController {
         chengJiDans = DataManager.shared.allChengJiDan
         DataManager.shared.delegate = self
         navigationItem.rightBarButtonItems?.append(editButtonItem)
+        
+        tableView.emptyDataSetView { (view) in
+            view.titleLabelString(NSAttributedString(string: "什么也没有哦"))
+            view.detailLabelString(NSAttributedString(string: "轻触右上角的 “+” 来新建城迹单吧！"))
+            view.dataSetBackgroundColor(.systemBackground)
+            view.image(UIImage(named: "china")?.withRenderingMode(.alwaysTemplate))
+            view.imageTintColor(.systemGray)
+            view.didTapContentView(self.addChengJiDanTapped)
+        }
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
