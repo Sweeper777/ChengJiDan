@@ -55,6 +55,7 @@ class ChengJiDanListViewController: UITableViewController {
             try DataManager.shared.deleteChengJiDan(chengJiDan)
             chengJiDans.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .automatic)
+            tableView.reloadEmptyDataSet()
         } catch let error {
             SCLAlertView().showError("错误", subTitle: error.localizedDescription, closeButtonTitle: "确定")
         }
@@ -69,6 +70,7 @@ class ChengJiDanListViewController: UITableViewController {
         textField.text = "城迹单\(nextNumber)"
         alert.addButton("确定") {
             self.addChengJiDan(name: textField.text ?? "")
+            self.tableView.reloadEmptyDataSet()
         }
         alert.showEdit("新城迹单", subTitle: nil, closeButtonTitle: "取消")
     }
