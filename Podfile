@@ -16,6 +16,7 @@ target 'ChengJiDan' do
   pod 'DCTextEngine'
   pod 'Firebase/AdMob'
   pod 'Firebase/Core'
+  pod 'EmptyDataSet-Swift'
 
   target 'ChengJiDanTests' do
     inherit! :search_paths
