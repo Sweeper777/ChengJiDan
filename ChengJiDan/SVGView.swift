@@ -80,5 +80,29 @@ class SVGView : UIView {
             path.fill()
         }
     }
+    
+    private func size(ofText string: String, fontSize: CGFloat) -> CGSize {
+        return NSAttributedString(string: string,
+                                  attributes: [.font: UIFont.systemFont(ofSize: fontSize)])
+            .boundingRect(with: CGSize(width: 1000, height: 1000), options: [], context: nil).size
+    }
+    
+    private func findFirstRect(path: UIBezierPath, thatFits: CGSize) -> CGRect? {
+        let points = path.cgPath.getPathElementsPoints()
+        allPoints: for point in points {
+            var checkpoint = point
+            var size = CGSize(width: 0, height: 0)
+            thisPoint: while size.width <= path.bounds.width {
+                if path.contains(checkpoint) && path.cgPath.contains(CGRect(origin: checkpoint, size: thatFits)) {
+                    return CGRect(x: checkpoint.x, y: checkpoint.y, width: thatFits.width, height: thatFits.height)
+                } else {
+                    checkpoint.x += 1
+                    size.width += 1
+                    continue thisPoint
+                }
+            }
+        }
+        return nil
+    }
 }
 
