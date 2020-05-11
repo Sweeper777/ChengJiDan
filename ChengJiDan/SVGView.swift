@@ -30,6 +30,12 @@ class SVGView : UIView {
         }
     }
     
+    var labelTexts: [String] = [] {
+        didSet {
+            setNeedsDisplay()
+        }
+    }
+    
     private(set) var svgPaths: [UIBezierPath] = []
     private(set) var svgPathBounds: CGRect = .zero
     
