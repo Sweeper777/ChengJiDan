@@ -44,10 +44,10 @@ class SVGView : UIView {
     }
     
     override func draw(_ rect: CGRect) {
-        draw(inBounds: self.bounds, lineWidth: min(self.width, self.height) / 640, borderColor: .label)
+        draw(inBounds: self.bounds, lineWidth: min(self.width, self.height) / 640, borderColor: .label, labelFontSize: 5)
     }
     
-    func draw(inBounds rect: CGRect, lineWidth: CGFloat, borderColor: UIColor) {
+    func draw(inBounds rect: CGRect, lineWidth: CGFloat, borderColor: UIColor, labelFontSize: CGFloat) {
         
         
         if svgPaths.count == 1 {
