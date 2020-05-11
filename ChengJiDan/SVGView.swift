@@ -167,3 +167,14 @@ extension CGPath {
     }
 }
 
+
+extension CGRect {
+
+    var center: CGPoint {
+        CGPoint(x: midX, y: midY)
+    }
+    
+    init(center: CGPoint, size: CGSize) {
+        self = CGRect(origin: center, size: size).insetBy(dx: -size.width, dy: -size.height)
+    }
+}
