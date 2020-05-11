@@ -1,7 +1,7 @@
 import Foundation
 
 extension Province {
-    static let anhui = Province(name: "安徽省", svgPathIndex: 0, cities: [
+    static let anhui = Province(name: "安徽省", shortName: "安徽", svgPathIndex: 0, cities: [
         "安庆市",
         "蚌埠市",
         "亳州市",
@@ -19,13 +19,13 @@ extension Province {
         "芜湖市",
         "宣城市",
     ])
-    static let beijing = Province(name: "北京市", svgPathIndex: 1, cities: [
+    static let beijing = Province(name: "北京市", shortName: "北京", svgPathIndex: 1, cities: [
         "北京市",
     ])
-    static let chongqing = Province(name: "重庆市", svgPathIndex: 2, cities: [
+    static let chongqing = Province(name: "重庆市", shortName: "重庆", svgPathIndex: 2, cities: [
         "重庆市",
     ])
-    static let fujian = Province(name: "福建省", svgPathIndex: 3, cities: [
+    static let fujian = Province(name: "福建省", shortName: "福建", svgPathIndex: 3, cities: [
         "福州市",
         "厦门市",
         "莆田市",
@@ -36,7 +36,7 @@ extension Province {
         "龙岩市",
         "宁德市",
     ])
-    static let guangdong = Province(name: "广东省", svgPathIndex: 4, cities: [
+    static let guangdong = Province(name: "广东省", shortName: "广东", svgPathIndex: 4, cities: [
         "广州市",
         "韶关市",
         "深圳市",
@@ -59,7 +59,7 @@ extension Province {
         "揭阳市",
         "云浮市",
     ])
-    static let gansu = Province(name: "甘肃省", svgPathIndex: 5, cities: [
+    static let gansu = Province(name: "甘肃省", shortName: "甘肃", svgPathIndex: 5, cities: [
         "兰州市",
         "嘉峪关市",
         "金昌市",
@@ -73,7 +73,7 @@ extension Province {
         "定西市",
         "陇南市",
     ])
-    static let guangxi = Province(name: "广西壮族自治区", svgPathIndex: 6, cities: [
+    static let guangxi = Province(name: "广西壮族自治区", shortName: "广西壮族", svgPathIndex: 6, cities: [
         "南宁市",
         "柳州市",
         "桂林市",
@@ -89,7 +89,7 @@ extension Province {
         "来宾市",
         "崇左市",
     ])
-    static let guizhou = Province(name: "贵州省", svgPathIndex: 7, cities: [
+    static let guizhou = Province(name: "贵州省", shortName: "贵州", svgPathIndex: 7, cities: [
         "贵阳市",
         "六盘水市",
         "遵义市",
@@ -97,13 +97,13 @@ extension Province {
         "毕节市",
         "铜仁市",
     ])
-    static let hainan = Province(name: "海南省", svgPathIndex: 8, cities: [
+    static let hainan = Province(name: "海南省", shortName: "海南", svgPathIndex: 8, cities: [
         "海口市",
         "三亚市",
         "三沙市",
         "儋州市",
     ])
-    static let hebei = Province(name: "河北省", svgPathIndex: 9, cities: [
+    static let hebei = Province(name: "河北省", shortName: "河北", svgPathIndex: 9, cities: [
         "石家庄市",
         "唐山市",
         "秦皇岛市",
@@ -116,7 +116,7 @@ extension Province {
         "廊坊市",
         "衡水市",
     ])
-    static let henan = Province(name: "河南省", svgPathIndex: 10, cities: [
+    static let henan = Province(name: "河南省", shortName: "河南", svgPathIndex: 10, cities: [
         "郑州市",
         "开封市",
         "洛阳市",
@@ -135,10 +135,10 @@ extension Province {
         "周口市",
         "驻马店市",
     ])
-    static let hongKong = Province(name: "香港特别行政区", svgPathIndex: 11, cities: [
+    static let hongKong = Province(name: "香港特别行政区", shortName: "香港", svgPathIndex: 11, cities: [
         "香港特别行政区"
     ])
-    static let heilongjiang = Province(name: "黑龙江省", svgPathIndex: 12, cities: [
+    static let heilongjiang = Province(name: "黑龙江省", shortName: "黑龙江", svgPathIndex: 12, cities: [
         "哈尔滨市",
         "齐齐哈尔市",
         "鸡西市",
@@ -152,7 +152,7 @@ extension Province {
         "黑河市",
         "绥化市",
     ])
-    static let hunan = Province(name: "湖南省", svgPathIndex: 13, cities: [
+    static let hunan = Province(name: "湖南省", shortName: "湖南", svgPathIndex: 13, cities: [
         "长沙市",
         "株洲市",
         "湘潭市",
@@ -167,7 +167,7 @@ extension Province {
         "怀化市",
         "娄底市",
     ])
-    static let hubei = Province(name: "湖北省", svgPathIndex: 14, cities: [
+    static let hubei = Province(name: "湖北省", shortName: "湖北", svgPathIndex: 14, cities: [
         "武汉市",
         "黄石市",
         "十堰市",
@@ -181,7 +181,7 @@ extension Province {
         "咸宁市",
         "随州市",
     ])
-    static let jilin = Province(name: "吉林省", svgPathIndex: 15, cities: [
+    static let jilin = Province(name: "吉林省", shortName: "吉林", svgPathIndex: 15, cities: [
         "长春市",
         "吉林市",
         "四平市",
@@ -191,7 +191,7 @@ extension Province {
         "松原市",
         "白城市",
     ])
-    static let jiangsu = Province(name: "江苏省", svgPathIndex: 16, cities: [
+    static let jiangsu = Province(name: "江苏省", shortName: "江苏", svgPathIndex: 16, cities: [
         "南京市",
         "无锡市",
         "徐州市",
@@ -206,7 +206,7 @@ extension Province {
         "泰州市",
         "宿迁市",
     ])
-    static let jiangxi = Province(name: "江西省", svgPathIndex: 17, cities: [
+    static let jiangxi = Province(name: "江西省", shortName: "江西", svgPathIndex: 17, cities: [
         "南昌市",
         "景德镇市",
         "萍乡市",
@@ -219,7 +219,7 @@ extension Province {
         "新余市",
         "上饶市",
     ])
-    static let liaoning = Province(name: "辽宁省", svgPathIndex: 18, cities: [
+    static let liaoning = Province(name: "辽宁省", shortName: "辽宁", svgPathIndex: 18, cities: [
         "沈阳市",
         "大连市",
         "鞍山市",
@@ -235,10 +235,10 @@ extension Province {
         "朝阳市",
         "葫芦岛市",
     ])
-    static let macau = Province(name: "澳门特别行政区", svgPathIndex: 19, cities: [
+    static let macau = Province(name: "澳门特别行政区", shortName: "澳门", svgPathIndex: 19, cities: [
         "澳门特别行政区"
     ])
-    static let innerMongolia = Province(name: "内蒙古自治区", svgPathIndex: 20, cities: [
+    static let innerMongolia = Province(name: "内蒙古自治区", shortName: "内蒙古", svgPathIndex: 20, cities: [
         "呼和浩特市",
         "包头市",
         "乌海市",
@@ -249,18 +249,18 @@ extension Province {
         "巴彦淖尔市",
         "乌兰察布市",
     ])
-    static let ningxia = Province(name: "宁夏回族自治区", svgPathIndex: 21, cities: [
+    static let ningxia = Province(name: "宁夏回族自治区", shortName: "宁夏回族", svgPathIndex: 21, cities: [
         "银川市",
         "石嘴山市",
         "吴忠市",
         "固原市",
         "中卫市",
     ])
-    static let qinghai = Province(name: "青海省", svgPathIndex: 22, cities: [
+    static let qinghai = Province(name: "青海省", shortName: "青海", svgPathIndex: 22, cities: [
         "西宁市",
         "海东市",
     ])
-    static let shaanxi = Province(name: "陕西省", svgPathIndex: 23, cities: [
+    static let shaanxi = Province(name: "陕西省", shortName: "陕西", svgPathIndex: 23, cities: [
         "西安市",
         "铜川市",
         "宝鸡市",
@@ -272,7 +272,7 @@ extension Province {
         "安康市",
         "商洛市",
     ])
-    static let sichuan = Province(name: "四川省", svgPathIndex: 24, cities: [
+    static let sichuan = Province(name: "四川省", shortName: "四川", svgPathIndex: 24, cities: [
         "成都市",
         "自贡市",
         "攀枝花市",
@@ -292,7 +292,7 @@ extension Province {
         "巴中市",
         "资阳市",
     ])
-    static let shandong = Province(name: "山东省", svgPathIndex: 25, cities: [
+    static let shandong = Province(name: "山东省", shortName: "山东", svgPathIndex: 25, cities: [
         "济南市",
         "青岛市",
         "淄博市",
@@ -310,10 +310,10 @@ extension Province {
         "滨州市",
         "菏泽市",
     ])
-    static let shanghai = Province(name: "上海市", svgPathIndex: 26, cities: [
+    static let shanghai = Province(name: "上海市", shortName: "上海", svgPathIndex: 26, cities: [
         "上海市"
     ])
-    static let shanxi = Province(name: "山西省", svgPathIndex: 27, cities: [
+    static let shanxi = Province(name: "山西省", shortName: "山西", svgPathIndex: 27, cities: [
         "太原市",
         "大同市",
         "阳泉市",
@@ -326,10 +326,10 @@ extension Province {
         "临汾市",
         "吕梁市",
     ])
-    static let tianjin = Province(name: "天津市", svgPathIndex: 28, cities: [
+    static let tianjin = Province(name: "天津市", shortName: "天津", svgPathIndex: 28, cities: [
         "天津市"
     ])
-    static let taiwan = Province(name: "台湾省", svgPathIndex: 29, cities: [
+    static let taiwan = Province(name: "台湾省", shortName: "台湾", svgPathIndex: 29, cities: [
         "台北市",
         "新北市",
         "桃园市",
@@ -351,13 +351,13 @@ extension Province {
         "台东县",
         "澎湖县",
     ])
-    static let xinjiang = Province(name: "新疆维吾尔自治区", svgPathIndex: 30, cities: [
+    static let xinjiang = Province(name: "新疆维吾尔自治区", shortName: "新疆", svgPathIndex: 30, cities: [
         "乌鲁木齐市",
         "克拉玛依市",
         "吐鲁番市",
         "哈密市",
     ])
-    static let xizang = Province(name: "西藏自治区", svgPathIndex: 31, cities: [
+    static let xizang = Province(name: "西藏自治区", shortName: "西藏", svgPathIndex: 31, cities: [
         "拉萨市",
         "日喀则市",
         "昌都市",
@@ -365,7 +365,7 @@ extension Province {
         "山南市",
         "那曲市",
     ])
-    static let yunnan = Province(name: "云南省", svgPathIndex: 32, cities: [
+    static let yunnan = Province(name: "云南省", shortName: "云南", svgPathIndex: 32, cities: [
         "昆明市",
         "曲靖市",
         "玉溪市",
@@ -375,7 +375,7 @@ extension Province {
         "普洱市",
         "临沧市",
     ])
-    static let zhejiang = Province(name: "浙江省", svgPathIndex: 33, cities: [
+    static let zhejiang = Province(name: "浙江省", shortName: "浙江", svgPathIndex: 33, cities: [
         "杭州市",
         "宁波市",
         "温州市",
