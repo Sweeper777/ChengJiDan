@@ -3,11 +3,13 @@ import Realm
 
 struct Province {
     let name: String
+    let shortName: String
     let svgPathIndex: Int
     let cities: [String]
     
-    init(name: String, svgPathIndex: Int, cities: [String]) {
+    init(name: String, shortName: String, svgPathIndex: Int, cities: [String]) {
         self.name = name
+        self.shortName = shortName
         self.svgPathIndex = svgPathIndex
         self.cities = cities
     }
