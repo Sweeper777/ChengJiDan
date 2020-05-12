@@ -23,6 +23,7 @@ class ChengJiDanMapViewController : UITableViewController {
         let xml = try! XML.parse(xmlString)
         svgView.svgStrings = Array(xml["svg", "g" ,"path"])
             .map { $0.attributes["d"]! }
+        svgView.labelTexts = Province.allCases.sorted(by: { $0.svgPathIndex < $1.svgPathIndex }).map { $0.shortName }
         updateView()
         tableView.separatorColor = .clear
         tableView.allowsSelection = false
