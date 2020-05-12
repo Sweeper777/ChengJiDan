@@ -167,6 +167,29 @@ extension CGPath {
     }
 }
 
+extension UIBezierPath {
+    func findRectThatFits(size: CGSize) -> CGRect? {
+        let searchRegion = cgPath.boundingBoxOfPath.insetBy(dx: size.width / 2, dy: size.height / 2)
+
+        // horizontal
+        for x in (Int(searchRegion.minX) * 10)..<(Int(searchRegion.maxX) * 10) {
+            let testRect = CGRect(center: CGPoint(x: x.f / 10, y: searchRegion.midY), size: size)
+            if cgPath.contains(testRect) {
+                return testRect
+            }
+        }
+        
+        // vertical
+        for y in (Int(searchRegion.minY) * 10)..<(Int(searchRegion.maxY) * 10) {
+            let testRect = CGRect(center: CGPoint(x: searchRegion.midX, y: y.f / 10), size: size)
+            if cgPath.contains(testRect) {
+                return testRect
+            }
+        }
+        
+        return nil
+    }
+}
 
 extension CGPath {
     func contains(_ rect: CGRect) -> Bool {
