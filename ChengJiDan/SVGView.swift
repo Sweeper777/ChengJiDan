@@ -78,6 +78,23 @@ class SVGView : UIView {
             path.stroke()
             (colorDict[index] ?? .clear).setFill()
             path.fill()
+            
+            if index < labelTexts.count && labelTexts[index].isNotEmpty {
+                let textSize = size(ofText: labelTexts[index], fontSize: labelFontSize)
+                if path.bounds.height < textSize.height || path.bounds.width < textSize.width {
+                    continue
+                }
+                
+                if let rect = path.findRectThatFits(size: textSize) {
+                    print("found!")
+                    NSAttributedString(string: labelTexts[index], attributes: [.font: UIFont.systemFont(ofSize: labelFontSize)]).draw(in: rect)
+                }
+                
+//                let pathCenter = path.cgPath.findCenter()
+//                let rect = CGRect(origin: pathCenter, size: .zero).insetBy(dx: -textSize.width, dy: -textSize.height)
+//                NSAttributedString(string: labelTexts[index], attributes: [.font: UIFont.systemFont(ofSize: labelFontSize)]).draw(in: rect)
+
+            }
         }
     }
     
