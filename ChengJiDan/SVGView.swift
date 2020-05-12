@@ -168,6 +168,14 @@ extension CGPath {
 }
 
 
+extension CGPath {
+    func contains(_ rect: CGRect) -> Bool {
+        contains(rect.origin) && contains(CGPoint(x: rect.minX, y: rect.maxY)) &&
+            contains(CGPoint(x: rect.maxX, y: rect.maxY)) &&
+            contains(CGPoint(x: rect.maxX, y: rect.minY))
+    }
+}
+
 extension CGRect {
 
     var center: CGPoint {
