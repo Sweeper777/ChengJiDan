@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ZFO-Vf-0my">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ql8-IT-TNm">
     <device id="retina4_0" orientation="portrait" appearance="dark"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
@@ -10,7 +10,7 @@
         <!--我的城迹单-->
         <scene sceneID="qMZ-Gc-rBO">
             <objects>
-                <tableViewController id="GhD-02-AJP" customClass="ChengJiDanListViewController" customModule="城跡单" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="GhD-02-AJP" customClass="ChengJiDanListViewController" customModule="城迹单" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="tsr-io-23G">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -52,18 +52,18 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <segue destination="cas-vn-INv" kind="show" identifier="showChengJiDan" id="5h9-ja-B19"/>
                         <segue destination="GNM-Ur-PeN" kind="presentation" identifier="showHelp" modalPresentationStyle="formSheet" id="ckv-61-0uc"/>
+                        <segue destination="bBQ-zf-Cxi" kind="showDetail" identifier="showChengJiDan" id="X34-Xi-VYB"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NiE-uq-1Ic" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="556" y="95"/>
+            <point key="canvasLocation" x="555" y="80"/>
         </scene>
         <!--帮助-->
         <scene sceneID="hAS-CZ-zQN">
             <objects>
-                <viewController id="Rfo-UT-tjy" customClass="HelpViewController" customModule="城跡单" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Rfo-UT-tjy" customClass="HelpViewController" customModule="城迹单" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eJe-ut-XGb">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -120,7 +120,7 @@ Cg
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ba3-qm-7eL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1297.5" y="841.90140845070425"/>
+            <point key="canvasLocation" x="2108" y="79"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="tRa-c1-gD7">
@@ -137,12 +137,28 @@ Cg
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Tx-nG-4Bj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="555" y="842"/>
+            <point key="canvasLocation" x="1365" y="79"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="DAQ-jj-Zol">
+            <objects>
+                <navigationController id="bBQ-zf-Cxi" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="46w-FA-0zb">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="cas-vn-INv" kind="relationship" relationship="rootViewController" id="32Z-sH-njC"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iaC-kd-Bp7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-459" y="926"/>
         </scene>
         <!--Cheng Ji Dan Map View Controller-->
         <scene sceneID="caW-dH-Taa">
             <objects>
-                <tableViewController id="cas-vn-INv" customClass="ChengJiDanMapViewController" customModule="城跡单" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="cas-vn-INv" customClass="ChengJiDanMapViewController" customModule="城迹单" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Nvg-14-RU6">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -201,7 +217,7 @@ Cg
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EiC-Ah-hQC" customClass="SVGView" customModule="城跡单" customModuleProvider="target">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EiC-Ah-hQC" customClass="SVGView" customModule="城迹单" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 </view>
@@ -452,12 +468,12 @@ Cg
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7DG-Fu-5Qx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1297.5" y="92.957746478873247"/>
+            <point key="canvasLocation" x="555" y="926"/>
         </scene>
         <!--编辑城迹单-->
         <scene sceneID="Uhn-X9-8yx">
             <objects>
-                <tableViewController id="j1W-AG-AwW" customClass="ChengJiDanEditorViewController" customModule="城跡单" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="j1W-AG-AwW" customClass="ChengJiDanEditorViewController" customModule="城迹单" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Jhh-1M-3F3">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -486,7 +502,7 @@ Cg
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
-                                <color key="backgroundColor" systemColor="systemGrayColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -509,7 +525,7 @@ Cg
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yMb-O1-zTn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2957" y="93"/>
+            <point key="canvasLocation" x="2216" y="926"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="TbI-kY-MEP">
@@ -526,7 +542,20 @@ Cg
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rtJ-Vm-znb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2063" y="94"/>
+            <point key="canvasLocation" x="1320" y="926"/>
+        </scene>
+        <!--My Split View Controller-->
+        <scene sceneID="aG1-cz-b0D">
+            <objects>
+                <splitViewController id="ql8-IT-TNm" customClass="MySplitViewController" customModule="城迹单" customModuleProvider="target" sceneMemberID="viewController">
+                    <connections>
+                        <segue destination="ZFO-Vf-0my" kind="relationship" relationship="masterViewController" id="Hgl-im-S3U"/>
+                        <segue destination="bBQ-zf-Cxi" kind="relationship" relationship="detailViewController" id="6a1-fT-8cA"/>
+                    </connections>
+                </splitViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FeM-kB-Jv4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1556" y="430"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="zVM-Kn-yYB">
@@ -542,10 +571,13 @@ Cg
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zVP-MA-6W7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-458" y="95"/>
+            <point key="canvasLocation" x="-459" y="80"/>
         </scene>
     </scenes>
     <resources>
         <image name="photo" catalog="system" width="64" height="48"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="X34-Xi-VYB"/>
+    </inferredMetricsTieBreakers>
 </document>
