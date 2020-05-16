@@ -94,7 +94,8 @@ class ChengJiDanListViewController: UITableViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let vc = segue.destination as? ChengJiDanMapViewController, let map = sender as? ChengJiDanMap {
+        if let vc = (segue.destination as? UINavigationController)?.topViewController as? ChengJiDanMapViewController,
+            let map = sender as? ChengJiDanMap {
             vc.chengJiDan = map
         }
     }
