@@ -4,7 +4,7 @@ import SCLAlertView
 import FSImageViewer
 
 class ChengJiDanMapViewController : UITableViewController {
-    var chengJiDan: ChengJiDanMap!
+    var chengJiDan: ChengJiDanMap?
     
     @IBOutlet var svgView: SVGView!
     @IBOutlet var scoreLabel: UILabel!
@@ -27,7 +27,7 @@ class ChengJiDanMapViewController : UITableViewController {
         updateView()
         tableView.separatorColor = .clear
         tableView.allowsSelection = false
-        title = chengJiDan.name
+        title = chengJiDan?.name ?? ""
         let keyText = generateKeyText(fontSize: 13)
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.lineSpacing = 5
@@ -66,16 +66,16 @@ class ChengJiDanMapViewController : UITableViewController {
     func updateView() {
         shouldGenerateNewImage = true
         svgView.colorDict = Dictionary(elements:
-            chengJiDan.colorForEachProvince.map { ($0.key.svgPathIndex, $0.value) }
+            chengJiDan?.colorForEachProvince.map { ($0.key.svgPathIndex, $0.value) } ?? []
         )
         scoreLabel.attributedText = generateScoreText(fontSize: 30)
-        title = chengJiDan.name
+        title = chengJiDan?.name ?? ""
         updateCityListLabels()
     }
     
     func generateScoreText(fontSize: CGFloat) -> NSAttributedString {
         let scoreText = NSMutableAttributedString(string: "城迹：\n", attributes: [.font: UIFont.systemFont(ofSize: fontSize)])
-        scoreText.append(NSAttributedString(string: "\(chengJiDan.totalScore)", attributes: [.font: UIFont.systemFont(ofSize: fontSize * 5 / 3)]))
+        scoreText.append(NSAttributedString(string: "\(chengJiDan?.totalScore ?? 0)", attributes: [.font: UIFont.systemFont(ofSize: fontSize * 5 / 3)]))
         scoreText.append(NSAttributedString(string: "分", attributes: [.font: UIFont.systemFont(ofSize: fontSize), .baselineOffset: fontSize / 4]))
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.alignment = .center
@@ -110,7 +110,7 @@ class ChengJiDanMapViewController : UITableViewController {
         func updateCityListLabel(status: TravelStatus) {
             guard let label = statusLabelDict[status] else { return }
             let text = NSMutableAttributedString(string: "\(status.description)（\(status.rawValue)分）：\n", attributes: [.font: UIFont.systemFont(ofSize: 18)])
-            let cityList = chengJiDan.entries.filter { $0.status == status }.map { $0.city }
+            let cityList = chengJiDan?.entries.filter { $0.status == status }.map { $0.city } ?? []
             let cityListText = cityList.isEmpty ? "无" : cityList.joined(separator: "、")
             text.append(NSAttributedString(string: cityListText, attributes: [.font: UIFont.systemFont(ofSize: 13), .foregroundColor: UIColor.systemGray]))
             let paragraphStyle = NSMutableParagraphStyle()
@@ -213,9 +213,10 @@ extension ChengJiDanMap {
 
 extension ChengJiDanMapViewController : ChengJiDanEditorViewControllerDelegate {
     func didFinishEditing(editingResult: [CityStatusPair], newName: String?) {
+        guard let nonNilChengJiDan = chengJiDan else { return }
         do {
-            var newChengJiDan = ChengJiDanMap(name: newName ?? chengJiDan.name, entries: editingResult)
-            try DataManager.shared.updateChengJiDan(oldChengJiDan: chengJiDan, newChengJiDan: &newChengJiDan)
+            var newChengJiDan = ChengJiDanMap(name: newName ?? nonNilChengJiDan.name, entries: editingResult)
+            try DataManager.shared.updateChengJiDan(oldChengJiDan: nonNilChengJiDan, newChengJiDan: &newChengJiDan)
             chengJiDan = newChengJiDan
             updateView()
         } catch let error {
