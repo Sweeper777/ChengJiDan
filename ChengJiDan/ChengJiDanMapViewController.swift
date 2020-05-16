@@ -34,6 +34,10 @@ class ChengJiDanMapViewController : UITableViewController {
         paragraphStyle.alignment = .center
         keyText.addAttributes([.paragraphStyle: paragraphStyle], range: NSRange(location: 0, length: keyText.length))
         keyLabel.attributedText = keyText
+        
+        if chengJiDan == nil {
+            navigationItem.rightBarButtonItems = []
+        }
     }
     
     @IBAction func editTapped() {
