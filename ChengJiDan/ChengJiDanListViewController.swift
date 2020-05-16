@@ -38,7 +38,9 @@ class ChengJiDanListViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: "showChengJiDan", sender: chengJiDans[indexPath.row])
-        tableView.deselectRow(at: indexPath, animated: true)
+        if splitViewController!.isCollapsed {
+            tableView.deselectRow(at: indexPath, animated: true)
+        }
     }
     
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -56,6 +58,9 @@ class ChengJiDanListViewController: UITableViewController {
             chengJiDans.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .automatic)
             tableView.reloadEmptyDataSet()
+            if !splitViewController!.isCollapsed {
+                performSegue(withIdentifier: "showChengJiDan", sender: nil)
+            }
         } catch let error {
             SCLAlertView().showError("错误", subTitle: error.localizedDescription, closeButtonTitle: "确定")
         }
