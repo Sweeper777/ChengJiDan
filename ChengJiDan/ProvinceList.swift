@@ -393,12 +393,9 @@ extension Province {
 extension Province : CaseIterable {
     typealias AllCases = [Province]
     
-    static var allCases: [Province] {
-        [
-            anhui, beijing, chongqing, fujian, guangdong, gansu, guangxi, guizhou,
-            hainan, hebei, henan, hongKong, heilongjiang, hunan, hubei, jilin, jiangsu,
-            jiangxi, liaoning, macau, innerMongolia, ningxia, qinghai, shaanxi, sichuan,
-            shandong, shanghai, shanxi, tianjin, taiwan, xinjiang, xizang, yunnan, zhejiang
-        ]
-    }
+    static var allCases: [Province] = {
+        let decoder = JSONDecoder()
+        let data = try! Data(contentsOf: Bundle.main.url(forResource: "provinceList", withExtension: "json")!)
+        return try! decoder.decode([Province].self, from: data)
+    }()
 }
