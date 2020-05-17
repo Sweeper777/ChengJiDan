@@ -105,6 +105,14 @@ class ChengJiDanEditorViewController : UITableViewController {
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
+    override func sectionIndexTitles(for tableView: UITableView) -> [String]? {
+        if isFiltering {
+            return nil
+        } else {
+            return Province.allCases.map { $0.abbreviation }
+        }
+    }
+    
     func tryShowAd(withProbability probability: Int) {
         if self.adsLeft > 0 && self.ad.isReady && Int.random(in: 0..<100) < probability {
             self.ad.present(fromRootViewController: self)
