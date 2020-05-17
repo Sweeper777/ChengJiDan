@@ -13,12 +13,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             kGADSimulatorID as! String
         ]
         
-        let encoder = JSONEncoder()
-        encoder.outputFormatting = .prettyPrinted
-        let data = try! encoder.encode(Province.allCases)
-        let json = String(data: data, encoding: .utf8)!
-        print(json)
-        
         return true
     }
 
