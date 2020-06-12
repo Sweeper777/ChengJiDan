@@ -17,6 +17,7 @@ target 'ChengJiDan' do
   pod 'Firebase/AdMob'
   pod 'Firebase/Core'
   pod 'EmptyDataSet-Swift'
+  pod 'MGSwipeTableCell'
 
   target 'ChengJiDanTests' do
     inherit! :search_paths
