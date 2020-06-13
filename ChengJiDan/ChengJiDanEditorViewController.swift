@@ -2,6 +2,7 @@ import UIKit
 import SCLAlertView
 import SWPinYinSearcher_JDBR
 import GoogleMobileAds
+import MGSwipeTableCell
 
 class ChengJiDanEditorViewController : UITableViewController {
     weak var delegate: ChengJiDanEditorViewControllerDelegate?
@@ -66,17 +67,30 @@ class ChengJiDanEditorViewController : UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell")!
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! MGSwipeTableCell
         let status: TravelStatus
+        let cityName: String
         if isFiltering {
-            cell.textLabel?.text = filteredCities[indexPath.row]
-            status = cityStatusPairDict[filteredCities[indexPath.row]] ?? .untrodden
+            cityName = filteredCities[indexPath.row]
         } else {
-            cell.textLabel?.text = dataSource[indexPath.section].cities[indexPath.row]
-            status = cityStatusPairDict[dataSource[indexPath.section].cities[indexPath.row]] ?? .untrodden
+            cityName = dataSource[indexPath.section].cities[indexPath.row]
         }
+        cell.textLabel?.text = cityName
+        status = cityStatusPairDict[cityName] ?? .untrodden
         cell.detailTextLabel?.text = status.description
         cell.backgroundColor = UIColor(named: status.debugDescription) ?? .systemGray
+        cell.leftButtons = TravelStatus.allCases.map {
+            status in
+            return MGSwipeButton(title: status.description, backgroundColor: UIColor(named: status.debugDescription) ?? .systemGray) {
+                [weak self] sender in
+                guard let `self` = self else { return false }
+                self.cityStatusPairDict[cityName] = status
+                tableView.reloadRows(at: [indexPath], with: .automatic)
+                self.tryShowAd(withProbability: 3)
+                return true
+            }
+        }
+        cell.leftSwipeSettings.transition = .static
         return cell
     }
     
