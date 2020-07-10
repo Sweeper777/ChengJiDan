@@ -25,6 +25,9 @@ class ChengJiDanMapViewController : UITableViewController {
 //        svgView.svgStrings = Array(xml["svg", "g" ,"path"])
 //            .map { $0.attributes["d"]! }
 //        svgView.labelTexts = Province.allCases.sorted(by: { $0.svgPathIndex < $1.svgPathIndex }).map { $0.shortName }
+        let jsonData = try! Data(contentsOf: Bundle.main.url(forResource: "china", withExtension: "geojson")!)
+        let json = try! JSONSerialization.jsonObject(with: jsonData, options: [])
+        try! mapView.loadGeoJSONMap(json)
         updateView()
         tableView.separatorColor = .clear
         tableView.allowsSelection = false
