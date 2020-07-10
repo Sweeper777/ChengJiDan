@@ -96,6 +96,7 @@ PODS:
   - GoogleUtilities/UserDefaults (6.5.1):
     - GoogleUtilities/Logger
   - MGSwipeTableCell (1.6.11)
+  - MRWorldMapView (1.0.1)
   - nanopb (0.3.9011):
     - nanopb/decode (= 0.3.9011)
     - nanopb/encode (= 0.3.9011)
@@ -120,6 +121,7 @@ DEPENDENCIES:
   - Firebase/Core
   - FSImageViewer
   - MGSwipeTableCell
+  - MRWorldMapView
   - Realm
   - RealmSwift
   - SCLAlertView (from `https://github.com/vikmeup/SCLAlertView-Swift.git`)
@@ -155,6 +157,7 @@ SPEC REPOS:
     - UAProgressView
   trunk:
     - MGSwipeTableCell
+    - MRWorldMapView
 
 EXTERNAL SOURCES:
   SCLAlertView:
@@ -189,6 +192,7 @@ SPEC CHECKSUMS:
   GoogleDataTransportCCTSupport: 36f69887fd212db6d7ef4dd45ba44523717a434e
   GoogleUtilities: 06eb53bb579efe7099152735900dd04bf09e7275
   MGSwipeTableCell: b804e4e450dee439c42250be90bd50458bf67fce
+  MRWorldMapView: b60c29bc4351e79168fd242acbb04406e25f7225
   nanopb: 18003b5e52dab79db540fe93fe9579f399bd1ccd
   PromisesObjC: c119f3cd559f50b7ae681fa59dc1acd19173b7e6
   Realm: 5e92902e2875dff4bb0fd02f67bb737c3d5db2bc
@@ -199,6 +203,6 @@ SPEC CHECKSUMS:
   SWPinYinSearcher-JDBR: 19978c80333fc375d6899929cc5ab0d829b35e43
   UAProgressView: 6796f5aa05037fb2940521636163b9db40a6c534
 
-PODFILE CHECKSUM: 448e726bb3e9f03063f2d263b54d47e86a0f4d35
+PODFILE CHECKSUM: a938f314161bdcd0f5a3bba939d61bfedb762896
 
 COCOAPODS: 1.9.1
