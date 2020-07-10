@@ -2,11 +2,12 @@ import UIKit
 import SwiftyXMLParser
 import SCLAlertView
 import FSImageViewer
+import MRWorldMapView
 
 class ChengJiDanMapViewController : UITableViewController {
     var chengJiDan: ChengJiDanMap?
     
-    @IBOutlet var svgView: SVGView!
+    @IBOutlet var mapView: MRWorldMapView!
     @IBOutlet var scoreLabel: UILabel!
     @IBOutlet var passedThroughLabel: UILabel!
     @IBOutlet var landedLabel: UILabel!
@@ -19,11 +20,11 @@ class ChengJiDanMapViewController : UITableViewController {
     var shouldGenerateNewImage = true
     
     override func viewDidLoad() {
-        let xmlString = try! String(contentsOfFile: Bundle.main.path(forResource: "map", ofType: "svg")!)
-        let xml = try! XML.parse(xmlString)
-        svgView.svgStrings = Array(xml["svg", "g" ,"path"])
-            .map { $0.attributes["d"]! }
-        svgView.labelTexts = Province.allCases.sorted(by: { $0.svgPathIndex < $1.svgPathIndex }).map { $0.shortName }
+//        let xmlString = try! String(contentsOfFile: Bundle.main.path(forResource: "map", ofType: "svg")!)
+//        let xml = try! XML.parse(xmlString)
+//        svgView.svgStrings = Array(xml["svg", "g" ,"path"])
+//            .map { $0.attributes["d"]! }
+//        svgView.labelTexts = Province.allCases.sorted(by: { $0.svgPathIndex < $1.svgPathIndex }).map { $0.shortName }
         updateView()
         tableView.separatorColor = .clear
         tableView.allowsSelection = false
@@ -53,7 +54,7 @@ class ChengJiDanMapViewController : UITableViewController {
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.row == 1 {
-            return tableView.width / svgView.whRatio
+            return tableView.width
         } else {
             return UITableView.automaticDimension
         }
@@ -61,7 +62,7 @@ class ChengJiDanMapViewController : UITableViewController {
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         coordinator.animate(alongsideTransition: { _ in
-            self.svgView.setNeedsDisplay()
+//            self.svgView.setNeedsDisplay()
         }) { _ in
             self.tableView.reloadData()
         }
@@ -69,9 +70,9 @@ class ChengJiDanMapViewController : UITableViewController {
     
     func updateView() {
         shouldGenerateNewImage = true
-        svgView.colorDict = Dictionary(elements:
-            chengJiDan?.colorForEachProvince.map { ($0.key.svgPathIndex, $0.value) } ?? []
-        )
+//        svgView.colorDict = Dictionary(elements:
+//            chengJiDan?.colorForEachProvince.map { ($0.key.svgPathIndex, $0.value) } ?? []
+//        )
         scoreLabel.attributedText = generateScoreText(fontSize: 30)
         title = chengJiDan?.name ?? ""
         updateCityListLabels()
@@ -156,7 +157,7 @@ class ChengJiDanMapViewController : UITableViewController {
         UIGraphicsBeginImageContext(size)
         UIColor.white.setFill()
         UIRectFill(CGRect(origin: .zero, size: size))
-        svgView.draw(inBounds: CGRect(origin: .zero, size: size), lineWidth: 2.5, borderColor: .black, labelFontSize: 20)
+//        svgView.draw(inBounds: CGRect(origin: .zero, size: size), lineWidth: 2.5, borderColor: .black, labelFontSize: 20)
         
         let scoreText = generateScoreText(fontSize: 50)
         let scoreTextBoundingRect = scoreText.boundingRect(with: size, options: [.usesDeviceMetrics, .usesLineFragmentOrigin], context: nil)
