@@ -217,7 +217,7 @@ Cg
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EiC-Ah-hQC" customClass="SVGView" customModule="城迹单" customModuleProvider="target">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EiC-Ah-hQC" customClass="MRWorldMapView">
                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 </view>
@@ -428,10 +428,10 @@ Cg
                         <outlet property="keyLabel" destination="mbZ-Az-PfK" id="Li5-ed-iTS"/>
                         <outlet property="landedLabel" destination="Blx-d8-riO" id="xzi-MM-7sL"/>
                         <outlet property="livedLabel" destination="H8Y-1h-Fwk" id="D43-kw-lA3"/>
+                        <outlet property="mapView" destination="EiC-Ah-hQC" id="gU2-QH-K7b"/>
                         <outlet property="passedThroughLabel" destination="BIo-i6-pAn" id="Sg5-0q-V1G"/>
                         <outlet property="scoreLabel" destination="1sz-LH-eri" id="5co-sg-t37"/>
                         <outlet property="spentTheNightLabel" destination="Umj-LK-IoO" id="KK2-aR-dGR"/>
-                        <outlet property="svgView" destination="EiC-Ah-hQC" id="9XW-93-1v5"/>
                         <outlet property="visitedLabel" destination="gvC-sp-oeq" id="MBs-qh-LL7"/>
                         <segue destination="Mgd-UA-usN" kind="presentation" identifier="editChengJiDan" modalPresentationStyle="formSheet" id="vZh-ag-I4e"/>
                     </connections>
