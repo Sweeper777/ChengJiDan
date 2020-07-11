@@ -161,6 +161,8 @@ class ChengJiDanMapViewController : UITableViewController {
         UIColor.white.setFill()
         UIRectFill(CGRect(origin: .zero, size: size))
 //        svgView.draw(inBounds: CGRect(origin: .zero, size: size), lineWidth: 2.5, borderColor: .black, labelFontSize: 20)
+        mapView.frame = mapView.frame.with(size: size)
+        mapView.draw(CGRect(origin: .zero, size: size))
         
         let scoreText = generateScoreText(fontSize: 50)
         let scoreTextBoundingRect = scoreText.boundingRect(with: size, options: [.usesDeviceMetrics, .usesLineFragmentOrigin], context: nil)
