@@ -28,6 +28,7 @@ class ChengJiDanMapViewController : UITableViewController {
         let jsonData = try! Data(contentsOf: Bundle.main.url(forResource: "china", withExtension: "geojson")!)
         let json = try! JSONSerialization.jsonObject(with: jsonData, options: [])
         try! mapView.loadGeoJSONMap(json)
+        mapView.delegate = self
         updateView()
         tableView.separatorColor = .clear
         tableView.allowsSelection = false
@@ -233,5 +234,11 @@ extension ChengJiDanMapViewController : ChengJiDanEditorViewControllerDelegate {
             let alert = SCLAlertView()
             alert.showError("错误", subTitle: error.localizedDescription, closeButtonTitle: "确定")
         }
+    }
+}
+
+extension ChengJiDanMapViewController : MRWorldMapViewDelegate {
+    func worldMap(_ map: MRWorldMapView!, didSelectCountry code: String!) {
+        print(code)
     }
 }
