@@ -18,6 +18,7 @@ class ChengJiDanMapViewController : UITableViewController {
     
     var imageCache: UIImage?
     var shouldGenerateNewImage = true
+    var colorDict: [String: UIColor] = [:]
     
     override func viewDidLoad() {
 //        let xmlString = try! String(contentsOfFile: Bundle.main.path(forResource: "map", ofType: "svg")!)
@@ -74,9 +75,9 @@ class ChengJiDanMapViewController : UITableViewController {
     
     func updateView() {
         shouldGenerateNewImage = true
-//        svgView.colorDict = Dictionary(elements:
-//            chengJiDan?.colorForEachProvince.map { ($0.key.svgPathIndex, $0.value) } ?? []
-//        )
+        colorDict = Dictionary(elements:
+            chengJiDan?.colorForEachProvince.map { ($0.key.name, $0.value) } ?? []
+        )
         scoreLabel.attributedText = generateScoreText(fontSize: 30)
         title = chengJiDan?.name ?? ""
         updateCityListLabels()
