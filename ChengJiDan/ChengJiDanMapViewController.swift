@@ -30,6 +30,8 @@ class ChengJiDanMapViewController : UITableViewController {
         let json = try! JSONSerialization.jsonObject(with: jsonData, options: [])
         try! mapView.loadGeoJSONMap(json)
         mapView.delegate = self
+        mapView.countryBorderColor = .label
+        mapView.backgroundGradientColor = nil
         updateView()
         tableView.separatorColor = .clear
         tableView.allowsSelection = false
@@ -164,7 +166,9 @@ class ChengJiDanMapViewController : UITableViewController {
         UIRectFill(CGRect(origin: .zero, size: size))
 //        svgView.draw(inBounds: CGRect(origin: .zero, size: size), lineWidth: 2.5, borderColor: .black, labelFontSize: 20)
         mapView.frame = mapView.frame.with(size: size)
+        mapView.countryBorderColor = .black
         mapView.draw(CGRect(origin: .zero, size: size))
+        mapView.countryBorderColor = .label
         
         let scoreText = generateScoreText(fontSize: 50)
         let scoreTextBoundingRect = scoreText.boundingRect(with: size, options: [.usesDeviceMetrics, .usesLineFragmentOrigin], context: nil)
@@ -239,7 +243,8 @@ extension ChengJiDanMapViewController : ChengJiDanEditorViewControllerDelegate {
 }
 
 extension ChengJiDanMapViewController : MRWorldMapViewDelegate {
-    func worldMap(_ map: MRWorldMapView!, didSelectCountry code: String!) {
-        print(code)
+    func worldMap(_ map: MRWorldMapView!, colorForCountry code: String!) -> UIColor! {
+        colorDict[code ?? ""] ?? .clear
+    }
     }
 }
