@@ -635,10 +635,10 @@
 
 - (void)drawRect:(CGRect const)rect
 {
-    [self.backgroundColor set];
-    UIRectFill(rect);
+//    [self.backgroundColor set];
+//    UIRectFill(rect);
     
-    [self mr_drawBackground];
+//    [self mr_drawBackground];
     
     NSMutableArray *const highlightedCountries = [NSMutableArray arrayWithCapacity:1];
     NSMutableArray *const selectedCountries = [NSMutableArray arrayWithCapacity:1];
