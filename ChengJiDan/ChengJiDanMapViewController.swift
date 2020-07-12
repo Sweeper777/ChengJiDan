@@ -246,5 +246,12 @@ extension ChengJiDanMapViewController : MRWorldMapViewDelegate {
     func worldMap(_ map: MRWorldMapView!, colorForCountry code: String!) -> UIColor! {
         colorDict[code ?? ""] ?? .clear
     }
+    
+    func worldMap(_ map: MRWorldMapView!, shouldHighlightCountry code: String!) -> Bool {
+        return false
+    }
+    
+    func worldMap(_ map: MRWorldMapView!, shouldSelectCountry code: String!) -> Bool {
+        return false
     }
 }
