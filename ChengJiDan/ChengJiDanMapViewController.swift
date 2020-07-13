@@ -21,11 +21,6 @@ class ChengJiDanMapViewController : UITableViewController {
     var colorDict: [String: UIColor] = [:]
     
     override func viewDidLoad() {
-//        let xmlString = try! String(contentsOfFile: Bundle.main.path(forResource: "map", ofType: "svg")!)
-//        let xml = try! XML.parse(xmlString)
-//        svgView.svgStrings = Array(xml["svg", "g" ,"path"])
-//            .map { $0.attributes["d"]! }
-//        svgView.labelTexts = Province.allCases.sorted(by: { $0.svgPathIndex < $1.svgPathIndex }).map { $0.shortName }
         let jsonData = try! Data(contentsOf: Bundle.main.url(forResource: "china", withExtension: "geojson")!)
         let json = try! JSONSerialization.jsonObject(with: jsonData, options: [])
         try! mapView.loadGeoJSONMap(json)
@@ -69,7 +64,6 @@ class ChengJiDanMapViewController : UITableViewController {
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         coordinator.animate(alongsideTransition: { _ in
-//            self.svgView.setNeedsDisplay()
         }) { _ in
             self.tableView.reloadData()
         }
@@ -165,7 +159,6 @@ class ChengJiDanMapViewController : UITableViewController {
         UIGraphicsBeginImageContext(size)
         UIColor.white.setFill()
         UIRectFill(CGRect(origin: .zero, size: size))
-//        svgView.draw(inBounds: CGRect(origin: .zero, size: size), lineWidth: 2.5, borderColor: .black, labelFontSize: 20)
         mapView.frame = mapView.frame.with(size: size)
         mapView.countryBorderColor = .black
         mapView.draw(CGRect(origin: .zero, size: size))
