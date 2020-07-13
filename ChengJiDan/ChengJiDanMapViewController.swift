@@ -83,6 +83,7 @@ class ChengJiDanMapViewController : UITableViewController {
         scoreLabel.attributedText = generateScoreText(fontSize: 30)
         title = chengJiDan?.name ?? ""
         updateCityListLabels()
+        mapView.setNeedsDisplay()
     }
     
     func generateScoreText(fontSize: CGFloat) -> NSAttributedString {
