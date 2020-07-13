@@ -20,10 +20,14 @@ class ChengJiDanMapViewController : UITableViewController {
     var shouldGenerateNewImage = true
     var colorDict: [String: UIColor] = [:]
     
-    override func viewDidLoad() {
-        let jsonData = try! Data(contentsOf: Bundle.main.url(forResource: "china", withExtension: "geojson")!)
+    func loadMap(atUrl url: URL) {
+        let jsonData = try! Data(contentsOf: url)
         let json = try! JSONSerialization.jsonObject(with: jsonData, options: [])
         try! mapView.loadGeoJSONMap(json)
+    }
+    
+    override func viewDidLoad() {
+        loadMap(atUrl: Bundle.main.url(forResource: "china", withExtension: "geojson")!)
         mapView.delegate = self
         mapView.countryBorderColor = .label
         mapView.backgroundGradientColor = nil
