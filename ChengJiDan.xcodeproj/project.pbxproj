@@ -30,6 +30,7 @@
 		5A0E825A246FF00500BFE59E /* provinceList.json in Resources */ = {isa = PBXBuildFile; fileRef = 5A0E8259246FF00500BFE59E /* provinceList.json */; };
 		5A12B12B2427B6B000124870 /* ChengJiDanEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A12B12A2427B6B000124870 /* ChengJiDanEditorViewController.swift */; };
 		5A26BFC5243C73930092D680 /* hanzi2pinyin_v2.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5A26BFC4243C73930092D680 /* hanzi2pinyin_v2.txt */; };
+		5A38733F24BBFCA100D686DB /* 辽宁省.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 5A38733E24BBFCA100D686DB /* 辽宁省.geojson */; };
 		5A3F9A7524B7FA9700DEA0CC /* china.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 5A3F9A7424B7FA9700DEA0CC /* china.geojson */; };
 		A0E62ABE231B1EEE6E04A48D /* Pods_ChengJiDanTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF005624EB9400C5F702CF96 /* Pods_ChengJiDanTests.framework */; };
 		E8A7BCA40E0B31DB48040986 /* Pods_ChengJiDan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E18FCFFB50D5F648DE25C86 /* Pods_ChengJiDan.framework */; };
@@ -77,6 +78,7 @@
 		5A0E8259246FF00500BFE59E /* provinceList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = provinceList.json; sourceTree = "<group>"; };
 		5A12B12A2427B6B000124870 /* ChengJiDanEditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChengJiDanEditorViewController.swift; sourceTree = "<group>"; };
 		5A26BFC4243C73930092D680 /* hanzi2pinyin_v2.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = hanzi2pinyin_v2.txt; path = "Pods/SWPinYinSearcher-JDBR/SWPinYinSearcher/hanzi2pinyin_v2.txt"; sourceTree = SOURCE_ROOT; };
+		5A38733E24BBFCA100D686DB /* 辽宁省.geojson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "辽宁省.geojson"; sourceTree = "<group>"; };
 		5A3F9A7424B7FA9700DEA0CC /* china.geojson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = china.geojson; sourceTree = "<group>"; };
 		CF34EFBE4FD5C6F567B0E8F9 /* Pods-ChengJiDan.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChengJiDan.debug.xcconfig"; path = "Target Support Files/Pods-ChengJiDan/Pods-ChengJiDan.debug.xcconfig"; sourceTree = "<group>"; };
 		DA58222A8C517369AADDA01F /* Pods-ChengJiDan.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChengJiDan.release.xcconfig"; path = "Target Support Files/Pods-ChengJiDan/Pods-ChengJiDan.release.xcconfig"; sourceTree = "<group>"; };
@@ -163,6 +165,7 @@
 				5A0456C1241CF2190055EB27 /* SKUBezierPath+SVG.m */,
 				5A0456C4241CFEBD0055EB27 /* map.svg */,
 				5A3F9A7424B7FA9700DEA0CC /* china.geojson */,
+				5A38733E24BBFCA100D686DB /* 辽宁省.geojson */,
 				5A0A045B244850CA009E426A /* help.md */,
 			);
 			path = ChengJiDan;
@@ -277,6 +280,7 @@
 				5A3F9A7524B7FA9700DEA0CC /* china.geojson in Resources */,
 				5A0A91252448918900D4303E /* Main.storyboard in Resources */,
 				5A0A91242448918900D4303E /* LaunchScreen.storyboard in Resources */,
+				5A38733F24BBFCA100D686DB /* 辽宁省.geojson in Resources */,
 				5A0456C5241CFEBD0055EB27 /* map.svg in Resources */,
 				5A02FF9D24542200001D06ED /* GoogleService-Info.plist in Resources */,
 			);
