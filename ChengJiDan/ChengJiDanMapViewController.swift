@@ -252,4 +252,15 @@ extension ChengJiDanMapViewController : MRWorldMapViewDelegate {
     func worldMap(_ map: MRWorldMapView!, selectedColorForCountry code: String!) -> UIColor! {
         colorDict[code ?? ""] ?? .clear
     }
+    
+    func worldMap(_ map: MRWorldMapView!, didSelectCountry code: String!) {
+        if let code = code, let url = Bundle.main.url(forResource: code, withExtension: "geojson") {
+            let province = Province(name: code)
+            colorDict = chengJiDan?.entryDict
+                .filter { Province(city: $0.key) == province }
+                .mapValues { UIColor(named: $0.debugDescription) ?? .clear } ?? [:]
+            loadMap(atUrl: url)
+            tableView.reloadData()
+        }
+    }
 }
