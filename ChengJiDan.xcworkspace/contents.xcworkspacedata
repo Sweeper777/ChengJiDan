@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:ChengJiDanHelper/ChengJiDanHelper.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:ChengJiDan.xcodeproj">
    </FileRef>
    <FileRef
