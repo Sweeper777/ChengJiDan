@@ -27,7 +27,7 @@ class ChengJiDanMapViewController : UITableViewController {
     }
     
     override func viewDidLoad() {
-        loadMap(atUrl: Bundle.main.url(forResource: "china", withExtension: "geojson")!)
+        loadMap(atUrl: Bundle.main.url(forResource: "city level map", withExtension: "geojson")!)
         mapView.delegate = self
         mapView.countryBorderColor = .label
         mapView.backgroundGradientColor = nil
