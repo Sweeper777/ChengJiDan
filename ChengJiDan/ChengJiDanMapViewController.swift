@@ -19,6 +19,7 @@ class ChengJiDanMapViewController : UITableViewController {
     var imageCache: UIImage?
     var shouldGenerateNewImage = true
     var colorDict: [String: UIColor] = [:]
+    var mapLoaded = false
     
     func loadMap(atUrl url: URL) {
         let jsonData = try! Data(contentsOf: url)
@@ -27,7 +28,7 @@ class ChengJiDanMapViewController : UITableViewController {
     }
     
     override func viewDidLoad() {
-        loadMap(atUrl: Bundle.main.url(forResource: "city level map", withExtension: "geojson")!)
+        mapView.isHidden = true
         mapView.delegate = self
         mapView.countryBorderColor = .label
         mapView.countryBorderWidth = 0.3
@@ -45,6 +46,15 @@ class ChengJiDanMapViewController : UITableViewController {
         
         if chengJiDan == nil {
             navigationItem.rightBarButtonItems = []
+        }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if !mapLoaded {
+            loadMap(atUrl: Bundle.main.url(forResource: "city level map", withExtension: "geojson")!)
+            mapView.isHidden = false
+            mapLoaded = true
         }
     }
     
