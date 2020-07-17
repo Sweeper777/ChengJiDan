@@ -30,6 +30,7 @@ class ChengJiDanMapViewController : UITableViewController {
         loadMap(atUrl: Bundle.main.url(forResource: "city level map", withExtension: "geojson")!)
         mapView.delegate = self
         mapView.countryBorderColor = .label
+        mapView.countryBorderWidth = 0.3
         mapView.backgroundGradientColor = nil
         updateView()
         tableView.separatorColor = .clear
