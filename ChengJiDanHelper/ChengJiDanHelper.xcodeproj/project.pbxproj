@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		5A33422124BD63F000AE8D56 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A33422024BD63F000AE8D56 /* main.swift */; };
 		5A33422824BD657500AE8D56 /* GeoJSONModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A33422724BD657500AE8D56 /* GeoJSONModel.swift */; };
+		5A3F3E0924C2F7DC00557B0F /* ProvinceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3F3E0824C2F7DC00557B0F /* ProvinceModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -27,6 +28,7 @@
 		5A33421D24BD63F000AE8D56 /* ChengJiDanHelper */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ChengJiDanHelper; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A33422024BD63F000AE8D56 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		5A33422724BD657500AE8D56 /* GeoJSONModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoJSONModel.swift; sourceTree = "<group>"; };
+		5A3F3E0824C2F7DC00557B0F /* ProvinceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProvinceModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 			children = (
 				5A33422024BD63F000AE8D56 /* main.swift */,
 				5A33422724BD657500AE8D56 /* GeoJSONModel.swift */,
+				5A3F3E0824C2F7DC00557B0F /* ProvinceModel.swift */,
 			);
 			path = ChengJiDanHelper;
 			sourceTree = "<group>";
@@ -124,6 +127,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A33422124BD63F000AE8D56 /* main.swift in Sources */,
+				5A3F3E0924C2F7DC00557B0F /* ProvinceModel.swift in Sources */,
 				5A33422824BD657500AE8D56 /* GeoJSONModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
