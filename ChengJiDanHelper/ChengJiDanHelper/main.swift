@@ -30,4 +30,9 @@ func combineMaps() throws{
     try data.write(to: URL(fileURLWithPath: "/Users/mulangsu/Desktop/geojson maps/city level map.geojson"))
 }
 
-
+func readLocalMap() throws -> FeatureCollection {
+    let data = try Data(contentsOf: URL.init(fileURLWithPath: "/Users/mulangsu/Desktop/city lists/city level map.geojson"))
+    let decoder = JSONDecoder()
+    let featureCollection = try decoder.decode(FeatureCollection.self, from: data)
+    return featureCollection
+}
