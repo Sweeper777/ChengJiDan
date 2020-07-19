@@ -36,3 +36,9 @@ func readLocalMap() throws -> FeatureCollection {
     let featureCollection = try decoder.decode(FeatureCollection.self, from: data)
     return featureCollection
 }
+func readProvinceList() throws -> [Province] {
+    let data = try Data(contentsOf: URL.init(fileURLWithPath: "/Users/mulangsu/Desktop/city lists/provinceList.json"))
+    let decoder = JSONDecoder()
+    let provinces = try decoder.decode([Province].self, from: data)
+    return provinces
+}
