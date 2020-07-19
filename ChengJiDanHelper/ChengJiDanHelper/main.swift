@@ -42,3 +42,10 @@ func readProvinceList() throws -> [Province] {
     let provinces = try decoder.decode([Province].self, from: data)
     return provinces
 }
+let map = try readLocalMap()
+let provinces = try readProvinceList()
+let cityListFromMap = map.features.map(\.properties.name).sorted().joined(separator: "\n")
+let cityListFromProvinces = provinces.flatMap(\.cities).sorted().joined(separator: "\n")
+try cityListFromMap.write(to: URL(fileURLWithPath: "/Users/mulangsu/Desktop/city lists/map city list.txt"), atomically: true, encoding: .utf8)
+try cityListFromProvinces.write(to: URL(fileURLWithPath: "/Users/mulangsu/Desktop/city lists/province list city list.txt"), atomically: true, encoding: .utf8)
+print("Done!")
