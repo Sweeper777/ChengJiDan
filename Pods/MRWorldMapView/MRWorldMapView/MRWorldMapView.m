@@ -288,7 +288,7 @@
         NSDictionary *const properties = feature[@"properties"];
         if ([properties isKindOfClass:NSDictionary.class]) {
             identifier = properties[@"name"];
-            NSLog(@"missing identifier for %@", identifier);
+//            NSLog(@"missing identifier for %@", identifier);
         } else if (properties) {
             NSString *const reason = [NSString stringWithFormat:NSLocalizedString(@"Unexpected properties type: %@", nil)
                                       , NSStringFromClass(properties.class)];
