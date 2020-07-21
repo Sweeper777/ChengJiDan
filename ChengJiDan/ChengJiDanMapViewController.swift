@@ -148,19 +148,28 @@ class ChengJiDanMapViewController : UITableViewController {
         updateCityListLabel(status: .lived)
     }
     
+    let imageGeneratorQueue = DispatchQueue(label: "imageGenerator")
+    
     @IBAction func exportTapped() {
-        let image: UIImage
         if imageCache != nil && !shouldGenerateNewImage {
-            image = imageCache!
             print("used cache!")
+            pushFSImageViewer(withImage: imageCache!)
         } else {
-            guard let generatedImage = exportChengJiDanAsImage() else { return }
-            image = generatedImage
-            imageCache = generatedImage
-            shouldGenerateNewImage = false
-            
-            print("generated new image!")
+            imageGeneratorQueue.async { [weak self] in
+                guard let generatedImage = self?.exportChengJiDanAsImage() else { return }
+                self?.imageCache = generatedImage
+                self?.shouldGenerateNewImage = false
+                
+                print("generated new image!")
+                DispatchQueue.main.async {
+                    self?.pushFSImageViewer(withImage: generatedImage)
+                }
+            }
         }
+        
+    }
+    
+    func pushFSImageViewer(withImage image: UIImage) {
         let fsImage = FSBasicImage(image: image)
         let imageSource = FSBasicImageSource(images: [fsImage])
         let vc = FSImageViewerViewController(imageSource: imageSource)
