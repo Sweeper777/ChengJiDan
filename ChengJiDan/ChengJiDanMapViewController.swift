@@ -33,6 +33,8 @@ class ChengJiDanMapViewController : UITableViewController {
         mapView.countryBorderColor = .label
         mapView.countryBorderWidth = 0.3
         mapView.backgroundGradientColor = nil
+        mapView.selectedBorderColor = .label
+        mapView.highlightedBorderColor = .label
         updateView()
         tableView.separatorColor = .clear
         tableView.allowsSelection = false
@@ -265,10 +267,18 @@ extension ChengJiDanMapViewController : MRWorldMapViewDelegate {
         colorDict[code ?? ""] ?? .clear
     }
     
+    func worldMap(_ map: MRWorldMapView!, selectedBorderWidthForCountry code: String!) -> CGFloat {
+        0.3
+    }
+    
+    func worldMap(_ map: MRWorldMapView!, highlightedBorderWidthForCountry code: String!) -> CGFloat {
+        0.3
+    }
+    
     func worldMap(_ map: MRWorldMapView!, shouldHighlightCountry code: String!) -> Bool {
         false
     }
-    
+
     func worldMap(_ map: MRWorldMapView!, shouldSelectCountry code: String!) -> Bool {
         false
     }
