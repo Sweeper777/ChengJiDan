@@ -155,13 +155,15 @@ class ChengJiDanMapViewController : UITableViewController {
             print("used cache!")
             pushFSImageViewer(withImage: imageCache!)
         } else {
-            exportChengJiDanAsImage { [weak self] (image) in
-                guard let generatedImage = image else { return }
+            imageGeneratorQueue.async { [weak self] in
+                guard let generatedImage = self?.exportChengJiDanAsImage() else { return }
                 self?.imageCache = generatedImage
                 self?.shouldGenerateNewImage = false
                 
                 print("generated new image!")
-                self?.pushFSImageViewer(withImage: generatedImage)
+                DispatchQueue.main.async {
+                    self?.pushFSImageViewer(withImage: generatedImage)
+                }
             }
         }
         
@@ -176,59 +178,53 @@ class ChengJiDanMapViewController : UITableViewController {
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
-    func exportChengJiDanAsImage(completion: @escaping (UIImage?) -> Void) {
+    func exportChengJiDanAsImage() -> UIImage? {
         let size = CGSize(width: 1000, height: 1000)
+        UIGraphicsBeginImageContext(size)
+        UIColor.white.setFill()
+        UIRectFill(CGRect(origin: .zero, size: size))
         mapView.frame = mapView.frame.with(size: size)
         mapView.countryBorderColor = .black
-        imageGeneratorQueue.async { [weak self] in
-            guard let `self` = self else { return }
-            UIGraphicsBeginImageContext(size)
-            UIColor.white.setFill()
-            UIRectFill(CGRect(origin: .zero, size: size))
-            self.mapView.draw(CGRect(origin: .zero, size: size))
-            
-            let scoreText = self.generateScoreText(fontSize: 50)
-            let scoreTextBoundingRect = scoreText.boundingRect(with: size, options: [.usesDeviceMetrics, .usesLineFragmentOrigin], context: nil)
-            let padding = 30.f
-            let scoreTextX = padding * 3
-            let scoreTextY = size.height - scoreTextBoundingRect.height - padding * 3
-            let drawingRect = scoreTextBoundingRect.with(origin: CGPoint(x: scoreTextX, y: scoreTextY))
-            
-            let borderRect = drawingRect.insetBy(dx: -padding, dy: -padding)
-            let scoreTextBorderPath = UIBezierPath(roundedRect: borderRect, cornerRadius: 20)
+        mapView.draw(CGRect(origin: .zero, size: size))
+        mapView.countryBorderColor = .label
+        
+        let scoreText = generateScoreText(fontSize: 50)
+        let scoreTextBoundingRect = scoreText.boundingRect(with: size, options: [.usesDeviceMetrics, .usesLineFragmentOrigin], context: nil)
+        let padding = 30.f
+        let scoreTextX = padding * 3
+        let scoreTextY = size.height - scoreTextBoundingRect.height - padding * 3
+        let drawingRect = scoreTextBoundingRect.with(origin: CGPoint(x: scoreTextX, y: scoreTextY))
+        
+        let borderRect = drawingRect.insetBy(dx: -padding, dy: -padding)
+        let scoreTextBorderPath = UIBezierPath(roundedRect: borderRect, cornerRadius: 20)
 
-            let scoreTextBackgroundLayer = CAShapeLayer()
-            scoreTextBackgroundLayer.path = scoreTextBorderPath.cgPath
-            scoreTextBackgroundLayer.fillColor = UIColor.white.cgColor
-            scoreTextBackgroundLayer.shadowRadius = 7
-            scoreTextBackgroundLayer.shadowOpacity = 1
-            scoreTextBackgroundLayer.render(in: UIGraphicsGetCurrentContext()!)
-            scoreText.draw(with: drawingRect, options: [.usesDeviceMetrics, .usesLineFragmentOrigin], context: nil)
-            
-            let keyTextBoundingRect = CGRect(x: 439.3878255208333,
-                                                y: 795.5247017952324,
-                                                width: 500.6121744791667,
-                                                height: 95.46875)
-            let keyBorderPath = UIBezierPath(roundedRect: keyTextBoundingRect.insetBy(dx: -padding, dy: -padding), cornerRadius: 20)
-            
-            let keyTextBackgroundLayer = CAShapeLayer()
-            keyTextBackgroundLayer.path = keyBorderPath.cgPath
-            keyTextBackgroundLayer.fillColor = UIColor.white.cgColor
-            keyTextBackgroundLayer.shadowRadius = 7
-            keyTextBackgroundLayer.shadowOpacity = 1
-            keyTextBackgroundLayer.render(in: UIGraphicsGetCurrentContext()!)
-            
-            let keyText = self.generateKeyText(fontSize: 40)
-            keyText.draw(with: keyTextBoundingRect, options: [.usesDeviceMetrics, .usesLineFragmentOrigin], context: nil)
-            
-            let image = UIGraphicsGetImageFromCurrentImageContext()
-            UIGraphicsEndImageContext()
-            
-            DispatchQueue.main.async { [weak self] in
-                self?.mapView.countryBorderColor = .label
-                completion(image)
-            }
-        }
+        let scoreTextBackgroundLayer = CAShapeLayer()
+        scoreTextBackgroundLayer.path = scoreTextBorderPath.cgPath
+        scoreTextBackgroundLayer.fillColor = UIColor.white.cgColor
+        scoreTextBackgroundLayer.shadowRadius = 7
+        scoreTextBackgroundLayer.shadowOpacity = 1
+        scoreTextBackgroundLayer.render(in: UIGraphicsGetCurrentContext()!)
+        scoreText.draw(with: drawingRect, options: [.usesDeviceMetrics, .usesLineFragmentOrigin], context: nil)
+        
+        let keyTextBoundingRect = CGRect(x: 439.3878255208333,
+                                            y: 795.5247017952324,
+                                            width: 500.6121744791667,
+                                            height: 95.46875)
+        let keyBorderPath = UIBezierPath(roundedRect: keyTextBoundingRect.insetBy(dx: -padding, dy: -padding), cornerRadius: 20)
+        
+        let keyTextBackgroundLayer = CAShapeLayer()
+        keyTextBackgroundLayer.path = keyBorderPath.cgPath
+        keyTextBackgroundLayer.fillColor = UIColor.white.cgColor
+        keyTextBackgroundLayer.shadowRadius = 7
+        keyTextBackgroundLayer.shadowOpacity = 1
+        keyTextBackgroundLayer.render(in: UIGraphicsGetCurrentContext()!)
+        
+        let keyText = generateKeyText(fontSize: 40)
+        keyText.draw(with: keyTextBoundingRect, options: [.usesDeviceMetrics, .usesLineFragmentOrigin], context: nil)
+        
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return image
     }
 }
 
