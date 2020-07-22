@@ -2,12 +2,10 @@ import UIKit
 import SwiftyXMLParser
 import SCLAlertView
 import FSImageViewer
-import MRWorldMapView
 
 class ChengJiDanMapViewController : UITableViewController {
     var chengJiDan: ChengJiDanMap?
     
-    @IBOutlet var mapView: MRWorldMapView!
     @IBOutlet var scoreLabel: UILabel!
     @IBOutlet var passedThroughLabel: UILabel!
     @IBOutlet var landedLabel: UILabel!
@@ -22,19 +20,9 @@ class ChengJiDanMapViewController : UITableViewController {
     var mapLoaded = false
     
     func loadMap(atUrl url: URL) {
-        let jsonData = try! Data(contentsOf: url)
-        let json = try! JSONSerialization.jsonObject(with: jsonData, options: [])
-        try! mapView.loadGeoJSONMap(json)
     }
     
     override func viewDidLoad() {
-        mapView.isHidden = true
-        mapView.delegate = self
-        mapView.countryBorderColor = .label
-        mapView.countryBorderWidth = 0.3
-        mapView.backgroundGradientColor = nil
-        mapView.selectedBorderColor = .label
-        mapView.highlightedBorderColor = .label
         updateView()
         tableView.separatorColor = .clear
         tableView.allowsSelection = false
@@ -55,7 +43,7 @@ class ChengJiDanMapViewController : UITableViewController {
         super.viewDidAppear(animated)
         if !mapLoaded {
             loadMap(atUrl: Bundle.main.url(forResource: "city level map", withExtension: "geojson")!)
-            mapView.isHidden = false
+//            mapView.isHidden = false
             mapLoaded = true
         }
     }
@@ -94,7 +82,7 @@ class ChengJiDanMapViewController : UITableViewController {
         scoreLabel.attributedText = generateScoreText(fontSize: 30)
         title = chengJiDan?.name ?? ""
         updateCityListLabels()
-        mapView.setNeedsDisplay()
+//        mapView.setNeedsDisplay()
     }
     
     func generateScoreText(fontSize: CGFloat) -> NSAttributedString {
@@ -157,16 +145,6 @@ class ChengJiDanMapViewController : UITableViewController {
             print("used cache!")
             pushFSImageViewer(withImage: imageCache!)
         } else {
-            imageGeneratorQueue.async { [weak self] in
-                guard let generatedImage = self?.exportChengJiDanAsImage() else { return }
-                self?.imageCache = generatedImage
-                self?.shouldGenerateNewImage = false
-                
-                print("generated new image!")
-                DispatchQueue.main.async {
-                    self?.pushFSImageViewer(withImage: generatedImage)
-                }
-            }
         }
         
     }
@@ -185,10 +163,10 @@ class ChengJiDanMapViewController : UITableViewController {
         UIGraphicsBeginImageContext(size)
         UIColor.white.setFill()
         UIRectFill(CGRect(origin: .zero, size: size))
-        mapView.frame = mapView.frame.with(size: size)
-        mapView.countryBorderColor = .black
-        mapView.draw(CGRect(origin: .zero, size: size))
-        mapView.countryBorderColor = .label
+//        mapView.frame = mapView.frame.with(size: size)
+//        mapView.countryBorderColor = .black
+//        mapView.draw(CGRect(origin: .zero, size: size))
+//        mapView.countryBorderColor = .label
         
         let scoreText = generateScoreText(fontSize: 50)
         let scoreTextBoundingRect = scoreText.boundingRect(with: size, options: [.usesDeviceMetrics, .usesLineFragmentOrigin], context: nil)
@@ -259,27 +237,5 @@ extension ChengJiDanMapViewController : ChengJiDanEditorViewControllerDelegate {
             let alert = SCLAlertView()
             alert.showError("错误", subTitle: error.localizedDescription, closeButtonTitle: "确定")
         }
-    }
-}
-
-extension ChengJiDanMapViewController : MRWorldMapViewDelegate {
-    func worldMap(_ map: MRWorldMapView!, colorForCountry code: String!) -> UIColor! {
-        colorDict[code ?? ""] ?? .clear
-    }
-    
-    func worldMap(_ map: MRWorldMapView!, selectedBorderWidthForCountry code: String!) -> CGFloat {
-        0.3
-    }
-    
-    func worldMap(_ map: MRWorldMapView!, highlightedBorderWidthForCountry code: String!) -> CGFloat {
-        0.3
-    }
-    
-    func worldMap(_ map: MRWorldMapView!, shouldHighlightCountry code: String!) -> Bool {
-        false
-    }
-
-    func worldMap(_ map: MRWorldMapView!, shouldSelectCountry code: String!) -> Bool {
-        false
     }
 }
