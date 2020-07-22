@@ -10,8 +10,7 @@
 #endif
 #endif
 
-#import "MRWorldMapView.h"
 
-FOUNDATION_EXPORT double MRWorldMapViewVersionNumber;
-FOUNDATION_EXPORT const unsigned char MRWorldMapViewVersionString[];
+FOUNDATION_EXPORT double CodableJSONVersionNumber;
+FOUNDATION_EXPORT const unsigned char CodableJSONVersionString[];
 

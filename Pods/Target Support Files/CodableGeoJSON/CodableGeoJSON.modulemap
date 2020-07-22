@@ -1,0 +1,6 @@
+framework module CodableGeoJSON {
+  umbrella header "CodableGeoJSON-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -198,13 +198,14 @@ fi
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/CodableGeoJSON/CodableGeoJSON.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/CodableJSON/CodableJSON.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/DCTextEngine/DCTextEngine.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/EGOCache/EGOCache.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/EmptyDataSet-Swift/EmptyDataSet_Swift.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/FSImageViewer/FSImageViewer.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/MGSwipeTableCell/MGSwipeTableCell.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/MRWorldMapView/MRWorldMapView.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Realm/Realm.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework"
@@ -217,13 +218,14 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/CodableGeoJSON/CodableGeoJSON.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/CodableJSON/CodableJSON.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/DCTextEngine/DCTextEngine.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/EGOCache/EGOCache.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/EmptyDataSet-Swift/EmptyDataSet_Swift.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/FSImageViewer/FSImageViewer.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/MGSwipeTableCell/MGSwipeTableCell.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/MRWorldMapView/MRWorldMapView.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Realm/Realm.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework"

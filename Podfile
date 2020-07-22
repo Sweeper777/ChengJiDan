@@ -18,7 +18,7 @@ target 'ChengJiDan' do
   pod 'Firebase/Core'
   pod 'EmptyDataSet-Swift'
   pod 'MGSwipeTableCell'
-  pod 'MRWorldMapView'
+  pod 'CodableGeoJSON'
 
   target 'ChengJiDanTests' do
     inherit! :search_paths

@@ -14,9 +14,9 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "8197D8DD67773E768C4A5E7B86DB154E"
-               BuildableName = "MRWorldMapView.framework"
-               BlueprintName = "MRWorldMapView"
+               BlueprintIdentifier = "7990B91F244063D6D5C474AB8FEB43B6"
+               BuildableName = "CodableGeoJSON.framework"
+               BlueprintName = "CodableGeoJSON"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
