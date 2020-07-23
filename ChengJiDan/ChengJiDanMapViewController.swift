@@ -65,7 +65,7 @@ class ChengJiDanMapViewController : UITableViewController {
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.row == 1 {
-            return tableView.width
+            return tableView.width * 0.9
         } else {
             return UITableView.automaticDimension
         }
