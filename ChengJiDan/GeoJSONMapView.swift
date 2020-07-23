@@ -34,7 +34,11 @@ class GeoJSONMapView : UIView {
     
     func project(long: Double, lat: Double) -> CGPoint {
         let projectedLong = ((long - 73.5) / 61.25).f * width
-        let projectedLat = (1 - ((lat - 8.8) / 44.8).f) * height
+        let projectedLat = (1 - ((mercator(lat) - 0.1548) / 0.9582).f) * height
         return CGPoint(x: projectedLong, y: projectedLat)
+    }
+    
+    func mercator(_ lat: Double) -> Double {
+        asinh(tan(lat * .pi / 180))
     }
 }
