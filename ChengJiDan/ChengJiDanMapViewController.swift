@@ -6,6 +6,7 @@ import FSImageViewer
 class ChengJiDanMapViewController : UITableViewController {
     var chengJiDan: ChengJiDanMap?
     
+    @IBOutlet var mapView: GeoJSONMapView!
     @IBOutlet var scoreLabel: UILabel!
     @IBOutlet var passedThroughLabel: UILabel!
     @IBOutlet var landedLabel: UILabel!
@@ -20,6 +21,9 @@ class ChengJiDanMapViewController : UITableViewController {
     var mapLoaded = false
     
     func loadMap(atUrl url: URL) {
+        let data = try! Data(contentsOf: url)
+        let featureCollection = try! JSONDecoder().decode(MapFeatureCollection.self, from: data)
+        mapView.featureCollection = featureCollection
     }
     
     override func viewDidLoad() {
@@ -145,6 +149,12 @@ class ChengJiDanMapViewController : UITableViewController {
             print("used cache!")
             pushFSImageViewer(withImage: imageCache!)
         } else {
+            guard let generatedImage = self.exportChengJiDanAsImage() else { return }
+            self.imageCache = generatedImage
+            self.shouldGenerateNewImage = false
+            
+            print("generated new image!")
+            self.pushFSImageViewer(withImage: generatedImage)
         }
         
     }
