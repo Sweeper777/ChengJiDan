@@ -22,6 +22,10 @@ class ChengJiDanMapViewController : UITableViewController {
 
     override func viewDidLoad() {
         updateView()
+        mapView.lowestLongitude = 73.5
+        mapView.longitudeRange = 61.25
+        mapView.lowestLatitudeMercator = 0.1548
+        mapView.latitudeRangeMercator = 0.9582
         tableView.separatorColor = .clear
         tableView.allowsSelection = false
         title = chengJiDan?.name ?? ""
