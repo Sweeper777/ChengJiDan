@@ -19,13 +19,7 @@ class ChengJiDanMapViewController : UITableViewController {
     var shouldGenerateNewImage = true
     var colorDict: [String: UIColor] = [:]
     var mapLoaded = false
-    
-    func loadMap(atUrl url: URL) {
-        let data = try! Data(contentsOf: url)
-        let featureCollection = try! JSONDecoder().decode(MapFeatureCollection.self, from: data)
-        mapView.featureCollection = featureCollection
-    }
-    
+
     override func viewDidLoad() {
         updateView()
         tableView.separatorColor = .clear
@@ -46,8 +40,9 @@ class ChengJiDanMapViewController : UITableViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         if !mapLoaded {
-            loadMap(atUrl: Bundle.main.url(forResource: "city level map", withExtension: "geojson")!)
-//            mapView.isHidden = false
+            GeoJSONManager.loadChinaGeoJSON { [weak self] in
+                self?.mapView.featureCollection = $0
+            }
             mapLoaded = true
         }
     }
@@ -141,8 +136,6 @@ class ChengJiDanMapViewController : UITableViewController {
         updateCityListLabel(status: .spentTheNight)
         updateCityListLabel(status: .lived)
     }
-    
-    let imageGeneratorQueue = DispatchQueue(label: "imageGenerator")
     
     @IBAction func exportTapped() {
         if imageCache != nil && !shouldGenerateNewImage {
