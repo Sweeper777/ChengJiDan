@@ -8,12 +8,32 @@ class GeoJSONMapView : UIView {
         }
     }
     
+    var lowestLongitude: Double = 0 {
+        didSet {
+            setNeedsDisplay()
+        }
+    }
+    var longitudeRange: Double = 180 {
+        didSet {
+            setNeedsDisplay()
+        }
+    }
+    var lowestLatitudeMercator: Double = 0 {
+        didSet {
+            setNeedsDisplay()
+        }
+    }
+    var latitudeRangeMercator: Double = 3 {
+        didSet {
+            setNeedsDisplay()
+        }
+    }
+    
     override func draw(_ rect: CGRect) {
         UIColor.label.setStroke()
         guard let featureCollection = self.featureCollection else { return }
         let features = featureCollection.features
         for feature in features {
-            print("Drawing \(feature.properties!.name)")
             guard let multipolygon = feature.geometry?.coordinates else { continue }
             let multiPolygonPath = UIBezierPath()
             for polygon in multipolygon {
@@ -33,8 +53,8 @@ class GeoJSONMapView : UIView {
     }
     
     func project(long: Double, lat: Double) -> CGPoint {
-        let projectedLong = ((long - 73.5) / 61.25).f * width
-        let projectedLat = (1 - ((mercator(lat) - 0.1548) / 0.9582).f) * height
+        let projectedLong = ((long - lowestLongitude) / longitudeRange).f * width
+        let projectedLat = (1 - ((mercator(lat) - lowestLatitudeMercator) / latitudeRangeMercator).f) * height
         return CGPoint(x: projectedLong, y: projectedLat)
     }
     
