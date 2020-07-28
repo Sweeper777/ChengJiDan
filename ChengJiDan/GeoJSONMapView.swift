@@ -29,6 +29,12 @@ class GeoJSONMapView : UIView {
         }
     }
     
+    var colorDict: [String: UIColor] = [:] {
+        didSet {
+            setNeedsDisplay()
+        }
+    }
+    
     override func draw(_ rect: CGRect) {
         UIColor.label.setStroke()
         guard let featureCollection = self.featureCollection else { return }
@@ -36,6 +42,7 @@ class GeoJSONMapView : UIView {
         for feature in features {
             guard let multipolygon = feature.geometry?.coordinates else { continue }
             let multiPolygonPath = UIBezierPath()
+            (colorDict[feature.properties?.name ?? ""] ?? .clear).setFill()
             for polygon in multipolygon {
                 let firstLinearRing = polygon.first!
                 for (index, position) in firstLinearRing.enumerated() {
@@ -49,6 +56,7 @@ class GeoJSONMapView : UIView {
             }
             multiPolygonPath.lineWidth = 0.3
             multiPolygonPath.stroke()
+            multiPolygonPath.fill()
         }
     }
     
