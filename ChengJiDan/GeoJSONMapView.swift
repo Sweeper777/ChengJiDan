@@ -35,8 +35,14 @@ class GeoJSONMapView : UIView {
         }
     }
     
-    override func draw(_ rect: CGRect) {
-        UIColor.label.setStroke()
+    func drawMap(borderColor: UIColor, frame: CGRect) {
+        func transformProjectedPoint(_ point: CGPoint) -> CGPoint {
+            point
+                .applying(CGAffineTransform(scaleX: frame.width, y: frame.height))
+                .applying(CGAffineTransform(translationX: frame.x, y: frame.y))
+        }
+        
+        borderColor.setStroke()
         guard let featureCollection = self.featureCollection else { return }
         let features = featureCollection.features
         for feature in features {
@@ -47,9 +53,13 @@ class GeoJSONMapView : UIView {
                 let firstLinearRing = polygon.first!
                 for (index, position) in firstLinearRing.enumerated() {
                     if index == 0 {
-                        multiPolygonPath.move(to: project(long: position.longitude, lat: position.latitude))
+                        multiPolygonPath.move(to:
+                            transformProjectedPoint(project(long: position.longitude, lat: position.latitude))
+                        )
                     } else {
-                        multiPolygonPath.addLine(to: project(long: position.longitude, lat: position.latitude))
+                        multiPolygonPath.addLine(to:
+                            transformProjectedPoint(project(long: position.longitude, lat: position.latitude))
+                        )
                     }
                 }
                 multiPolygonPath.close()
@@ -60,9 +70,13 @@ class GeoJSONMapView : UIView {
         }
     }
     
+    override func draw(_ rect: CGRect) {
+        drawMap(borderColor: .label, frame: bounds)
+    }
+    
     func project(long: Double, lat: Double) -> CGPoint {
-        let projectedLong = ((long - lowestLongitude) / longitudeRange).f * width
-        let projectedLat = (1 - ((mercator(lat) - lowestLatitudeMercator) / latitudeRangeMercator).f) * height
+        let projectedLong = ((long - lowestLongitude) / longitudeRange).f
+        let projectedLat = (1 - ((mercator(lat) - lowestLatitudeMercator) / latitudeRangeMercator).f)
         return CGPoint(x: projectedLong, y: projectedLat)
     }
     
