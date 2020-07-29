@@ -79,13 +79,12 @@ class ChengJiDanMapViewController : UITableViewController {
     
     func updateView() {
         shouldGenerateNewImage = true
-        colorDict = chengJiDan?.entryDict
+        mapView.colorDict = chengJiDan?.entryDict
             .mapValues { UIColor(named: $0.debugDescription) ?? .clear } ?? [:]
-        colorDict["台湾省"] = chengJiDan?.colorForEachProvince[.taiwan]!
+        mapView.colorDict["台湾省"] = chengJiDan?.colorForEachProvince[.taiwan]!
         scoreLabel.attributedText = generateScoreText(fontSize: 30)
         title = chengJiDan?.name ?? ""
         updateCityListLabels()
-//        mapView.setNeedsDisplay()
     }
     
     func generateScoreText(fontSize: CGFloat) -> NSAttributedString {
