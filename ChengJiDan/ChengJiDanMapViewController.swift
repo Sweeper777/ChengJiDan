@@ -17,7 +17,6 @@ class ChengJiDanMapViewController : UITableViewController {
     
     var imageCache: UIImage?
     var shouldGenerateNewImage = true
-    var colorDict: [String: UIColor] = [:]
     var mapLoaded = false
 
     override func viewDidLoad() {
@@ -169,10 +168,13 @@ class ChengJiDanMapViewController : UITableViewController {
         UIGraphicsBeginImageContext(size)
         UIColor.white.setFill()
         UIRectFill(CGRect(origin: .zero, size: size))
-//        mapView.frame = mapView.frame.with(size: size)
-//        mapView.countryBorderColor = .black
-//        mapView.draw(CGRect(origin: .zero, size: size))
-//        mapView.countryBorderColor = .label
+        mapView.drawMap(
+            borderColor: .black,
+            frame: CGRect(
+                origin: .zero,
+                size: CGSize(width: size.width, height: size.width * 0.9)
+            )
+        )
         
         let scoreText = generateScoreText(fontSize: 50)
         let scoreTextBoundingRect = scoreText.boundingRect(with: size, options: [.usesDeviceMetrics, .usesLineFragmentOrigin], context: nil)
