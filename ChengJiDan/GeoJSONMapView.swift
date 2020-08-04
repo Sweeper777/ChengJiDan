@@ -1,39 +1,14 @@
 import UIKit
 import SwiftyUtils
 
-class GeoJSONMapView : UIView {
-    var featureCollection: MapFeatureCollection? {
-        didSet {
-            setNeedsDisplay()
-        }
-    }
+class GeoJSONMapView {
+    var featureCollection: MapFeatureCollection?
     
-    var lowestLongitude: Double = 0 {
-        didSet {
-            setNeedsDisplay()
-        }
-    }
-    var longitudeRange: Double = 180 {
-        didSet {
-            setNeedsDisplay()
-        }
-    }
-    var lowestLatitudeMercator: Double = 0 {
-        didSet {
-            setNeedsDisplay()
-        }
-    }
-    var latitudeRangeMercator: Double = 3 {
-        didSet {
-            setNeedsDisplay()
-        }
-    }
-    
-    var colorDict: [String: UIColor] = [:] {
-        didSet {
-            setNeedsDisplay()
-        }
-    }
+    var lowestLongitude: Double = 0
+    var longitudeRange: Double = 180
+    var lowestLatitudeMercator: Double = 0
+    var latitudeRangeMercator: Double = 3
+    var colorDict: [String: UIColor] = [:]
     
     func drawMap(borderColor: UIColor, frame: CGRect) {
         func transformProjectedPoint(_ point: CGPoint) -> CGPoint {
@@ -70,8 +45,18 @@ class GeoJSONMapView : UIView {
         }
     }
     
-    override func draw(_ rect: CGRect) {
-        drawMap(borderColor: .label, frame: bounds)
+    func drawMapImage(borderColor: UIColor, frame: CGRect, on dispatchQueue: DispatchQueue, completion: @escaping (UIImage?) -> Void) {
+        dispatchQueue.async { [weak self] in
+            guard let `self` = self else {
+                completion(nil)
+                return
+            }
+            UIGraphicsBeginImageContext(frame.size)
+            self.drawMap(borderColor: borderColor, frame: frame)
+            let image = UIGraphicsGetImageFromCurrentImageContext()
+            UIGraphicsEndImageContext()
+            completion(image)
+        }
     }
     
     func project(long: Double, lat: Double) -> CGPoint {
