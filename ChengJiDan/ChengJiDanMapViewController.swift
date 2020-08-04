@@ -6,7 +6,8 @@ import FSImageViewer
 class ChengJiDanMapViewController : UITableViewController {
     var chengJiDan: ChengJiDanMap?
     
-    @IBOutlet var mapView: GeoJSONMapView!
+    var mapDrawer = GeoJSONMapView()
+    @IBOutlet var mapView: UIImageView!
     @IBOutlet var scoreLabel: UILabel!
     @IBOutlet var passedThroughLabel: UILabel!
     @IBOutlet var landedLabel: UILabel!
@@ -21,10 +22,10 @@ class ChengJiDanMapViewController : UITableViewController {
 
     override func viewDidLoad() {
         updateView()
-        mapView.lowestLongitude = 73.5
-        mapView.longitudeRange = 61.25
-        mapView.lowestLatitudeMercator = 0.1548
-        mapView.latitudeRangeMercator = 0.9582
+        mapDrawer.lowestLongitude = 73.5
+        mapDrawer.longitudeRange = 61.25
+        mapDrawer.lowestLatitudeMercator = 0.1548
+        mapDrawer.latitudeRangeMercator = 0.9582
         tableView.separatorColor = .clear
         tableView.allowsSelection = false
         title = chengJiDan?.name ?? ""
@@ -44,7 +45,7 @@ class ChengJiDanMapViewController : UITableViewController {
         super.viewDidAppear(animated)
         if !mapLoaded {
             GeoJSONManager.loadChinaGeoJSON { [weak self] in
-                self?.mapView.featureCollection = $0
+                self?.mapDrawer.featureCollection = $0
             }
             mapLoaded = true
         }
@@ -78,9 +79,9 @@ class ChengJiDanMapViewController : UITableViewController {
     
     func updateView() {
         shouldGenerateNewImage = true
-        mapView.colorDict = chengJiDan?.entryDict
+        mapDrawer.colorDict = chengJiDan?.entryDict
             .mapValues { UIColor(named: $0.debugDescription) ?? .clear } ?? [:]
-        mapView.colorDict["台湾省"] = chengJiDan?.colorForEachProvince[.taiwan]!
+        mapDrawer.colorDict["台湾省"] = chengJiDan?.colorForEachProvince[.taiwan]!
         scoreLabel.attributedText = generateScoreText(fontSize: 30)
         title = chengJiDan?.name ?? ""
         updateCityListLabels()
@@ -168,7 +169,7 @@ class ChengJiDanMapViewController : UITableViewController {
         UIGraphicsBeginImageContext(size)
         UIColor.white.setFill()
         UIRectFill(CGRect(origin: .zero, size: size))
-        mapView.drawMap(
+        mapDrawer.drawMap(
             borderColor: .black,
             frame: CGRect(
                 origin: .zero,
