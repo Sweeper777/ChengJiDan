@@ -8,7 +8,7 @@ typealias MapFeatureCollection = GeoJSONFeatureCollection<MultiPolygonGeometry, 
 
 class GeoJSONManager {
     private static var china: MapFeatureCollection?
-    private static let geoJSONLoaderQueue = DispatchQueue(label: "geoJSONLoader", qos: .background)
+    static let geoJSONLoaderQueue = DispatchQueue(label: "geoJSONLoader", qos: .background)
     
     private init() {}
     

@@ -82,6 +82,16 @@ class ChengJiDanMapViewController : UITableViewController {
         mapDrawer.colorDict = chengJiDan?.entryDict
             .mapValues { UIColor(named: $0.debugDescription) ?? .clear } ?? [:]
         mapDrawer.colorDict["台湾省"] = chengJiDan?.colorForEachProvince[.taiwan]!
+        
+        mapDrawer.drawMapImage(borderColor: .label, frame: CGRect(x: 0, y: 0, width: 700, height: 630), on: GeoJSONManager.geoJSONLoaderQueue) { (image) in
+            if let map = image {
+                DispatchQueue.main.async {
+                    [weak self] in
+                    self?.mapView.image = map
+                }
+            }
+        }
+        
         scoreLabel.attributedText = generateScoreText(fontSize: 30)
         title = chengJiDan?.name ?? ""
         updateCityListLabels()
