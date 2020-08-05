@@ -17,7 +17,7 @@
 		5A0456B5241CF1210055EB27 /* ChengJiDanTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0456B4241CF1210055EB27 /* ChengJiDanTests.swift */; };
 		5A0456C3241CF2190055EB27 /* SKUBezierPath+SVG.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A0456C1241CF2190055EB27 /* SKUBezierPath+SVG.m */; };
 		5A0456C5241CFEBD0055EB27 /* map.svg in Resources */ = {isa = PBXBuildFile; fileRef = 5A0456C4241CFEBD0055EB27 /* map.svg */; };
-		5A0456C7241CFF040055EB27 /* GeoJSONMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0456C6241CFF040055EB27 /* GeoJSONMapView.swift */; };
+		5A0456C7241CFF040055EB27 /* GeoJSONMapDrawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0456C6241CFF040055EB27 /* GeoJSONMapDrawer.swift */; };
 		5A0456C9241D074E0055EB27 /* Province.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0456C8241D074E0055EB27 /* Province.swift */; };
 		5A0456CB241D0A960055EB27 /* TravelStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0456CA241D0A960055EB27 /* TravelStatus.swift */; };
 		5A0456CD241D120D0055EB27 /* ProvinceList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0456CC241D120D0055EB27 /* ProvinceList.swift */; };
@@ -65,7 +65,7 @@
 		5A0456C1241CF2190055EB27 /* SKUBezierPath+SVG.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SKUBezierPath+SVG.m"; sourceTree = "<group>"; };
 		5A0456C2241CF2190055EB27 /* ChengJiDan-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ChengJiDan-Bridging-Header.h"; sourceTree = "<group>"; };
 		5A0456C4241CFEBD0055EB27 /* map.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = map.svg; sourceTree = "<group>"; };
-		5A0456C6241CFF040055EB27 /* GeoJSONMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoJSONMapView.swift; sourceTree = "<group>"; };
+		5A0456C6241CFF040055EB27 /* GeoJSONMapDrawer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoJSONMapDrawer.swift; sourceTree = "<group>"; };
 		5A0456C8241D074E0055EB27 /* Province.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Province.swift; sourceTree = "<group>"; };
 		5A0456CA241D0A960055EB27 /* TravelStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelStatus.swift; sourceTree = "<group>"; };
 		5A0456CC241D120D0055EB27 /* ProvinceList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProvinceList.swift; sourceTree = "<group>"; };
@@ -150,7 +150,7 @@
 				5A12B12A2427B6B000124870 /* ChengJiDanEditorViewController.swift */,
 				5A011C75244711BE001FAC3E /* HelpViewController.swift */,
 				5A0E8255246FDD7700BFE59E /* MySplitViewController.swift */,
-				5A0456C6241CFF040055EB27 /* GeoJSONMapView.swift */,
+				5A0456C6241CFF040055EB27 /* GeoJSONMapDrawer.swift */,
 				5A0456C8241D074E0055EB27 /* Province.swift */,
 				5A0456CC241D120D0055EB27 /* ProvinceList.swift */,
 				5A0456CA241D0A960055EB27 /* TravelStatus.swift */,
@@ -365,7 +365,7 @@
 			files = (
 				5A02FF9F245423EA001D06ED /* SecretStuff.swift in Sources */,
 				5A0456A2241CF11E0055EB27 /* ChengJiDanListViewController.swift in Sources */,
-				5A0456C7241CFF040055EB27 /* GeoJSONMapView.swift in Sources */,
+				5A0456C7241CFF040055EB27 /* GeoJSONMapDrawer.swift in Sources */,
 				5A04569E241CF11E0055EB27 /* AppDelegate.swift in Sources */,
 				5A0456C9241D074E0055EB27 /* Province.swift in Sources */,
 				5A061E7F2426689C00CC3308 /* ChengJiDanMapViewController.swift in Sources */,

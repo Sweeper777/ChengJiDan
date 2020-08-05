@@ -1,7 +1,7 @@
 import UIKit
 import SwiftyUtils
 
-class GeoJSONMapView {
+class GeoJSONMapDrawer {
     var featureCollection: MapFeatureCollection?
     
     var lowestLongitude: Double = 0

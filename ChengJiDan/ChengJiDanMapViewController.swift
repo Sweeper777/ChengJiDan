@@ -6,7 +6,7 @@ import FSImageViewer
 class ChengJiDanMapViewController : UITableViewController {
     var chengJiDan: ChengJiDanMap?
     
-    var mapDrawer = GeoJSONMapView()
+    var mapDrawer = GeoJSONMapDrawer()
     @IBOutlet var mapView: UIImageView!
     @IBOutlet var scoreLabel: UILabel!
     @IBOutlet var passedThroughLabel: UILabel!
