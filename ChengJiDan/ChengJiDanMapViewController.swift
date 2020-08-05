@@ -46,6 +46,7 @@ class ChengJiDanMapViewController : UITableViewController {
         if !mapLoaded {
             GeoJSONManager.loadChinaGeoJSON { [weak self] in
                 self?.mapDrawer.featureCollection = $0
+                self?.updateView()
             }
             mapLoaded = true
         }
