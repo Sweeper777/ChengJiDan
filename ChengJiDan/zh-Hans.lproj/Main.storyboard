@@ -220,11 +220,40 @@ Cg
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rrh-Sr-mvj">
                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
                                                 </imageView>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jcz-tW-l1R">
+                                                    <rect key="frame" x="104.5" y="44.5" width="111" height="111"/>
+                                                    <subviews>
+                                                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="CMb-Ec-cks">
+                                                            <rect key="frame" x="45" y="36" width="20" height="20"/>
+                                                        </activityIndicatorView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="加载中..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k6L-4n-JRw">
+                                                            <rect key="frame" x="22" y="64" width="66" height="21"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="trailing" secondItem="k6L-4n-JRw" secondAttribute="trailing" constant="23" id="XNq-Cs-7lA"/>
+                                                        <constraint firstAttribute="trailing" secondItem="CMb-Ec-cks" secondAttribute="trailing" constant="46" id="ZHs-EN-LWZ"/>
+                                                        <constraint firstAttribute="height" constant="111" id="e9u-iB-6Bp"/>
+                                                        <constraint firstAttribute="bottom" secondItem="CMb-Ec-cks" secondAttribute="bottom" constant="55" id="gm4-9W-D3S"/>
+                                                        <constraint firstAttribute="bottom" secondItem="k6L-4n-JRw" secondAttribute="bottom" constant="26" id="nzF-BP-OA3"/>
+                                                        <constraint firstItem="k6L-4n-JRw" firstAttribute="top" secondItem="CMb-Ec-cks" secondAttribute="bottom" constant="8" id="qLg-Fy-FJ9"/>
+                                                        <constraint firstAttribute="width" constant="111" id="snT-9l-9ix"/>
+                                                        <constraint firstItem="CMb-Ec-cks" firstAttribute="leading" secondItem="Jcz-tW-l1R" secondAttribute="leading" constant="45" id="tQ9-gQ-ckg"/>
+                                                        <constraint firstItem="k6L-4n-JRw" firstAttribute="leading" secondItem="Jcz-tW-l1R" secondAttribute="leading" constant="22" id="z90-W2-nkf"/>
+                                                        <constraint firstItem="CMb-Ec-cks" firstAttribute="top" secondItem="Jcz-tW-l1R" secondAttribute="top" constant="36" id="zkp-jx-peD"/>
+                                                    </constraints>
+                                                </view>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="rrh-Sr-mvj" secondAttribute="trailing" id="BAj-SM-WKC"/>
                                                 <constraint firstItem="rrh-Sr-mvj" firstAttribute="top" secondItem="eR2-1p-iGl" secondAttribute="top" id="Lqy-xf-gPw"/>
                                                 <constraint firstItem="rrh-Sr-mvj" firstAttribute="leading" secondItem="eR2-1p-iGl" secondAttribute="leading" id="ZV2-ek-c3C"/>
+                                                <constraint firstItem="Jcz-tW-l1R" firstAttribute="centerX" secondItem="eR2-1p-iGl" secondAttribute="centerX" id="ghq-Sf-6eB"/>
+                                                <constraint firstItem="Jcz-tW-l1R" firstAttribute="centerY" secondItem="eR2-1p-iGl" secondAttribute="centerY" id="jzZ-nK-suJ"/>
                                                 <constraint firstAttribute="bottom" secondItem="rrh-Sr-mvj" secondAttribute="bottom" id="sbD-BR-3k6"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -427,6 +456,7 @@ Cg
                         <outlet property="keyLabel" destination="mbZ-Az-PfK" id="Li5-ed-iTS"/>
                         <outlet property="landedLabel" destination="Blx-d8-riO" id="xzi-MM-7sL"/>
                         <outlet property="livedLabel" destination="H8Y-1h-Fwk" id="D43-kw-lA3"/>
+                        <outlet property="mapLoadingIndicator" destination="Jcz-tW-l1R" id="sAH-lS-oUi"/>
                         <outlet property="mapView" destination="rrh-Sr-mvj" id="Pyh-SW-a3I"/>
                         <outlet property="passedThroughLabel" destination="BIo-i6-pAn" id="Sg5-0q-V1G"/>
                         <outlet property="scoreLabel" destination="1sz-LH-eri" id="5co-sg-t37"/>
