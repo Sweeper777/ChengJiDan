@@ -18,7 +18,6 @@ class ChengJiDanMapViewController : UITableViewController {
     
     var imageCache: UIImage?
     var shouldGenerateNewImage = true
-    var mapLoaded = false
 
     override func viewDidLoad() {
         updateView()
@@ -43,12 +42,9 @@ class ChengJiDanMapViewController : UITableViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        if !mapLoaded {
-            GeoJSONManager.loadChinaGeoJSON { [weak self] in
-                self?.mapDrawer.featureCollection = $0
-                self?.updateView()
-            }
-            mapLoaded = true
+        GeoJSONManager.loadChinaGeoJSON { [weak self] in
+            self?.mapDrawer.featureCollection = $0
+            self?.updateView()
         }
     }
     
