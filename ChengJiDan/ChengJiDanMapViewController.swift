@@ -9,6 +9,7 @@ class ChengJiDanMapViewController : UITableViewController {
     var mapDrawer = GeoJSONMapDrawer()
     @IBOutlet var mapView: UIImageView!
     @IBOutlet var mapLoadingIndicator: UIView!
+    @IBOutlet var activityIndicator: UIActivityIndicatorView!
     @IBOutlet var scoreLabel: UILabel!
     @IBOutlet var passedThroughLabel: UILabel!
     @IBOutlet var landedLabel: UILabel!

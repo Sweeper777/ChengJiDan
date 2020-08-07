@@ -453,6 +453,7 @@ Cg
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
+                        <outlet property="activityIndicator" destination="CMb-Ec-cks" id="dUV-se-BLB"/>
                         <outlet property="keyLabel" destination="mbZ-Az-PfK" id="Li5-ed-iTS"/>
                         <outlet property="landedLabel" destination="Blx-d8-riO" id="xzi-MM-7sL"/>
                         <outlet property="livedLabel" destination="H8Y-1h-Fwk" id="D43-kw-lA3"/>
