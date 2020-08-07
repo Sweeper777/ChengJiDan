@@ -44,6 +44,7 @@ class ChengJiDanMapViewController : UITableViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        showMapLoadingIndicator()
         GeoJSONManager.loadChinaGeoJSON { [weak self] in
             self?.mapDrawer.featureCollection = $0
             self?.updateView()
@@ -82,11 +83,13 @@ class ChengJiDanMapViewController : UITableViewController {
             .mapValues { UIColor(named: $0.debugDescription) ?? .clear } ?? [:]
         mapDrawer.colorDict["台湾省"] = chengJiDan?.colorForEachProvince[.taiwan]!
         
+        showMapLoadingIndicator()
         mapDrawer.drawMapImage(borderColor: .label, frame: CGRect(x: 0, y: 0, width: 700, height: 630), on: GeoJSONManager.geoJSONLoaderQueue) { (image) in
             if let map = image {
                 DispatchQueue.main.async {
                     [weak self] in
                     self?.mapView.image = map
+                    self?.hideMapLoadingIndicator()
                 }
             }
         }
@@ -171,6 +174,16 @@ class ChengJiDanMapViewController : UITableViewController {
         vc.backgroundColorVisible = .systemBackground
         vc.backgroundColorHidden = .systemBackground
         self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func showMapLoadingIndicator() {
+        mapLoadingIndicator.isHidden = false
+        activityIndicator.startAnimating()
+    }
+    
+    func hideMapLoadingIndicator() {
+        mapLoadingIndicator.isHidden = true
+        activityIndicator.stopAnimating()
     }
     
     func exportChengJiDanAsImage() -> UIImage? {
