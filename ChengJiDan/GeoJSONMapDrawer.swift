@@ -10,7 +10,7 @@ class GeoJSONMapDrawer {
     var latitudeRangeMercator: Double = 3
     var colorDict: [String: UIColor] = [:]
     
-    func drawMap(borderColor: UIColor, frame: CGRect) {
+    func drawMap(borderColor: UIColor, borderWidth: CGFloat, frame: CGRect) {
         func transformProjectedPoint(_ point: CGPoint) -> CGPoint {
             point
                 .applying(CGAffineTransform(scaleX: frame.width, y: frame.height))
@@ -39,20 +39,20 @@ class GeoJSONMapDrawer {
                 }
                 multiPolygonPath.close()
             }
-            multiPolygonPath.lineWidth = 0.3
+            multiPolygonPath.lineWidth = borderWidth
             multiPolygonPath.stroke()
             multiPolygonPath.fill()
         }
     }
     
-    func drawMapImage(borderColor: UIColor, frame: CGRect, on dispatchQueue: DispatchQueue, completion: @escaping (UIImage?) -> Void) {
+    func drawMapImage(borderColor: UIColor, borderWidth: CGFloat, frame: CGRect, on dispatchQueue: DispatchQueue, completion: @escaping (UIImage?) -> Void) {
         dispatchQueue.async { [weak self] in
             guard let `self` = self else {
                 completion(nil)
                 return
             }
             UIGraphicsBeginImageContext(frame.size)
-            self.drawMap(borderColor: borderColor, frame: frame)
+            self.drawMap(borderColor: borderColor, borderWidth: borderWidth, frame: frame)
             let image = UIGraphicsGetImageFromCurrentImageContext()
             UIGraphicsEndImageContext()
             completion(image)
