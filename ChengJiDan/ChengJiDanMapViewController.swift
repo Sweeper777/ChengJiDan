@@ -22,11 +22,11 @@ class ChengJiDanMapViewController : UITableViewController {
     var shouldGenerateNewImage = true
 
     override func viewDidLoad() {
-        updateView()
         mapDrawer.lowestLongitude = 73.5
         mapDrawer.longitudeRange = 61.25
         mapDrawer.lowestLatitudeMercator = 0.1548
         mapDrawer.latitudeRangeMercator = 0.9582
+        updateView()
         tableView.separatorColor = .clear
         tableView.allowsSelection = false
         title = chengJiDan?.name ?? ""
