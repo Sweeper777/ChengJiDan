@@ -26,7 +26,11 @@ class ChengJiDanMapViewController : UITableViewController {
         mapDrawer.longitudeRange = 61.25
         mapDrawer.lowestLatitudeMercator = 0.1548
         mapDrawer.latitudeRangeMercator = 0.9582
-        updateView()
+        showMapLoadingIndicator()
+        GeoJSONManager.loadChinaGeoJSON { [weak self] in
+            self?.mapDrawer.featureCollection = $0
+            self?.updateView()
+        }
         tableView.separatorColor = .clear
         tableView.allowsSelection = false
         title = chengJiDan?.name ?? ""
@@ -39,15 +43,6 @@ class ChengJiDanMapViewController : UITableViewController {
         
         if chengJiDan == nil {
             navigationItem.rightBarButtonItems = []
-        }
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        showMapLoadingIndicator()
-        GeoJSONManager.loadChinaGeoJSON { [weak self] in
-            self?.mapDrawer.featureCollection = $0
-            self?.updateView()
         }
     }
     
