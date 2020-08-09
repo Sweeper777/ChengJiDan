@@ -20,6 +20,7 @@ class ChengJiDanMapViewController : UITableViewController {
     
     var imageCache: UIImage?
     var shouldGenerateNewImage = true
+    var mapDrawn = false
 
     override func viewDidLoad() {
         mapDrawer.lowestLongitude = 73.5
@@ -27,6 +28,7 @@ class ChengJiDanMapViewController : UITableViewController {
         mapDrawer.lowestLatitudeMercator = 0.1548
         mapDrawer.latitudeRangeMercator = 0.9582
         showMapLoadingIndicator()
+        updateAllLabels()
         GeoJSONManager.loadChinaGeoJSON { [weak self] in
             self?.mapDrawer.featureCollection = $0
             self?.updateView()
@@ -85,13 +87,16 @@ class ChengJiDanMapViewController : UITableViewController {
     func updateView() {
         updateAllLabels()
         shouldGenerateNewImage = true
+        if !mapDrawn {
             showMapLoadingIndicator()
+        }
         mapDrawer.drawMapImage(borderColor: .label, borderWidth: 0.3, frame: CGRect(x: 0, y: 0, width: 700, height: 630), on: GeoJSONManager.geoJSONLoaderQueue) { (image) in
             if let map = image {
                 DispatchQueue.main.async {
                     [weak self] in
                     self?.mapView.image = map
                     self?.hideMapLoadingIndicator()
+                    self?.mapDrawn = true
                 }
             }
         }
