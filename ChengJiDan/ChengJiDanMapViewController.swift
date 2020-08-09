@@ -72,13 +72,20 @@ class ChengJiDanMapViewController : UITableViewController {
         }
     }
     
-    func updateView() {
-        shouldGenerateNewImage = true
+    func updateAllLabels() {
         mapDrawer.colorDict = chengJiDan?.entryDict
             .mapValues { UIColor(named: $0.debugDescription) ?? .clear } ?? [:]
         mapDrawer.colorDict["台湾省"] = chengJiDan?.colorForEachProvince[.taiwan]!
         
-        showMapLoadingIndicator()
+        scoreLabel.attributedText = generateScoreText(fontSize: 30)
+        title = chengJiDan?.name ?? ""
+        updateCityListLabels()
+    }
+    
+    func updateView() {
+        updateAllLabels()
+        shouldGenerateNewImage = true
+            showMapLoadingIndicator()
         mapDrawer.drawMapImage(borderColor: .label, borderWidth: 0.3, frame: CGRect(x: 0, y: 0, width: 700, height: 630), on: GeoJSONManager.geoJSONLoaderQueue) { (image) in
             if let map = image {
                 DispatchQueue.main.async {
@@ -88,10 +95,6 @@ class ChengJiDanMapViewController : UITableViewController {
                 }
             }
         }
-        
-        scoreLabel.attributedText = generateScoreText(fontSize: 30)
-        title = chengJiDan?.name ?? ""
-        updateCityListLabels()
     }
     
     func generateScoreText(fontSize: CGFloat) -> NSAttributedString {
