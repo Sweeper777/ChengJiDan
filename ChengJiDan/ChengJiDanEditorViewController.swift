@@ -29,7 +29,7 @@ class ChengJiDanEditorViewController : UITableViewController {
     
     override func viewDidLoad() {
         cityStatusPairs = chengJiDan.entries
-        cityStatusPairDict = Dictionary(elements: cityStatusPairs!.map { ($0.city, $0.status) })
+        cityStatusPairDict = Dictionary(uniqueKeysWithValues: cityStatusPairs!.map { ($0.city, $0.status) })
         dataSource = Province.allCases
         
         searchController.searchResultsUpdater = self

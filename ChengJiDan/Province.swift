@@ -32,8 +32,8 @@ struct Province : Codable {
         }
     }
     
-    private static let dictionaryByName: [String: Province] = Dictionary(elements: Province.allCases.map { ($0.name, $0) })
-    private static let dictionaryByCityName: [String: Province] = Dictionary(elements:
+    private static let dictionaryByName: [String: Province] = Dictionary(uniqueKeysWithValues: Province.allCases.map { ($0.name, $0) })
+    private static let dictionaryByCityName: [String: Province] = Dictionary(uniqueKeysWithValues:
         Province.allCases.flatMap { p in
             p.cities.map { ($0, p) }
         }
@@ -73,7 +73,7 @@ struct ChengJiDanMap {
     init(name: String, entries: [CityStatusPair]) {
         self.name = name
         self.entries = entries
-        self.entryDict = Dictionary(elements: entries.map { ($0.city, $0.status) })
+        self.entryDict = Dictionary(uniqueKeysWithValues: entries.map { ($0.city, $0.status) })
     }
     
     init(objectRef: ChengJiDanMapObject) {

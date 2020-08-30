@@ -245,7 +245,7 @@ class ChengJiDanMapViewController : UITableViewController {
 
 extension ChengJiDanMap {
     var colorForEachProvince: [Province: UIColor] {
-        Dictionary(elements: Province.allCases.map { ($0, color(forProvince: $0)) })
+        Dictionary(uniqueKeysWithValues: Province.allCases.map { ($0, color(forProvince: $0)) })
     }
     
     private func color(forProvince province: Province) -> UIColor {
