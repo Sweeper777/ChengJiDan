@@ -241,6 +241,12 @@ class ChengJiDanMapViewController : UITableViewController {
         UIGraphicsEndImageContext()
         return image
     }
+    
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        if previousTraitCollection?.userInterfaceStyle != traitCollection.userInterfaceStyle {
+            updateView()
+        }
+    }
 }
 
 extension ChengJiDanMap {
