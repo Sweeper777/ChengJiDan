@@ -77,7 +77,7 @@ class ChengJiDanMapViewController : UITableViewController {
     func updateAllLabels() {
         mapDrawer.colorDict = chengJiDan?.entryDict
             .mapValues { UIColor(named: $0.debugDescription) ?? .clear } ?? [:]
-        mapDrawer.colorDict["台湾省"] = chengJiDan?.colorForEachProvince[.taiwan]!
+        mapDrawer.colorDict["台湾省"] = chengJiDan?.colorForTaiwan
         
         scoreLabel.attributedText = generateScoreText(fontSize: 30)
         title = chengJiDan?.name ?? ""
@@ -244,8 +244,8 @@ class ChengJiDanMapViewController : UITableViewController {
 }
 
 extension ChengJiDanMap {
-    var colorForEachProvince: [Province: UIColor] {
-        Dictionary(uniqueKeysWithValues: Province.allCases.map { ($0, color(forProvince: $0)) })
+    var colorForTaiwan: UIColor {
+        color(forProvince: .taiwan)
     }
     
     private func color(forProvince province: Province) -> UIColor {
