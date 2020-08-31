@@ -90,7 +90,7 @@ class ChengJiDanMapViewController : UITableViewController {
         if !mapDrawn {
             showMapLoadingIndicator()
         }
-        mapDrawer.drawMapImage(borderColor: .label, borderWidth: 0.3, frame: CGRect(x: 0, y: 0, width: 700, height: 630), on: GeoJSONManager.geoJSONLoaderQueue) { (image) in
+        mapDrawer.drawMapImage(borderColor: .label, borderWidth: 0.6, frame: CGRect(x: 0, y: 0, width: 700, height: 630), on: GeoJSONManager.geoJSONLoaderQueue) { (image) in
             if let map = image {
                 DispatchQueue.main.async {
                     [weak self] in
@@ -196,7 +196,7 @@ class ChengJiDanMapViewController : UITableViewController {
         UIRectFill(CGRect(origin: .zero, size: size))
         mapDrawer.drawMap(
             borderColor: .black,
-            borderWidth: 0.4286,
+            borderWidth: 0.8572,
             frame: CGRect(
                 origin: .zero,
                 size: CGSize(width: size.width, height: size.width * 0.9)
